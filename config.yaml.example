@@ -1,0 +1,21 @@
+integrations:
+  -
+    name: graph-jamf
+    directory: ./.integrations/graph-jamf
+    git: https://github.com/JupiterOne/graph-jamf.git
+    env:
+      JAMF_HOST: example-host
+      JAMF_USERNAME: example-username
+      JAMF_PASSWORD: example-password
+  -
+    name: graph-sentry
+    directory: ./.integrations/graph-sentry
+    git: https://github.com/JupiterOne/graph-sentry.git
+    env:
+      AUTH_TOKEN: example-token
+      ORGANIZATION_SLUG: example-organization
+storage:
+  engine: neo4j
+  username: neo4jusername
+  password: neo4jpassword
+  uri: https://localhost:7687
