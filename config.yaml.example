@@ -3,7 +3,7 @@ integrations:
     name: graph-jamf
     directory: ./.integrations/graph-jamf
     git: https://github.com/JupiterOne/graph-jamf.git
-    env:
+    config:
       JAMF_HOST: example-host
       JAMF_USERNAME: example-username
       JAMF_PASSWORD: example-password
@@ -11,7 +11,7 @@ integrations:
     name: graph-sentry
     directory: ./.integrations/graph-sentry
     git: https://github.com/JupiterOne/graph-sentry.git
-    env:
+    config:
       AUTH_TOKEN: example-token
       ORGANIZATION_SLUG: example-organization
 storage:
