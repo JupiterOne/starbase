@@ -11,7 +11,9 @@ export function setup() {
       const config = await parseConfigYaml('config.yaml');
 
       for(const integration of config.integrations) {
-        Clone.clone(integration.git, integration.directory);
+        if(integration.git) {
+          Clone.clone(integration.git, integration.directory);
+        }
       }
 
   });
