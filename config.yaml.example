@@ -1,6 +1,7 @@
 integrations:
   -
     name: graph-jamf
+    instanceID: testInstanceID
     directory: ./.integrations/graph-jamf
     git: https://github.com/JupiterOne/graph-jamf.git
     config:
@@ -9,6 +10,7 @@ integrations:
       JAMF_PASSWORD: example-password
   -
     name: graph-sentry
+    instanceID: testInstanceID
     directory: ./.integrations/graph-sentry
     git: https://github.com/JupiterOne/graph-sentry.git
     config:

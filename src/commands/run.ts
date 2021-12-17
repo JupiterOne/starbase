@@ -19,7 +19,6 @@ export function run() {
           NEO4J_USER=${config.storage.username}
           NEO4J_PASSWORD=${config.storage.password}
         `);
-
       }
 
       for(const integration of config.integrations) {
@@ -29,7 +28,7 @@ export function run() {
 
         // And finally call command to save if we have a storage endpoint defined.
         if(config.storage) {
-          execSync(`yarn j1-integration neo4j push -i starbasetest -d ${integration.directory}/.j1-integration`);
+          execSync(`yarn j1-integration neo4j push -i ${integration.instanceID} -d ${integration.directory}/.j1-integration`);
         }
       }
   });

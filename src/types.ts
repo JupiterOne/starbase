@@ -1,8 +1,9 @@
 
 export type StarbaseIntegration = {
   name: string;
+  instanceID: string;
   directory: string;
-  git: string;
+  git?: string;
   config: string[];
 }
 
