@@ -7,7 +7,9 @@
   "author": "dev-integrations@jupiterone.com",
   "license": "MPL-2.0",
   "scripts": {
-    "starbase": "ts-node ./src/index.ts"
+    "starbase": "ts-node ./src/index.ts",
+    "neo4j:start": "docker-compose -f docker/neo4j.yml up &",
+    "neo4j:stop": "docker-compose -f docker/neo4j.yml down"
   },
   "dependencies": {
     "@jupiterone/integration-sdk-cli": "^8.0.0",

@@ -51,6 +51,9 @@ each listed integration in the config.yaml file:
   4. Perform `yarn starbase run` to collect data for each listed integration and
      then push collected data if a storage endpoint has been listed in `config.yaml`.
 
+For additional information on using Neo4j as a storage endpoint, please see the
+[README.md](docker/README.md) provided.
+
 ### Making Contributions
 
 Start by taking a look at the source code. Each integration is basically a set

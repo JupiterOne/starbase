@@ -4,3 +4,4 @@ tsconfig.tsbuildinfo
 .integrations/
 config.yaml
 .env
+docker/.neo4j/
