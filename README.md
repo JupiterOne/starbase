@@ -40,15 +40,11 @@ ingestion projects and optionally pushing them to a storage endpoint.
 
 ### Running the integration
 
-A single call to `yarn ts-node index.ts` will perform the following steps for 
-each listed integration in the config.yaml file:
-  1. Clone (or pull) the project from Github.
-  2. Perform `yarn install` to install all needed dependencies.
-  3. Perform `yarn starbase setup` to perform an intial clone of all integrations
+  1. Perform `yarn starbase setup` to perform an intial clone of all integrations
      listed in the `config.yaml` file.
-  4. Perform `yarn starbase update-integrations` to pull the latest updates and 
+  2. Perform `yarn starbase update-integrations` to pull the latest updates and 
      install all dependencies for each integration listed in the `config.yaml` file. 
-  4. Perform `yarn starbase run` to collect data for each listed integration and
+  3. Perform `yarn starbase run` to collect data for each listed integration and
      then push collected data if a storage endpoint has been listed in `config.yaml`.
 
 For additional information on using Neo4j as a storage endpoint, please see the
