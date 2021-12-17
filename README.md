@@ -3,11 +3,6 @@
 Starbase by JupiterOne is an orchestrator application for running graph
 ingestion projects and optionally pushing them to a storage endpoint.
 
-<!-- TODO review licensing (matched existing graph-* projects) -->
-
-<!-- TODO use commander for CLI -->
-
-<!-- TODO add functinality to kick off docker Neo4j image. -->
 
 ## Development
 
