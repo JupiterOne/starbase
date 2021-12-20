@@ -2,30 +2,30 @@ integrations:
   -
     name: graph-jamf-missing-instance
     directory: ./.integrations/graph-jamf
-    git: https://github.com/JupiterOne/graph-jamf.git
+    gitRemoteUrl: https://github.com/JupiterOne/graph-jamf.git
     config:
       JAMF_HOST: example-host
       JAMF_USERNAME: example-username
       JAMF_PASSWORD: example-password
   -
-    instanceID: testInstanceID
+    instanceId: testInstanceId
     directory: ./.integrations/graph-jamf
-    git: https://github.com/JupiterOne/graph-jamf.git
+    gitRemoteUrl: https://github.com/JupiterOne/graph-jamf.git
     config:
       JAMF_HOST: example-host
       JAMF_USERNAME: example-username
       JAMF_PASSWORD: example-password
   -
     name: graph-jamf-missing-dir
-    instanceID: testInstanceID
-    git: https://github.com/JupiterOne/graph-jamf.git
+    instanceId: testInstanceId
+    gitRemoteUrl: https://github.com/JupiterOne/graph-jamf.git
     config:
       JAMF_HOST: example-host
       JAMF_USERNAME: example-username
       JAMF_PASSWORD: example-password
   -
     name: graph-jamf-no-git
-    instanceID: testInstanceID
+    instanceId: testInstanceId
     directory: ./.integrations/graph-jamf
     config:
       JAMF_HOST: example-host
@@ -33,9 +33,9 @@ integrations:
       JAMF_PASSWORD: example-password
   -
     name: graph-jamf-no-config
-    instanceID: testInstanceID
+    instanceId: testInstanceId
     directory: ./.integrations/graph-jamf
-    git: https://github.com/JupiterOne/graph-jamf.git
+    gitRemoteUrl: https://github.com/JupiterOne/graph-jamf.git
 storage:
   engine: neo4j
   username: neo4jusername

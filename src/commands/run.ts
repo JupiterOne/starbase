@@ -8,16 +8,14 @@ export function run() {
   return createCommand('run')
     .description('collect and upload entities and relationships')
     .action(async (options) => {
-      console.log(`RUN`);
-
       const config = await parseConfigYaml('config.yaml');
 
       if(config.storage) {
         //set up .env for storage configuration
         await fs.writeFile('.env', `
-          NEO4J_URI=${config.storage.uri}
-          NEO4J_USER=${config.storage.username}
-          NEO4J_PASSWORD=${config.storage.password}
+          NEO4J_URI=${config.storage.config.uri}
+          NEO4J_USER=${config.storage.config.username}
+          NEO4J_PASSWORD=${config.storage.config.password}
         `);
       }
 
@@ -28,7 +26,7 @@ export function run() {
 
         // And finally call command to save if we have a storage endpoint defined.
         if(config.storage) {
-          execSync(`yarn j1-integration neo4j push -i ${integration.instanceID} -d ${integration.directory}/.j1-integration`);
+          execSync(`yarn j1-integration neo4j push -i ${integration.instanceId} -d ${integration.directory}/.j1-integration`);
         }
       }
   });

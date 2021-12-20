@@ -9,8 +9,6 @@ export function updateIntegrations() {
   return createCommand('update-integrations')
     .description('update repositories listed in config.yaml and install dependencies')
     .action(async (options) => {
-      console.log(`UPDATE-INTEGRATIONS`);
-
       const config = await parseConfigYaml('config.yaml');
 
       for(const integration of config.integrations) {

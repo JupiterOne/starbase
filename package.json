@@ -2,12 +2,12 @@
   "name": "starbase",
   "version": "0.0.0",
   "description": "Orchestrator project for JupiterOne open source ingestion projects.",
-  "main": "./src/index.js",
   "repository": "https://github.com/JupiterOne/starbase.git",
   "author": "dev-integrations@jupiterone.com",
   "license": "MPL-2.0",
   "scripts": {
     "starbase": "ts-node ./src/index.ts",
+    "starbase:help": "ts-node ./src/index.ts -h",
     "neo4j:start": "docker-compose -f docker/neo4j.yml up &",
     "neo4j:stop": "docker-compose -f docker/neo4j.yml down"
   },

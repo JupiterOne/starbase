@@ -1,20 +1,26 @@
 
-export type StarbaseIntegration = {
+export type StarbaseIntegration<TConfig = any> = {
   name: string;
-  instanceID: string;
+  instanceId: string;
   directory: string;
-  git?: string;
-  config: string[];
+  gitRemoteUrl?: string;
+  config: TConfig;
 }
 
-export type StarbaseStorage = {
+export type StarbaseStorage<TStorageConfig = any> = {
   engine: string;
+  config: TStorageConfig;
+}
+
+interface Neo4jStorageConfig {
   username: string;
   password: string;
   uri: string;
 }
 
-export type StarbaseConfig = {
+export type Neo4jStorage = StarbaseStorage<Neo4jStorageConfig>;
+
+export type StarbaseConfig  = {
   integrations: StarbaseIntegration[];
   storage?: StarbaseStorage;
 }

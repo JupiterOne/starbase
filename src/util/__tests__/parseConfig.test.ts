@@ -5,9 +5,9 @@ const testConfig: StarbaseConfig = {
   integrations: [
     {
       name: 'graph-jamf',
-      instanceID: 'testInstanceID',
+      instanceId: 'testInstanceId',
       directory: './.integrations/graph-jamf',
-      git: 'https://github.com/JupiterOne/graph-jamf.git',
+      gitRemoteUrl: 'https://github.com/JupiterOne/graph-jamf.git',
       config: [
         'JAMF_HOST=example-host\n',
         'JAMF_USERNAME=example-username\n',
@@ -16,9 +16,9 @@ const testConfig: StarbaseConfig = {
     },
     {
       name: 'graph-sentry',
-      instanceID: 'testInstanceID',
+      instanceId: 'testInstanceId',
       directory: './.integrations/graph-sentry',
-      git: 'https://github.com/JupiterOne/graph-sentry.git',
+      gitRemoteUrl: 'https://github.com/JupiterOne/graph-sentry.git',
       config: [
         'AUTH_TOKEN=example-token\n',
         'ORGANIZATION_SLUG=example-organization\n'
@@ -27,9 +27,11 @@ const testConfig: StarbaseConfig = {
   ],
   storage: {
     engine: 'neo4j',
-    username: 'neo4jusername',
-    password: 'neo4jpassword',
-    uri: 'https://localhost:7687'
+    config: {
+      username: 'neo4jusername',
+      password: 'neo4jpassword',
+      uri: 'https://localhost:7687'
+    }
   }
 };
 
@@ -37,9 +39,9 @@ const testConfigOptionals: StarbaseConfig = {
   integrations: [
     {
       name: 'graph-jamf-no-git',
-      instanceID: 'testInstanceID',
+      instanceId: 'testInstanceId',
       directory: './.integrations/graph-jamf',
-      git: undefined,
+      gitRemoteUrl: undefined,
       config: [
         'JAMF_HOST=example-host\n',
         'JAMF_USERNAME=example-username\n',
@@ -48,17 +50,19 @@ const testConfigOptionals: StarbaseConfig = {
     },
     {
       name: 'graph-jamf-no-config',
-      instanceID: 'testInstanceID',
+      instanceId: 'testInstanceId',
       directory: './.integrations/graph-jamf',
-      git: 'https://github.com/JupiterOne/graph-jamf.git',
+      gitRemoteUrl: 'https://github.com/JupiterOne/graph-jamf.git',
       config: []
     },
   ],
   storage: {
     engine: 'neo4j',
-    username: 'neo4jusername',
-    password: 'neo4jpassword',
-    uri: 'https://localhost:7687'
+    config: {
+      username: 'neo4jusername',
+      password: 'neo4jpassword',
+      uri: 'https://localhost:7687'
+    }
   }
 };
 
@@ -73,7 +77,7 @@ describe('#parseConfig', () => {
   test('Missing config file', async () => {
     await expect(
       parseConfigYaml('')
-    ).rejects.toThrowError('ERROR.  Missing config.yaml.');
+    ).rejects.toThrowError('Missing config.yaml (path=)');
   });
 
   test('Optional/Required integration values yeild proper config.', async () => {

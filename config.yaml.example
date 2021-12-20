@@ -1,18 +1,18 @@
 integrations:
   -
     name: graph-jamf
-    instanceID: testInstanceID
+    instanceId: testInstanceId
     directory: ./.integrations/graph-jamf
-    git: https://github.com/JupiterOne/graph-jamf.git
+    gitRemoteUrl: https://github.com/JupiterOne/graph-jamf.git
     config:
       JAMF_HOST: example-host
       JAMF_USERNAME: example-username
       JAMF_PASSWORD: example-password
   -
     name: graph-sentry
-    instanceID: testInstanceID
+    instanceId: testInstanceId
     directory: ./.integrations/graph-sentry
-    git: https://github.com/JupiterOne/graph-sentry.git
+    gitRemoteUrl: https://github.com/JupiterOne/graph-sentry.git
     config:
       AUTH_TOKEN: example-token
       ORGANIZATION_SLUG: example-organization
