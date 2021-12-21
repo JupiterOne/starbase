@@ -8,21 +8,21 @@ const testConfig: StarbaseConfig = {
       instanceId: 'testInstanceId',
       directory: './.integrations/graph-jamf',
       gitRemoteUrl: 'https://github.com/JupiterOne/graph-jamf.git',
-      config: [
-        'JAMF_HOST=example-host\n',
-        'JAMF_USERNAME=example-username\n',
-        'JAMF_PASSWORD=example-password\n'
-      ]
+      config: {
+        'JAMF_HOST':'example-host',
+        'JAMF_USERNAME':'example-username',
+        'JAMF_PASSWORD':'example-password'
+      }
     },
     {
       name: 'graph-sentry',
       instanceId: 'testInstanceId',
       directory: './.integrations/graph-sentry',
       gitRemoteUrl: 'https://github.com/JupiterOne/graph-sentry.git',
-      config: [
-        'AUTH_TOKEN=example-token\n',
-        'ORGANIZATION_SLUG=example-organization\n'
-      ]
+      config: {
+        'AUTH_TOKEN':'example-token',
+        'ORGANIZATION_SLUG':'example-organization'
+      }
     }
   ],
   storage: {
@@ -41,19 +41,17 @@ const testConfigOptionals: StarbaseConfig = {
       name: 'graph-jamf-no-git',
       instanceId: 'testInstanceId',
       directory: './.integrations/graph-jamf',
-      gitRemoteUrl: undefined,
-      config: [
-        'JAMF_HOST=example-host\n',
-        'JAMF_USERNAME=example-username\n',
-        'JAMF_PASSWORD=example-password\n'
-      ]
+      config: {
+        'JAMF_HOST':'example-host',
+        'JAMF_USERNAME':'example-username',
+        'JAMF_PASSWORD':'example-password'
+      }
     },
     {
       name: 'graph-jamf-no-config',
       instanceId: 'testInstanceId',
       directory: './.integrations/graph-jamf',
       gitRemoteUrl: 'https://github.com/JupiterOne/graph-jamf.git',
-      config: []
     },
   ],
   storage: {
@@ -77,7 +75,7 @@ describe('#parseConfig', () => {
   test('Missing config file', async () => {
     await expect(
       parseConfigYaml('')
-    ).rejects.toThrowError('Missing config.yaml (path=)');
+    ).rejects.toThrowError('Starbase config file not found (filePath=)');
   });
 
   test('Optional/Required integration values yeild proper config.', async () => {

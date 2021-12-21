@@ -38,6 +38,7 @@ integrations:
     gitRemoteUrl: https://github.com/JupiterOne/graph-jamf.git
 storage:
   engine: neo4j
-  username: neo4jusername
-  password: neo4jpassword
-  uri: https://localhost:7687
+  config:
+    username: neo4jusername
+    password: neo4jpassword
+    uri: https://localhost:7687

@@ -21,7 +21,11 @@ export function run() {
 
       for(const integration of config.integrations) {
         // Set up .env file prior to calling `yarn start`
-        await fs.writeFile(path.join(integration.directory, '.env'), integration.config);
+        let configArray = Object.keys(integration.config).map(function(configEntryName) {
+          let configArr = `${configEntryName}=${integration.config[configEntryName]}\n`;
+          return configArr;
+        });
+        await fs.writeFile(path.join(integration.directory, '.env'), configArray);
         execSync(`cd ${integration.directory}; yarn start;`);
 
         // And finally call command to save if we have a storage endpoint defined.

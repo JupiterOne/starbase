@@ -4,7 +4,7 @@ export type StarbaseIntegration<TConfig = any> = {
   instanceId: string;
   directory: string;
   gitRemoteUrl?: string;
-  config: TConfig;
+  config?: TConfig;
 }
 
 export type StarbaseStorage<TStorageConfig = any> = {

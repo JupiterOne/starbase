@@ -10,7 +10,7 @@ export function setup() {
 
       for(const integration of config.integrations) {
         if(integration.gitRemoteUrl) {
-          Clone.clone(integration.gitRemoteUrl, integration.directory);
+          await Clone.clone(integration.gitRemoteUrl, integration.directory);
         }
       }
 

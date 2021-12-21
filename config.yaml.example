@@ -18,6 +18,7 @@ integrations:
       ORGANIZATION_SLUG: example-organization
 storage:
   engine: neo4j
-  username: neo4jusername
-  password: neo4jpassword
-  uri: https://localhost:7687
+  config: 
+    username: neo4jusername
+    password: neo4jpassword
+    uri: https://localhost:7687
