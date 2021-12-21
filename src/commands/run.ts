@@ -1,5 +1,5 @@
 import { createCommand } from 'commander';
-import { execSync  } from 'child_process';
+import { exec  } from 'child_process';
 import { promises as fs } from 'fs';
 import * as path from 'path';
 import { parseConfigYaml } from '../util/parseConfig';
@@ -26,11 +26,11 @@ export function run() {
           return configArr;
         });
         await fs.writeFile(path.join(integration.directory, '.env'), configArray);
-        execSync(`cd ${integration.directory}; yarn start;`);
+        await exec(`cd ${integration.directory}; yarn start;`);
 
         // And finally call command to save if we have a storage endpoint defined.
         if(config.storage) {
-          execSync(`yarn j1-integration neo4j push -i ${integration.instanceId} -d ${integration.directory}/.j1-integration`);
+          await exec(`yarn j1-integration neo4j push -i ${integration.instanceId} -d ${integration.directory}/.j1-integration`);
         }
       }
   });

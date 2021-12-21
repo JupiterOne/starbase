@@ -1,7 +1,7 @@
 import { createCommand } from 'commander';
 import { Repository, Reference } from 'nodegit';
 import { parseConfigYaml } from '../util/parseConfig';
-import { execSync  } from 'child_process';
+import { exec  } from 'child_process';
 
 // Git pull each integration + install dependencies in children
 
@@ -18,7 +18,7 @@ export function updateIntegrations() {
         const originMain = await repo.getBranch('origin/main');
         await repo.mergeBranches(localMain, originMain);
         //Finally, install dependencies
-        execSync(`cd ${integration.directory}; yarn install;`);
+        await exec(`cd ${integration.directory}; yarn install;`);
       }
 
   });

@@ -1,11 +1,6 @@
 import { promises as fs } from 'fs';
 import * as yaml from 'js-yaml';
-// import { YAMLMap } from 'yaml/types';
-import {
-  StarbaseConfig, 
-  // StarbaseIntegration,
-  // Neo4jStorage,
-} from '../types';
+import { StarbaseConfig } from '../types';
 import Ajv from 'ajv';
 
 const ajv = new Ajv();
@@ -48,7 +43,6 @@ async function validateStarbaseConfigSchema(config: StarbaseConfig) {
   let finalConfig: StarbaseConfig = {integrations: []};
   const validator = ajv.compile(integrationSchema);
   for(const integration of config.integrations) {
-    // if (hasMissingItems(integration)) {
     if(!validator(integration)) {
       console.log('WARNING.  Skipping the following due to missing item(s) in its config: ', integration);
     }
