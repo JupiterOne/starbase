@@ -3,6 +3,7 @@ import { exec  } from 'child_process';
 import { promises as fs } from 'fs';
 import * as path from 'path';
 import { parseConfigYaml } from '../util/parseConfig';
+import { isDirectoryPresent } from '@jupiterone/integration-sdk-runtime';
 
 export function run() {
   return createCommand('run')
@@ -20,17 +21,22 @@ export function run() {
       }
 
       for(const integration of config.integrations) {
-        // Set up .env file prior to calling `yarn start`
-        let configArray = Object.keys(integration.config).map(function(configEntryName) {
-          let configArr = `${configEntryName}=${integration.config[configEntryName]}\n`;
-          return configArr;
-        });
-        await fs.writeFile(path.join(integration.directory, '.env'), configArray);
-        await exec(`cd ${integration.directory}; yarn start;`);
+        if (await isDirectoryPresent(integration.directory)) {
+          // Set up .env file prior to calling `yarn start`
+          let configArray = Object.keys(integration.config).map(function(configEntryName) {
+            let configArr = `${configEntryName}=${integration.config[configEntryName]}\n`;
+            return configArr;
+          });
+          await fs.writeFile(path.join(integration.directory, '.env'), configArray);
+          await exec(`cd ${integration.directory}; yarn start;`);
 
-        // And finally call command to save if we have a storage endpoint defined.
-        if(config.storage) {
-          await exec(`yarn j1-integration neo4j push -i ${integration.instanceId} -d ${integration.directory}/.j1-integration`);
+          // And finally call command to save if we have a storage endpoint defined.
+          if(config.storage) {
+            await exec(`yarn j1-integration neo4j push -i ${integration.instanceId} -d ${integration.directory}/.j1-integration`);
+          }
+        }
+        else {
+          console.log('SKIPPING due to missing directory ', integration.directory);
         }
       }
   });
