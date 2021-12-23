@@ -2,16 +2,27 @@
   "name": "starbase",
   "version": "0.0.0",
   "description": "Orchestrator project for JupiterOne open source ingestion projects.",
-  "main": "index.js",
   "repository": "https://github.com/JupiterOne/starbase.git",
   "author": "dev-integrations@jupiterone.com",
   "license": "MPL-2.0",
+  "scripts": {
+    "starbase": "ts-node ./src/index.ts",
+    "starbase:help": "ts-node ./src/index.ts -h",
+    "neo4j:start": "docker-compose -f docker/neo4j.yml up &",
+    "neo4j:stop": "docker-compose -f docker/neo4j.yml down"
+  },
   "dependencies": {
-    "@jupiterone/integration-sdk-cli": "^7.4.1",
-    "@jupiterone/integration-sdk-dev-tools": "^7.4.1",
+    "@jupiterone/integration-sdk-cli": "^8.0.0",
+    "@jupiterone/integration-sdk-dev-tools": "^8.0.0",
+    "ajv": "^8.8.2",
     "child_process": "^1.0.2",
+    "js-yaml": "^4.1.0",
+    "nodegit": "^0.27.0",
     "ts-node": "^10.4.0",
-    "typescript": "^4.5.4",
-    "yaml": "^1.10.2"
+    "typescript": "^4.5.4"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.5",
+    "@types/nodegit": "^0.27.7"
   }
 }

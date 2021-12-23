@@ -1,21 +1,24 @@
 integrations:
   -
     name: graph-jamf
+    instanceId: testInstanceId
     directory: ./.integrations/graph-jamf
-    git: https://github.com/JupiterOne/graph-jamf.git
-    env:
+    gitRemoteUrl: https://github.com/JupiterOne/graph-jamf.git
+    config:
       JAMF_HOST: example-host
       JAMF_USERNAME: example-username
       JAMF_PASSWORD: example-password
   -
     name: graph-sentry
+    instanceId: testInstanceId
     directory: ./.integrations/graph-sentry
-    git: https://github.com/JupiterOne/graph-sentry.git
-    env:
+    gitRemoteUrl: https://github.com/JupiterOne/graph-sentry.git
+    config:
       AUTH_TOKEN: example-token
       ORGANIZATION_SLUG: example-organization
 storage:
   engine: neo4j
-  username: neo4jusername
-  password: neo4jpassword
-  uri: https://localhost:7687
+  config: 
+    username: neo4jusername
+    password: neo4jpassword
+    uri: https://localhost:7687

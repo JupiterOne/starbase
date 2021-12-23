@@ -11,3 +11,5 @@ and this project adheres to
 ### Added
 
 - Initial definition of project.
+- Individual commands for setup, update-integrations, and run defined via
+  commander.
