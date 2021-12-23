@@ -5,3 +5,4 @@ tsconfig.tsbuildinfo
 config.yaml
 .env
 docker/.neo4j/
+yarn-error.log
