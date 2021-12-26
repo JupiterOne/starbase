@@ -12,8 +12,7 @@ export function createStarbase() {
 
 createStarbase()
   .parseAsync(process.argv)
-  .catch(err => {
+  .catch((err) => {
     console.error(err);
     process.exitCode = 1;
-  })
-
+  });
