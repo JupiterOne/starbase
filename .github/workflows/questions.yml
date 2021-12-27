@@ -1,0 +1,38 @@
+name: Questions
+on: [pull_request_target]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - id: setup-node
+        name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+
+      - name: Check out `main` branch
+        uses: actions/checkout@v2
+        with: 
+          path: source
+      
+      - name: Check out target branch questions
+        uses: actions/checkout@v2
+        with:
+          ref: ${{github.event.pull_request.head.ref}}
+          repository: ${{github.event.pull_request.head.repo.full_name}}
+          path: target
+
+      - name: Install dependencies for `main` branch
+        run: yarn install --cwd source
+
+      - name: Validate questions on target branch
+        env:
+          MANAGED_QUESTIONS_JUPITERONE_ACCOUNT_ID: ${{ secrets.MANAGED_QUESTIONS_JUPITERONE_ACCOUNT_ID }}
+          MANAGED_QUESTIONS_JUPITERONE_API_KEY: ${{ secrets.MANAGED_QUESTIONS_JUPITERONE_API_KEY }}
+        run: yarn --cwd source 
+               j1-integration validate-question-file 
+                 -a $MANAGED_QUESTIONS_JUPITERONE_ACCOUNT_ID 
+                 -k $MANAGED_QUESTIONS_JUPITERONE_API_KEY 
+                 -p ../target/jupiterone/questions/questions.yaml

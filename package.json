@@ -11,7 +11,11 @@
     "neo4j:start": "docker-compose -f docker/neo4j.yml up &",
     "neo4j:stop": "docker-compose -f docker/neo4j.yml down",
     "format": "prettier --write '**/*.{js,ts,md,json}'",
-    "lint": "eslint --ext .js,.ts"
+    "lint": "eslint --ext .js,.ts",
+    "type-check": "tsc",
+    "test": "jest",
+    "test:ci": "yarn lint && yarn type-check && yarn test",
+    "build": "tsc -p tsconfig.dist.json --declaration && cp README.md dist/README.md"
   },
   "dependencies": {
     "@jupiterone/integration-sdk-cli": "^8.0.0",

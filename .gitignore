@@ -6,3 +6,5 @@ config.yaml
 .env
 docker/.neo4j/
 yarn-error.log
+dist/
+coverage/
