@@ -10,8 +10,7 @@ ingestion projects and optionally pushing them to a storage endpoint.
 1. Install [Node.js](https://nodejs.org/) using the
    [installer](https://nodejs.org/en/download/) or a version manager such as
    [nvm](https://github.com/nvm-sh/nvm) or [fnm](https://github.com/Schniz/fnm).
-2. Install [`yarn`](https://yarnpkg.com/getting-started/install) or
-   [`npm`](https://github.com/npm/cli#installation) to install dependencies.
+2. Install [`yarn`](https://yarnpkg.com/getting-started/install).
 3. Install dependencies with `yarn install`.
 4. Register an account in the system each integration targets for ingestion and
    obtain API credentials.
@@ -32,7 +31,7 @@ ingestion projects and optionally pushing them to a storage endpoint.
    integration code is executed. `.gitignore` is configured to to avoid
    commiting the `config.yaml` and .`.env` files.
 
-### Running the integration
+### Running Starbase
 
 1. Perform `yarn starbase setup` to perform an intial clone of all integrations
    listed in the `config.yaml` file.
@@ -59,10 +58,10 @@ See the
 [SDK development documentation](https://github.com/JupiterOne/sdk/blob/main/docs/integrations/development.md)
 for a deep dive into the mechanics of how integrations work.
 
-See [docs/development.md](docs/development.md) for any additional details about
-developing this integration.
+See the [docs/development.md](docs/development.md) in any of the existing
+integrations for any additional details about developing other integrations.
 
 ### Changelog
 
-The history of this integration's development can be viewed at
+The history of this project's development can be viewed at
 [CHANGELOG.md](CHANGELOG.md).

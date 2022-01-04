@@ -30,7 +30,7 @@ const testConfig: StarbaseConfig = {
     config: {
       username: 'neo4j',
       password: 'devpass',
-      uri: 'https://localhost:7687',
+      uri: 'bolt://localhost:7687',
     },
   },
 };
@@ -59,7 +59,7 @@ const testConfigOptionals: StarbaseConfig = {
     config: {
       username: 'neo4j',
       password: 'devpass',
-      uri: 'https://localhost:7687',
+      uri: 'bolt://localhost:7687',
     },
   },
 };
