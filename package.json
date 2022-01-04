@@ -27,8 +27,8 @@
     "build": "tsc -p tsconfig.dist.json --declaration && cp README.md dist/README.md && cp LICENSE dist/LICENSE"
   },
   "dependencies": {
-    "@jupiterone/integration-sdk-cli": "^8.0.0",
-    "@jupiterone/integration-sdk-dev-tools": "^8.0.0",
+    "@jupiterone/integration-sdk-cli": "^8.1.1",
+    "@jupiterone/integration-sdk-dev-tools": "^8.1.1",
     "ajv": "^8.8.2",
     "js-yaml": "^4.1.0",
     "nodegit": "^0.27.0",
