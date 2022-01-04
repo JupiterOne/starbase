@@ -4,6 +4,9 @@ import { createCommand } from 'commander';
 import { promises as fs } from 'fs';
 import * as path from 'path';
 import { parseConfigYaml } from '../util/parseConfig';
+import * as util from 'util';
+
+const exec_promise = util.promisify(exec);
 
 export function run() {
   return createCommand('run')
@@ -36,14 +39,20 @@ export function run() {
             path.join(integration.directory, '.env'),
             configArray,
           );
-          await exec(`yarn --cwd ${integration.directory} start;`);
+          let startExec =  await exec_promise(`yarn --cwd ${integration.directory} start;`);
+          if(startExec && startExec.stdout) {
+            console.log(startExec.stdout);
+          }
 
           // And finally call command to save if we have a storage endpoint defined.
           if (config.storage) {
             if (config.storage.engine == 'neo4j') {
-              await exec(
+              let pushNeo4jExec =  await exec_promise(
                 `yarn j1-integration neo4j push -i ${integration.instanceId} -d ${integration.directory}/.j1-integration`,
               );
+              if(pushNeo4jExec && pushNeo4jExec.stdout) {
+                console.log(pushNeo4jExec.stdout)
+              }
             } else {
               console.log(
                 'SKIPPING.  Neo4j is the only storage engine supported at this time.',
