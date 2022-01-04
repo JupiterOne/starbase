@@ -36,7 +36,7 @@ export function run() {
             path.join(integration.directory, '.env'),
             configArray,
           );
-          await exec(`cd ${integration.directory}; yarn start;`);
+          await exec(`yarn --cwd ${integration.directory} start;`);
 
           // And finally call command to save if we have a storage endpoint defined.
           if (config.storage) {
