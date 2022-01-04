@@ -13,7 +13,9 @@ up a local neo4j database for those that do not want to stand up one manually.
 The yarn commands `yarn neo4j:start` and `yarn neo4j:stop` can be used to start
 and stop the Neo4j server.
 
-Once the Neo4j server is running, you can access the Neo4j browser at <http://localhost:7474/browser/>. The `neo4j.yml` docker-compose config sets the default username to `neo4j` and the default password to `devpass`.
+Once the Neo4j server is running, you can access the Neo4j browser at
+<http://localhost:7474/browser/>. The `neo4j.yml` docker-compose config sets the
+default username to `neo4j` and the default password to `devpass`.
 
 NOTE: An existing installation of Docker Engine and Docker Composer are needed
 to use the above commands. [Docker Desktop](https://docs.docker.com/desktop/)

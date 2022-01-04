@@ -40,12 +40,11 @@ export function run() {
 
           // And finally call command to save if we have a storage endpoint defined.
           if (config.storage) {
-            if(config.storage.engine == 'neo4j') {
+            if (config.storage.engine == 'neo4j') {
               await exec(
                 `yarn j1-integration neo4j push -i ${integration.instanceId} -d ${integration.directory}/.j1-integration`,
               );
-            }
-            else {
+            } else {
               console.log(
                 'SKIPPING.  Neo4j is the only storage engine supported at this time.',
                 integration.directory,

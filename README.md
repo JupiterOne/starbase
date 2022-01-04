@@ -58,7 +58,7 @@ See the
 [SDK development documentation](https://github.com/JupiterOne/sdk/blob/main/docs/integrations/development.md)
 for a deep dive into the mechanics of how integrations work.
 
-See the [docs/development.md](docs/development.md) in any of the existing 
+See the [docs/development.md](docs/development.md) in any of the existing
 integrations for any additional details about developing other integrations.
 
 ### Changelog
