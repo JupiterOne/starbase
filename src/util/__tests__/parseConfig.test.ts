@@ -28,8 +28,8 @@ const testConfig: StarbaseConfig = {
   storage: {
     engine: 'neo4j',
     config: {
-      username: 'neo4jusername',
-      password: 'neo4jpassword',
+      username: 'neo4j',
+      password: 'devpass',
       uri: 'https://localhost:7687',
     },
   },
@@ -57,8 +57,8 @@ const testConfigOptionals: StarbaseConfig = {
   storage: {
     engine: 'neo4j',
     config: {
-      username: 'neo4jusername',
-      password: 'neo4jpassword',
+      username: 'neo4j',
+      password: 'devpass',
       uri: 'https://localhost:7687',
     },
   },
