@@ -6,8 +6,12 @@ export type StarbaseIntegration<TConfig = any> = {
   config?: TConfig;
 };
 
+export enum StorageEngineType {
+  Neo4j = 'neo4j'
+}
+
 export type StarbaseStorage<TStorageConfig = any> = {
-  engine: string;
+  engine: StorageEngineType;
   config: TStorageConfig;
 };
 

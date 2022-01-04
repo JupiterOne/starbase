@@ -3,6 +3,7 @@ import { exec } from 'child_process';
 import { createCommand } from 'commander';
 import { promises as fs } from 'fs';
 import * as path from 'path';
+import { StorageEngineType } from '../types';
 import { parseConfigYaml } from '../util/parseConfig';
 
 export function run() {
@@ -40,9 +41,13 @@ export function run() {
 
           // And finally call command to save if we have a storage endpoint defined.
           if (config.storage) {
-            await exec(
-              `yarn j1-integration neo4j push -i ${integration.instanceId} -d ${integration.directory}/.j1-integration`,
-            );
+            if (config.storage.engine === StorageEngineType.Neo4j) {
+              await exec(
+                `yarn j1-integration neo4j push -i ${integration.instanceId} -d ${integration.directory}/.j1-integration`,
+              );
+            } else {
+              console.log('Invalid storage engine type ', config.storage.engine);
+            }
           }
         } else {
           console.log(
