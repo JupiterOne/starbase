@@ -4,6 +4,9 @@ import { Clone } from 'nodegit';
 import { parseConfigYaml } from '../util/parseConfig';
 import { exec } from 'child_process';
 import { Reference, Repository } from 'nodegit';
+import * as util from 'util';
+
+const exec_promise = util.promisify(exec);
 
 export function setup() {
   return createCommand('setup')
@@ -26,7 +29,10 @@ export function setup() {
           }
         }
         //Finally, install dependencies
-        await exec(`cd ${integration.directory}; yarn install;`);
+        let startExec = await exec_promise(`yarn --cwd ${integration.directory} install;`);
+        if(startExec && startExec.stdout) {
+          console.log(startExec.stdout);
+        }
       }
     });
 }
