@@ -2,6 +2,11 @@ import { isDirectoryPresent } from '@jupiterone/integration-sdk-runtime';
 import { createCommand } from 'commander';
 import { Clone } from 'nodegit';
 import { parseConfigYaml } from '../util/parseConfig';
+import { exec } from 'child_process';
+import { Reference, Repository } from 'nodegit';
+import * as util from 'util';
+
+const execPromise = util.promisify(exec);
 
 export function setup() {
   return createCommand('setup')
@@ -12,13 +17,21 @@ export function setup() {
       for (const integration of config.integrations) {
         if (integration.gitRemoteUrl) {
           if (await isDirectoryPresent(integration.directory)) {
-            console.log(
-              `Skipping the following integration that has already been set up:  `,
-              integration.name,
-            );
+            //If the folder already exists, update instead of cloning
+            let repo = await Repository.open(integration.directory);
+            await repo.fetchAll();
+            const localMain: Reference = await repo.getCurrentBranch();
+            const originMain = await repo.getBranch('origin/main');
+            await repo.mergeBranches(localMain, originMain);
           } else {
+            //No folder = clone
             await Clone.clone(integration.gitRemoteUrl, integration.directory);
           }
+        }
+        //Finally, install dependencies
+        let startExec = await execPromise(`yarn --cwd ${integration.directory} install;`);
+        if(startExec && startExec.stdout) {
+          console.log(startExec.stdout);
         }
       }
     });

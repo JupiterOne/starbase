@@ -1,13 +1,12 @@
 import { createCommand } from 'commander';
-import { run, setup, updateIntegrations } from './commands';
+import { run, setup } from './commands';
 
 export function createStarbase() {
   return createCommand()
     .name('yarn starbase')
     .description('Starbase graph ingestion orchestrator')
     .addCommand(run())
-    .addCommand(setup())
-    .addCommand(updateIntegrations());
+    .addCommand(setup());
 }
 
 createStarbase()
