@@ -6,7 +6,7 @@ import * as path from 'path';
 import { parseConfigYaml } from '../util/parseConfig';
 import * as util from 'util';
 
-const exec_promise = util.promisify(exec);
+const execPromise = util.promisify(exec);
 
 export function run() {
   return createCommand('run')
@@ -39,7 +39,7 @@ export function run() {
             path.join(integration.directory, '.env'),
             configArray,
           );
-          let startExec =  await exec_promise(`yarn --cwd ${integration.directory} start;`);
+          let startExec =  await execPromise(`yarn --cwd ${integration.directory} start;`);
           if(startExec && startExec.stdout) {
             console.log(startExec.stdout);
           }
@@ -47,7 +47,7 @@ export function run() {
           // And finally call command to save if we have a storage endpoint defined.
           if (config.storage) {
             if (config.storage.engine == 'neo4j') {
-              let pushNeo4jExec =  await exec_promise(
+              let pushNeo4jExec =  await execPromise(
                 `yarn j1-integration neo4j push -i ${integration.instanceId} -d ${integration.directory}/.j1-integration`,
               );
               if(pushNeo4jExec && pushNeo4jExec.stdout) {

@@ -6,7 +6,7 @@ import { exec } from 'child_process';
 import { Reference, Repository } from 'nodegit';
 import * as util from 'util';
 
-const exec_promise = util.promisify(exec);
+const execPromise = util.promisify(exec);
 
 export function setup() {
   return createCommand('setup')
@@ -29,7 +29,7 @@ export function setup() {
           }
         }
         //Finally, install dependencies
-        let startExec = await exec_promise(`yarn --cwd ${integration.directory} install;`);
+        let startExec = await execPromise(`yarn --cwd ${integration.directory} install;`);
         if(startExec && startExec.stdout) {
           console.log(startExec.stdout);
         }
