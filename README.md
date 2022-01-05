@@ -33,12 +33,10 @@ ingestion projects and optionally pushing them to a storage endpoint.
 
 ### Running Starbase
 
-1. Perform `yarn starbase setup` to perform an intial clone of all integrations
-   listed in the `config.yaml` file.
-2. Perform `yarn starbase update-integrations` to pull the latest updates and
-   install all dependencies for each integration listed in the `config.yaml`
-   file.
-3. Perform `yarn starbase run` to collect data for each listed integration and
+1. Perform `yarn starbase setup` to perform a clone or update of all integrations
+   listed in the `config.yaml` file as well as install all dependencies for each
+   integration.
+2. Perform `yarn starbase run` to collect data for each listed integration and
    then push collected data if a storage endpoint has been listed in
    `config.yaml`.
 
