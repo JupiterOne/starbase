@@ -158,7 +158,13 @@ integrations for any additional details about developing other integrations.
 The history of this project's development can be viewed at
 [CHANGELOG.md](CHANGELOG.md).
 
+### Contact
+
+Join us on `#starbase` on the [JupiterOne Community Slack](slack).
+
 ## JupiterOne
 
 If this is too much work, you can create a free cloud-hosted account at 
 https://jupiterone.com. 
+
+[slack]: https://join.slack.com/t/jupiterone-community/shared_invite/zt-9b0a2htx-m8PmSWMbkjqCzF2dIZiabw
