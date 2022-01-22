@@ -165,6 +165,6 @@ Join us on `#starbase` on the [JupiterOne Community Slack](slack).
 ## JupiterOne
 
 If this is too much work, you can create a free cloud-hosted account at 
-https://jupiterone.com. 
+https://login.us.jupiterone.io/sign-up. 
 
 [slack]: https://join.slack.com/t/jupiterone-community/shared_invite/zt-9b0a2htx-m8PmSWMbkjqCzF2dIZiabw
