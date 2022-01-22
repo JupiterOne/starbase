@@ -93,7 +93,8 @@ storage endpoint.
     such, users of Starbase can leverage the AWS connector from Cartography to
     ingest AWS assets and relationships. A more comprehensive AWS integration is
     used by the cloud hosted JupiterOne platform and we are considering making
-    the J1 AWS integration available as open source in the future. Additionally, JupiterOne already provides a free tier of its cloud hosted service.
+    the J1 AWS integration available as open source in the future. Additionally,
+    JupiterOne already provides a free tier of its cloud hosted service.
 
 ## Usage and Development
 
