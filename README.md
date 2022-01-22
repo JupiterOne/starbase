@@ -1,9 +1,96 @@
 # JupiterOne Starbase
 
-Starbase by JupiterOne is an orchestrator application for running graph
-ingestion projects and optionally pushing them to a storage endpoint.
+Starbase by JupiterOne aims to democratize graph-based security analysis.
 
-## Development
+Starbase is a Node.js project that consolidate assets and relationships from
+providers including cloud infrastructure, SaaS applications, security controls,
+and more in an intuitive graph view powered by a Neo4j database or a similar
+storage endpoint.
+
+## Available Integrations / Connectors
+
+- addigy
+- airwatch
+- artifactory
+- atspoke
+- auth0
+- aws[^1]
+- azure
+- azure-devops
+- azure-extender-ad-audit-logs
+- bamboohr
+- bitbucket
+- bugcrowd
+- cbdefense
+- checkmarx
+- cisco-amp
+- cisco-meraki
+- cloudflare
+- cobalt
+- crowdstrike
+- cybereason
+- databricks
+- datadog
+- detectify
+- digicert
+- duo
+- enrichment-examples
+- fastly
+- feroot
+- github
+- gitlab
+- gitleaks-findings
+- godaddy
+- google
+- google-cloud
+- hackerone
+- heroku
+- hubspot
+- jamf
+- jira
+- jumpcloud
+- knowbe4
+- kubernetes
+- malwarebytes
+- microsoft-365
+- mimecast
+- nmap
+- nowsecure
+- npm
+- okta
+- onelogin
+- openshift
+- pagerduty
+- qualys
+- rapid7
+- salesforce
+- sentinelone
+- sentry
+- servicenow
+- signal-sciences
+- slack
+- snipe-it
+- snowflake
+- snyk
+- sonarqube
+- sysdig
+- tenable-io
+- terraform-cloud
+- threatstack
+- trend-micro
+- veracode
+- vuls-findings
+- wazuh
+- whitehat
+- whois
+- wpengine
+- zeit
+- zendesk
+- zoom
+
+[^1]: 
+
+## Usage and Development
 
 ### Prerequisites
 
@@ -63,3 +150,8 @@ integrations for any additional details about developing other integrations.
 
 The history of this project's development can be viewed at
 [CHANGELOG.md](CHANGELOG.md).
+
+## JupiterOne
+
+If this is too much work, you can create a free cloud-hosted account at 
+https://jupiterone.com. 
