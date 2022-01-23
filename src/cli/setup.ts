@@ -1,7 +1,7 @@
 import { isDirectoryPresent } from '@jupiterone/integration-sdk-runtime';
 import { createCommand } from 'commander';
 import { Clone } from 'nodegit';
-import { parseConfigYaml } from '../util/parseConfig';
+import { parseConfigYaml } from '../starbase';
 import { exec } from 'child_process';
 import { Reference, Repository } from 'nodegit';
 import * as util from 'util';
