@@ -1,15 +1,6 @@
-import { createCommand } from 'commander';
-import { run, setup } from './commands';
+import { createStarbaseCli } from './cli';
 
-export function createStarbase() {
-  return createCommand()
-    .name('yarn starbase')
-    .description('Starbase graph ingestion orchestrator')
-    .addCommand(run())
-    .addCommand(setup());
-}
-
-createStarbase()
+createStarbaseCli()
   .parseAsync(process.argv)
   .catch((err) => {
     console.error(err);
