@@ -23,7 +23,7 @@ system or service, you must have:
 
 Starbase offers three key advantages:
 
-1. **Depth and breadth** **Depth** - Deep visibility from a [breadth of external services and systems](#available-integrations--connectors). Thousands of entities (verticies) and relationships (edges) are available out-of-the-box.
+1. **Depth and breadth** - Deep visibility from a [breadth of external services and systems](#available-integrations--connectors). Thousands of entities (verticies) and relationships (edges) are available out-of-the-box.
 2. **Uniform data model** - The data that Starbase collects is _automatically_ classified, making it easy to develop _generic_ queries.
 3. **Easily extensible** - Starbase graph integrations can be easily developed!
 
