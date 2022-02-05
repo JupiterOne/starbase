@@ -24,7 +24,7 @@ Here are some highlights:
 - [Jira](https://github.com/jupiterone/graph-azure)
 
 <details>
-  <summary>Click here to expand a full list of supported graph connectors!</summary>
+  <summary><b>Click here to expand a full list of supported graph connectors!</b></summary>
 
   - [Addigy](https://github.com/jupiterone/graph-addigy)
   - airwatch
@@ -105,85 +105,6 @@ Here are some highlights:
   - zendesk
   - zoom
 </details>
-
-- addigy
-- airwatch
-- artifactory
-- atspoke
-- auth0
-- aws[^1]
-- azure
-- azure-devops
-- azure-extender-ad-audit-logs
-- bamboohr
-- bitbucket
-- bugcrowd
-- cbdefense
-- checkmarx
-- cisco-amp
-- cisco-meraki
-- cloudflare
-- cobalt
-- crowdstrike
-- cybereason
-- databricks
-- datadog
-- detectify
-- digicert
-- duo
-- enrichment-examples
-- fastly
-- feroot
-- github
-- gitlab
-- gitleaks-findings
-- godaddy
-- google
-- google-cloud
-- hackerone
-- heroku
-- hubspot
-- jamf
-- jira
-- jumpcloud
-- knowbe4
-- kubernetes
-- malwarebytes
-- microsoft-365
-- mimecast
-- nmap
-- nowsecure
-- npm
-- okta
-- onelogin
-- openshift
-- pagerduty
-- qualys
-- rapid7
-- salesforce
-- sentinelone
-- sentry
-- servicenow
-- signal-sciences
-- slack
-- snipe-it
-- snowflake
-- snyk
-- sonarqube
-- sysdig
-- tenable-io
-- terraform-cloud
-- threatstack
-- trend-micro
-- veracode
-- vuls-findings
-- wazuh
-- whitehat
-- whois
-- wpengine
-- zeit
-- zendesk
-- zoom
 
 [^1]: JupiterOne Starbase and the [Lyft Cartography](https://github.com/lyft/cartography)
     projects compliment each other as both projects push graph data to a Neo4j
