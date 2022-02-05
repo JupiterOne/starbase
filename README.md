@@ -52,7 +52,7 @@ Here are some highlights:
   - [Google](https://github.com/jupiterone/graph-google)
   - [Google Cloud](https://github.com/jupiterone/graph-google-cloud)
   - [HackerOne](https://github.com/jupiterone/graph-hackerone)
-  - [Heroku](https://github.com/jupiterone/graph-heroku)
+  - [Heroku](https://github.com/JupiterOnejupiterone/graph-heroku)
   - [Jamf](https://github.com/jupiterone/graph-jamf)
   - [Jira](https://github.com/jupiterone/graph-jira)
   - [JumpCloud](https://github.com/jupiterone/graph-jumpcloud)
@@ -160,19 +160,15 @@ For additional information on using Neo4j as a storage endpoint, please see the
 
 ### Contributing
 
-Start by taking a look at the source code. Each integration is basically a set
-of functions called steps, each of which ingests a collection of resources and
-relationships. The goal is to limit each step to as few resource types as
-possible so that should the ingestion of one type of data fail, it does not
-necessarily prevent the ingestion of other, unrelated data. That connectorsshould be
-enough information to allow you to get started coding!
+Starbase is composed of three components:
 
-See the
-[SDK development documentation](https://github.com/JupiterOne/sdk/blob/main/docs/integrations/development.md)
+1. **Starbase Core** - The Starbase core project is an orchestration engine that handles bootstraping the underlying graph integrations.
+
+2. **Graph Integrations** - These are the tools that perform data collection from third party systems and services. You can find a full list of supported [graph integrations here](https://github.com/jupiterone?q=graph-&type=all&language=&sort=). If you have a feature request, a bug to report, or you'd like to contribute to one of the supported integrations, please navigate to the specific integration repository.
+
+3. **[Graph Integrations SDK](https://github.com/jupiterone/sdk)** - The Graph Integration SDK contains core utilities and the underlying graph integration
+runtime packages.See the [SDK development documentation](https://github.com/JupiterOne/sdk/blob/main/docs/integrations/development.md)
 for a deep dive into the mechanics of how integrations work.
-
-See the [docs/development.md](docs/development.md) in any of the existing
-integrations for any additional details about developing other integrations.
 
 ### Changelog
 
