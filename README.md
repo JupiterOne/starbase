@@ -1,11 +1,14 @@
-# JupiterOne Starbase
+<h1 align="center">
+  <img src="./branding/logo-light-bg.png" alt="Starbase" width="250" />
+</h1>
 
-Starbase by JupiterOne aims to democratize graph-based security analysis.
+<p align="center">
+  <strong>Democratizing graph-based security analysis 🚀</strong>
+</p>
 
-Starbase is a Node.js project that consolidate assets and relationships from
+Starbase from [JupiterOne](https://jupiterone.com), consolidates assets and relationships from
 providers including cloud infrastructure, SaaS applications, security controls,
-and more in an intuitive graph view powered by a Neo4j database or a similar
-storage endpoint.
+and more in an intuitive graph view backed by the [Neo4j](https://neo4j.com/) database.
 
 ## Available Integrations / Connectors
 
