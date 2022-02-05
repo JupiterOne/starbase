@@ -148,12 +148,30 @@ cp config.yaml.example config.yaml
 
 ### Running Starbase
 
-1. Perform `yarn starbase setup` to perform a clone or update of all integrations
+Starbase exposes a CLI for bootstrapping graph integration
+development and execution.
+
+```
+❯ yarn starbase --help
+
+Usage: yarn starbase [options] [command]
+
+Starbase graph ingestion orchestrator
+
+Options:
+  -h, --help      display help for command
+
+Commands:
+  run             collect and upload entities and relationships
+  setup           clone repositories listed in config.yaml
+  help [command]  display help for command
+```
+
+1. Run `yarn starbase setup` to clone or update all integrations
    listed in the `config.yaml` file as well as install all dependencies for each
    integration.
-2. Perform `yarn starbase run` to collect data for each listed integration and
-   then push collected data if a storage endpoint has been listed in
-   `config.yaml`.
+2. Run `yarn starbase run` to collect data for each listed integration and
+   then push collected data to the storage endpoint listed in `config.yaml`.
 
 For additional information on using Neo4j as a storage endpoint, please see the
 [README.md](docker/README.md) provided.
