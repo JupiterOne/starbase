@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="./branding/logo-light-bg.png" alt="Starbase" width="250" /></br></br>
+  <img src="./img/branding/logo-light-bg.png" alt="Starbase" width="250" /></br></br>
   <strong style="font-size:75px;">Democratizing graph-based security analysis 🚀</strong>
 </h1></br>
 
