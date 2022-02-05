@@ -12,6 +12,100 @@ and more in an intuitive graph view backed by the [Neo4j](https://neo4j.com/) da
 
 ## Available Integrations / Connectors
 
+Starbase supports [70+](https://github.com/jupiterone?q=graph-&type=all&language=&sort=)
+open source graph connectors!
+
+Here are some highlights:
+
+- [Azure](https://github.com/jupiterone/graph-azure)
+- [GitHub](https://github.com/jupiterone/graph-azure)
+- [Google Cloud](https://github.com/jupiterone/graph-azure)
+- [Google Workspace](https://github.com/jupiterone/graph-azure)
+- [Jira](https://github.com/jupiterone/graph-azure)
+
+<details>
+  <summary>Click here to expand a full list of supported graph connectors!</summary>
+
+  - [Addigy](https://github.com/jupiterone/graph-addigy)
+  - airwatch
+  - artifactory
+  - atspoke
+  - auth0
+  - aws[^1]
+  - azure
+  - azure-devops
+  - azure-extender-ad-audit-logs
+  - bamboohr
+  - bitbucket
+  - bugcrowd
+  - cbdefense
+  - checkmarx
+  - cisco-amp
+  - cisco-meraki
+  - cloudflare
+  - cobalt
+  - crowdstrike
+  - cybereason
+  - databricks
+  - datadog
+  - detectify
+  - digicert
+  - duo
+  - enrichment-examples
+  - fastly
+  - feroot
+  - github
+  - gitlab
+  - gitleaks-findings
+  - godaddy
+  - google
+  - google-cloud
+  - hackerone
+  - heroku
+  - hubspot
+  - jamf
+  - jira
+  - jumpcloud
+  - knowbe4
+  - kubernetes
+  - malwarebytes
+  - microsoft-365
+  - mimecast
+  - nmap
+  - nowsecure
+  - npm
+  - okta
+  - onelogin
+  - openshift
+  - pagerduty
+  - qualys
+  - rapid7
+  - salesforce
+  - sentinelone
+  - sentry
+  - servicenow
+  - signal-sciences
+  - slack
+  - snipe-it
+  - snowflake
+  - snyk
+  - sonarqube
+  - sysdig
+  - tenable-io
+  - terraform-cloud
+  - threatstack
+  - trend-micro
+  - veracode
+  - vuls-findings
+  - wazuh
+  - whitehat
+  - whois
+  - wpengine
+  - zeit
+  - zendesk
+  - zoom
+</details>
+
 - addigy
 - airwatch
 - artifactory
