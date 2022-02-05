@@ -162,13 +162,21 @@ For additional information on using Neo4j as a storage endpoint, please see the
 
 Starbase is composed of three components:
 
-1. **Starbase Core** - The Starbase core project is an orchestration engine that handles bootstraping the underlying graph integrations.
+1. **Starbase Core**
+  
+    The Starbase core project is an orchestration engine that handles bootstraping the underlying graph integrations.
 
-2. **Graph Integrations** - These are the tools that perform data collection from third party systems and services. You can find a full list of supported [graph integrations here](https://github.com/jupiterone?q=graph-&type=all&language=&sort=). If you have a feature request, a bug to report, or you'd like to contribute to one of the supported integrations, please navigate to the specific integration repository.
+2. **Graph Integrations**
 
-3. **[Graph Integrations SDK](https://github.com/jupiterone/sdk)** - The Graph Integration SDK contains core utilities and the underlying graph integration
-runtime packages.See the [SDK development documentation](https://github.com/JupiterOne/sdk/blob/main/docs/integrations/development.md)
-for a deep dive into the mechanics of how integrations work.
+    These are the tools that perform data collection from third party systems and services. You can find a full list of 
+    supported [graph integrations here](https://github.com/jupiterone?q=graph-&type=all&language=&sort=). If you have a feature request, 
+    a bug to report, or you'd like to contribute to one of the supported integrations, please navigate to the specific integration repository.
+
+3. **[Graph Integrations SDK](https://github.com/jupiterone/sdk)**
+
+    The Graph Integration SDK contains core utilities and the underlying graph integration
+    runtime packages.See the [SDK development documentation](https://github.com/JupiterOne/sdk/blob/main/docs/integrations/development.md)
+    for a deep dive into the mechanics of how integrations work.
 
 ### Changelog
 
@@ -182,6 +190,6 @@ Join us on `#starbase` on the [JupiterOne Community Slack](slack).
 ## JupiterOne
 
 If this is too much work, you can create a free cloud-hosted account at 
-https://login.us.jupiterone.io/sign-up. 
+https://login.us.jupiterone.io/sign-up.
 
 [slack]: https://join.slack.com/t/jupiterone-community/shared_invite/zt-9b0a2htx-m8PmSWMbkjqCzF2dIZiabw
