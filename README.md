@@ -1,11 +1,15 @@
 <h1 align="center">
-  <img src="./img/branding/logo-light-bg.png" alt="Starbase" width="250" /></br></br>
+  <img src="./img/branding/logo-light-bg.png" alt="Starbase Logo" width="250" /></br></br>
   <strong style="font-size:75px;">Democratizing graph-based security analysis 🚀</strong>
 </h1></br>
 
-Starbase from [JupiterOne](https://jupiterone.com), consolidates assets and relationships from
-providers including cloud infrastructure, SaaS applications, security controls,
-and more in an intuitive graph view backed by the [Neo4j](https://neo4j.com/) database.
+Starbase from [JupiterOne](https://jupiterone.com), collects assets and relationships from
+services and systems including cloud infrastructure, SaaS applications, security controls,
+and more into an intuitive graph view backed by the [Neo4j](https://neo4j.com/) database.
+
+<p align="center">
+  <img src="./img/starbase-demo.gif" alt="Starbase Demo"/>
+</p>
 
 ## Available Integrations / Connectors
 
@@ -15,93 +19,69 @@ open source graph integrations!
 Here are some highlights:
 
 - [Azure](https://github.com/jupiterone/graph-azure)
-- [GitHub](https://github.com/jupiterone/graph-azure)
-- [Google Cloud](https://github.com/jupiterone/graph-azure)
-- [Google Workspace](https://github.com/jupiterone/graph-azure)
-- [Jira](https://github.com/jupiterone/graph-azure)
+- [Bitbucket](https://github.com/jupiterone/graph-bitbucket)
+- [GitHub](https://github.com/jupiterone/graph-github)
+- [Google Cloud](https://github.com/jupiterone/graph-google-cloud)
+- [Google Workspace](https://github.com/jupiterone/graph-google)
+- [Jira](https://github.com/jupiterone/graph-jira)
 - ...
 
 <details>
-  <summary><b>Click here to expand a full list of supported graph integrations!</b></summary>
-
-  - [Addigy](https://github.com/jupiterone/graph-addigy)
-  - airwatch
-  - artifactory
-  - atspoke
-  - auth0
-  - aws[^1]
-  - azure
-  - azure-devops
-  - azure-extender-ad-audit-logs
-  - bamboohr
-  - bitbucket
-  - bugcrowd
-  - cbdefense
-  - checkmarx
-  - cisco-amp
-  - cisco-meraki
-  - cloudflare
-  - cobalt
-  - crowdstrike
-  - cybereason
-  - databricks
-  - datadog
-  - detectify
-  - digicert
-  - duo
-  - enrichment-examples
-  - fastly
-  - feroot
-  - github
-  - gitlab
-  - gitleaks-findings
-  - godaddy
-  - google
-  - google-cloud
-  - hackerone
-  - heroku
-  - hubspot
-  - jamf
-  - jira
-  - jumpcloud
-  - knowbe4
-  - kubernetes
-  - malwarebytes
-  - microsoft-365
-  - mimecast
-  - nmap
-  - nowsecure
-  - npm
-  - okta
-  - onelogin
-  - openshift
-  - pagerduty
-  - qualys
-  - rapid7
-  - salesforce
-  - sentinelone
-  - sentry
-  - servicenow
-  - signal-sciences
-  - slack
-  - snipe-it
-  - snowflake
-  - snyk
-  - sonarqube
-  - sysdig
-  - tenable-io
-  - terraform-cloud
-  - threatstack
-  - trend-micro
-  - veracode
-  - vuls-findings
-  - wazuh
-  - whitehat
-  - whois
-  - wpengine
-  - zeit
-  - zendesk
-  - zoom
+  <summary><b>❗Click here to expand a full list of supported graph integrations❗</b></summary>
+  
+  - [AirWatch](https://github.com/jupiterone/graph-airwatch)
+  - [JFrog Artifactory](https://github.com/jupiterone/graph-artifactory)
+  - [Auth0](https://github.com/jupiterone/graph-auth0)
+  - [Azure](https://github.com/jupiterone/graph-azure)
+  - [Azure DevOps](https://github.com/jupiterone/graph-azure-devops)
+  - [BambooHR](https://github.com/jupiterone/graph-bamboohr)
+  - [Bugcrowd](https://github.com/jupiterone/graph-bugcrowd)
+  - [CbDefense](https://github.com/jupiterone/graph-cbdefense)
+  - [Cisco Amp](https://github.com/jupiterone/graph-cisco-amp)
+  - [Cisco Meraki](https://github.com/jupiterone/graph-cisco-meraki)
+  - [Cloudflare](https://github.com/jupiterone/graph-cloudflare)
+  - [CrowdStrike](https://github.com/jupiterone/graph-crowdstrike)
+  - [Detectify](https://github.com/jupiterone/graph-detectify)
+  - [DigiCert](https://github.com/jupiterone/graph-digicert)
+  - [Duo](https://github.com/jupriterone/graph-duo)
+  - [Fastly](https://github.com/jupiterone/graph-fastly)
+  - [Feroot](https://github.com/jupiterone/graph-feroot)
+  - [Gitlab](https://github.com/jupiterone/graph-gitlab)
+  - [Gitleaks Findings](https://github.com/jupiterone/graph-gitleaks-findings)
+  - [GoDaddy](https://github.com/jupiterone/graph-godaddy)
+  - [Google](https://github.com/jupiterone/graph-google)
+  - [Google Cloud](https://github.com/jupiterone/graph-google-cloud)
+  - [HackerOne](https://github.com/jupiterone/graph-hackerone)
+  - [Heroku](https://github.com/jupiterone/graph-heroku)
+  - [Jamf](https://github.com/jupiterone/graph-jamf)
+  - [Jira](https://github.com/jupiterone/graph-jira)
+  - [JumpCloud](https://github.com/jupiterone/graph-jumpcloud)
+  - [Knowbe4](https://github.com/jupiterone/graph-knowbe4)
+  - [Malwarebytes](https://github.com/jupiterone/graph-malwarebytes)
+  - [Microsoft 365](https://github.com/jupiterone/graph-microsoft-365)
+  - [Nmap](https://github.com/jupiterone/graph-nmap)
+  - [NowSecure](https://github.com/jupiterone/graph-nowsecure)
+  - [NPM](https://github.com/jupiterone/graph-npm)
+  - [Okta](https://github.com/jupiterone/graph-okta)
+  - [OneLogin](https://github.com/jupiterone/graph-onelogin)
+  - [OpenShift](https://github.com/jupiterone/graph-openshift)
+  - [PagerDuty](https://github.com/jupiterone/graph-pagerduty)
+  - [Qualys](https://github.com/jupiterone/graph-qualys)
+  - [Rapid7](https://github.com/jupiterone/graph-rapid7)
+  - [SentinelOne](https://github.com/jupiterone/graph-sentinelone)
+  - [ServiceNow](https://github.com/jupiterone/graph-servicenow)
+  - [Slack](https://github.com/jupiterone/graph-slack)
+  - [Snipe It](https://github.com/jupiterone/graph-snipe-it)
+  - [Snowflake](https://github.com/jupiterone/graph-snowflake)
+  - [Snyk](https://github.com/jupiterone/graph-snyk)
+  - [Tenable io](https://github.com/jupiterone/graph-tenable-io)
+  - [ThreatStack](https://github.com/jupiterone/graph-threatstack)
+  - [Trend Micro](https://github.com/jupiterone/graph-trend-micro)
+  - [Veracode](https://github.com/jupiterone/graph-veracode)
+  - [Vuls Findings](https://github.com/jupiterone/graph-vuls-findings)
+  - [Wazuh](https://github.com/jupiterone/graph-wazuh)
+  - [WhiteHat](https://github.com/jupiterone/graph-whitehat)
+  - [Whois](https://github.com/jupiterone/graph-whois)
 </details>
 
 [^1]: JupiterOne Starbase and the [Lyft Cartography](https://github.com/lyft/cartography)
