@@ -1,7 +1,4 @@
-import {
-  writeIntegrationConfig,
-  writeNeo4jRootConfig
-} from './config';
+import { writeIntegrationConfig, writeNeo4jRootConfig } from './config';
 import { executeIntegration } from './integration';
 import { isDirectoryPresent } from '@jupiterone/integration-sdk-runtime';
 import { StarbaseConfigurationError } from './error';
@@ -12,7 +9,7 @@ async function setupStarbaseStorageEngine(starbaseConfig: StarbaseConfig) {
 
   if (starbaseConfig.storage.engine !== 'neo4j') {
     throw new StarbaseConfigurationError(
-      'Invalid storage engine supplied. Neo4j is the only storage engine supported at this time.'
+      'Invalid storage engine supplied. Neo4j is the only storage engine supported at this time.',
     );
   }
 
@@ -26,15 +23,13 @@ type OnSkipIntegrationExecutionFunctionParams = {
 
 type OnExecuteStarbaseOptions = {
   onSkipIntegrationExecution?: (
-    params: OnSkipIntegrationExecutionFunctionParams
-  ) => void
+    params: OnSkipIntegrationExecutionFunctionParams,
+  ) => void;
 };
 
 async function executeStarbase(
   starbaseConfig: StarbaseConfig,
-  {
-    onSkipIntegrationExecution
-  }: OnExecuteStarbaseOptions = {}
+  { onSkipIntegrationExecution }: OnExecuteStarbaseOptions = {},
 ) {
   await setupStarbaseStorageEngine(starbaseConfig);
 
@@ -43,7 +38,7 @@ async function executeStarbase(
       if (onSkipIntegrationExecution) {
         onSkipIntegrationExecution({
           integration,
-          reason: `Integration directory is not present. Please ensure that you've run "yarn starbase setup".`
+          reason: `Integration directory is not present. Please ensure that you've run "yarn starbase setup".`,
         });
       }
 
@@ -55,7 +50,4 @@ async function executeStarbase(
   }
 }
 
-export {
-  executeStarbase,
-  OnSkipIntegrationExecutionFunctionParams
-};
+export { executeStarbase, OnSkipIntegrationExecutionFunctionParams };

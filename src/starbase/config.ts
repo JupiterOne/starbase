@@ -1,6 +1,6 @@
 import { promises as fs } from 'fs';
 import * as path from 'path';
-import { StarbaseIntegration, StarbaseStorage } from "./types";
+import { StarbaseIntegration, StarbaseStorage } from './types';
 import Ajv, { Schema } from 'ajv';
 import * as yaml from 'js-yaml';
 import { StarbaseConfig } from './types';
@@ -20,9 +20,7 @@ const integrationSchema: Schema = {
   additionalProperties: true,
 };
 
-function integrationConfigToEnvFormat(
-  config: StarbaseIntegration['config']
-) {
+function integrationConfigToEnvFormat(config: StarbaseIntegration['config']) {
   let envFileContents = '';
 
   for (const configEntryName in config) {
@@ -38,7 +36,7 @@ function integrationConfigToEnvFormat(
 async function writeNeo4jRootConfig(storage: StarbaseStorage) {
   await fs.writeFile(
     '.env',
-`NEO4J_URI=${storage.config.uri}
+    `NEO4J_URI=${storage.config.uri}
 NEO4J_USER=${storage.config.username}
 NEO4J_PASSWORD=${storage.config.password}
 `,
@@ -46,7 +44,7 @@ NEO4J_PASSWORD=${storage.config.password}
 }
 
 async function writeIntegrationConfig<TConfig = any>(
-  integration: StarbaseIntegration<TConfig>
+  integration: StarbaseIntegration<TConfig>,
 ) {
   if (!integration.config) return;
 
@@ -72,15 +70,17 @@ async function loadRawConfig(filePath: string) {
   }
 }
 
-async function loadParsedConfig(
-  filePath: string,
-): Promise<StarbaseConfig> {
+async function loadParsedConfig(filePath: string): Promise<StarbaseConfig> {
   const rawFile = await loadRawConfig(filePath);
   return yaml.load(rawFile) as StarbaseConfig;
 }
 
-async function validateStarbaseConfigSchema(config: StarbaseConfig) {
-  const finalConfig: StarbaseConfig = { integrations: [] };
+function validateStarbaseConfigSchema(config: StarbaseConfig) {
+  const finalConfig: StarbaseConfig = {
+    integrations: [],
+    storage: config.storage,
+  };
+
   const validator = ajv.compile(integrationSchema);
 
   for (const integration of config.integrations) {
@@ -94,19 +94,13 @@ async function validateStarbaseConfigSchema(config: StarbaseConfig) {
     }
   }
 
-  finalConfig.storage = config.storage;
   return finalConfig;
 }
 
-async function parseConfigYaml(
-  configPath: string,
-): Promise<StarbaseConfig> {
+async function parseConfigYaml(configPath: string): Promise<StarbaseConfig> {
   const yamlConfig: StarbaseConfig = await loadParsedConfig(configPath);
-  const finalConfig: StarbaseConfig = await validateStarbaseConfigSchema(
-    yamlConfig,
-  );
+  const finalConfig: StarbaseConfig = validateStarbaseConfigSchema(yamlConfig);
 
-  validateStarbaseConfigSchema(yamlConfig);
   return finalConfig;
 }
 
@@ -114,5 +108,5 @@ export {
   parseConfigYaml,
   writeIntegrationConfig,
   writeNeo4jRootConfig,
-  integrationConfigToEnvFormat
+  integrationConfigToEnvFormat,
 };

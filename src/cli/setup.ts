@@ -1,38 +1,10 @@
-import { isDirectoryPresent } from '@jupiterone/integration-sdk-runtime';
 import { createCommand } from 'commander';
-import { Clone } from 'nodegit';
-import { parseConfigYaml } from '../starbase';
-import { exec } from 'child_process';
-import { Reference, Repository } from 'nodegit';
-import * as util from 'util';
-
-const execPromise = util.promisify(exec);
+import { parseConfigYaml, setupStarbase } from '../starbase';
 
 export function setup() {
   return createCommand('setup')
-    .description('clone repositories listed in config.yaml')
+    .description('bootstraps or updates graph integration projects')
     .action(async (options) => {
-      const config = await parseConfigYaml('config.yaml');
-
-      for (const integration of config.integrations) {
-        if (integration.gitRemoteUrl) {
-          if (await isDirectoryPresent(integration.directory)) {
-            //If the folder already exists, update instead of cloning
-            let repo = await Repository.open(integration.directory);
-            await repo.fetchAll();
-            const localMain: Reference = await repo.getCurrentBranch();
-            const originMain = await repo.getBranch('origin/main');
-            await repo.mergeBranches(localMain, originMain);
-          } else {
-            //No folder = clone
-            await Clone.clone(integration.gitRemoteUrl, integration.directory);
-          }
-        }
-        //Finally, install dependencies
-        let startExec = await execPromise(`yarn --cwd ${integration.directory} install;`);
-        if(startExec && startExec.stdout) {
-          console.log(startExec.stdout);
-        }
-      }
+      await setupStarbase(await parseConfigYaml('config.yaml'));
     });
 }

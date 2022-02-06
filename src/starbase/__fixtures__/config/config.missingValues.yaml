@@ -1,38 +1,33 @@
 integrations:
-  -
-    name: graph-jamf-missing-instance
+  - name: graph-jamf-missing-instance
     directory: ./.integrations/graph-jamf
     gitRemoteUrl: https://github.com/JupiterOne/graph-jamf.git
     config:
       JAMF_HOST: example-host
       JAMF_USERNAME: example-username
       JAMF_PASSWORD: example-password
-  -
-    instanceId: testInstanceId
+  - instanceId: testInstanceId
     directory: ./.integrations/graph-jamf
     gitRemoteUrl: https://github.com/JupiterOne/graph-jamf.git
     config:
       JAMF_HOST: example-host
       JAMF_USERNAME: example-username
       JAMF_PASSWORD: example-password
-  -
-    name: graph-jamf-missing-dir
+  - name: graph-jamf-missing-dir
     instanceId: testInstanceId
     gitRemoteUrl: https://github.com/JupiterOne/graph-jamf.git
     config:
       JAMF_HOST: example-host
       JAMF_USERNAME: example-username
       JAMF_PASSWORD: example-password
-  -
-    name: graph-jamf-no-git
+  - name: graph-jamf-no-git
     instanceId: testInstanceId
     directory: ./.integrations/graph-jamf
     config:
       JAMF_HOST: example-host
       JAMF_USERNAME: example-username
       JAMF_PASSWORD: example-password
-  -
-    name: graph-jamf-no-config
+  - name: graph-jamf-no-config
     instanceId: testInstanceId
     directory: ./.integrations/graph-jamf
     gitRemoteUrl: https://github.com/JupiterOne/graph-jamf.git
