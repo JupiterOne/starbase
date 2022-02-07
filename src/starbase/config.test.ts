@@ -1,14 +1,17 @@
-import { integrationConfigToEnvFormat, parseConfigYaml } from "./config";
+import { integrationConfigToEnvFormat, parseConfigYaml } from './config';
 import { StarbaseConfig } from './types';
 
 describe('#integrationConfigToEnvFormat', () => {
   test('should convert integration config to environment file format', () => {
     expect(
       integrationConfigToEnvFormat({
-        "JSON_STRING_KEY": '{"type": "my_account", "project_id": "the-project-id"}',
-        "PROJECT_ID": "the-project-id"
-      })
-    ).toEqual(`JSON_STRING_KEY={"type": "my_account", "project_id": "the-project-id"}\nPROJECT_ID=the-project-id\n`);
+        JSON_STRING_KEY:
+          '{"type": "my_account", "project_id": "the-project-id"}',
+        PROJECT_ID: 'the-project-id',
+      }),
+    ).toEqual(
+      `JSON_STRING_KEY={"type": "my_account", "project_id": "the-project-id"}\nPROJECT_ID=the-project-id\n`,
+    );
   });
 });
 

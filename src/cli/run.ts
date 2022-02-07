@@ -1,23 +1,27 @@
 import { createCommand } from 'commander';
-import { executeStarbase, OnSkipIntegrationExecutionFunctionParams, parseConfigYaml } from '../starbase';
+import {
+  executeStarbase,
+  OnSkipIntegrationExecutionFunctionParams,
+  parseConfigYaml,
+} from '../starbase';
 import { StarbaseIntegration } from '../starbase/types';
 
 function withIntegrationLogData(
   message: string,
-  integration: StarbaseIntegration
+  integration: StarbaseIntegration,
 ) {
   return `${message} (instanceId=${integration.instanceId}, directory=${integration.directory})`;
 }
 
 function onSkipIntegrationExecution({
   integration,
-  reason
+  reason,
 }: OnSkipIntegrationExecutionFunctionParams) {
   console.log(
     withIntegrationLogData(
       `Skipping integration execution: ${reason}`,
-      integration
-    )
+      integration,
+    ),
   );
 }
 
@@ -25,9 +29,8 @@ export function run() {
   return createCommand('run')
     .description('collect and upload entities and relationships')
     .action(async () => {
-      await executeStarbase(
-        await parseConfigYaml('config.yaml'),
-        { onSkipIntegrationExecution }
-      );
+      await executeStarbase(await parseConfigYaml('config.yaml'), {
+        onSkipIntegrationExecution,
+      });
     });
 }

@@ -1,8 +1,8 @@
 export {
   executeStarbase,
-  OnSkipIntegrationExecutionFunctionParams
+  OnSkipIntegrationExecutionFunctionParams,
 } from './execution';
 
-export {
-  parseConfigYaml,
-} from './config';
+export { setupStarbase } from './setup';
+
+export { parseConfigYaml } from './config';

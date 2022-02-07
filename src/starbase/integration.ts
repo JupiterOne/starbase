@@ -1,16 +1,5 @@
-import { exec } from 'child_process';
-import * as util from 'util';
 import { StarbaseConfig, StarbaseIntegration } from './types';
-
-const execPromise = util.promisify(exec);
-
-async function executeWithLogging(command: string) {
-  const result = await execPromise(command);
-
-  if (result && result.stdout) {
-    console.log(result.stdout);
-  }
-}
+import { executeWithLogging } from './process';
 
 async function collectIntegrationData(integrationDirectory: string) {
   await executeWithLogging(`yarn --cwd ${integrationDirectory} start;`);
@@ -27,7 +16,7 @@ async function writeIntegrationDataToNeo4j(
 
 async function executeIntegration<TConfig>(
   integration: StarbaseIntegration<TConfig>,
-  starbaseConfig: StarbaseConfig
+  starbaseConfig: StarbaseConfig,
 ) {
   await collectIntegrationData(integration.directory);
 
@@ -35,7 +24,7 @@ async function executeIntegration<TConfig>(
   if (starbaseConfig.storage?.engine === 'neo4j') {
     await writeIntegrationDataToNeo4j(
       integration.instanceId,
-      integration.directory
+      integration.directory,
     );
   }
 }
@@ -43,5 +32,5 @@ async function executeIntegration<TConfig>(
 export {
   executeIntegration,
   collectIntegrationData,
-  writeIntegrationDataToNeo4j
+  writeIntegrationDataToNeo4j,
 };
