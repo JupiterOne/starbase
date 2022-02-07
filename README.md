@@ -3,13 +3,14 @@
   <strong style="font-size:75px;">Democratizing graph-based security analysis 🚀</strong>
 </h1></br>
 
-Starbase from [JupiterOne](https://jupiterone.com), collects assets and relationships from
-services and systems including cloud infrastructure, SaaS applications, security controls,
-and more into an intuitive graph view backed by the [Neo4j](https://neo4j.com/) database.
+Starbase from [JupiterOne](https://jupiterone.com), collects assets and
+relationships from services and systems including cloud infrastructure, SaaS
+applications, security controls, and more into an intuitive graph view backed by
+the [Neo4j](https://neo4j.com/) database.
 
-**Security is a basic right**. Starbase's goal is to **democratize graph-based security analysis** and 
-overall visibility into external services and systems. Our team believes that in order to secure any 
-system or service, you must have:
+**Security is a basic right**. Starbase's goal is to **democratize graph-based
+security analysis** and overall visibility into external services and systems.
+Our team believes that in order to secure any system or service, you must have:
 
 - **Knowledge** of the assets that you have
 - **Knowledge** of the relationships between assets that you have
@@ -23,14 +24,19 @@ system or service, you must have:
 
 Starbase offers three key advantages:
 
-1. **Depth and breadth** - Deep visibility from a [breadth of external services and systems](#available-integrations--connectors). Thousands of entities (verticies) and relationships (edges) are available out-of-the-box.
-2. **Uniform data model** - The data that Starbase collects is _automatically_ classified, making it easy to develop _generic_ queries.
+1. **Depth and breadth** - Deep visibility from a
+   [breadth of external services and systems](#available-integrations--connectors).
+   Thousands of entities (verticies) and relationships (edges) are available
+   out-of-the-box.
+2. **Uniform data model** - The data that Starbase collects is _automatically_
+   classified, making it easy to develop _generic_ queries.
 3. **Easily extensible** - Starbase graph integrations can be easily developed!
 
 ## Available Integrations / Connectors
 
-Starbase supports [70+](https://github.com/jupiterone?q=graph-&type=all&language=&sort=)
-open source graph integrations!
+Starbase supports
+[70+](https://github.com/jupiterone?q=graph-&type=all&language=&sort=) open
+source graph integrations!
 
 Here are some highlights:
 
@@ -100,14 +106,15 @@ Here are some highlights:
   - [Whois](https://github.com/jupiterone/graph-whois)
 </details>
 
-[^1]: JupiterOne Starbase and the [Lyft Cartography](https://github.com/lyft/cartography)
-    projects compliment each other as both projects push graph data to a Neo4j
-    database instance. As such, users of Starbase can leverage the AWS connector
-    from Cartography to ingest AWS assets and relationships. A more
-    comprehensive AWS integration is used by the cloud hosted JupiterOne
-    platform and we are considering making the J1 AWS integration available as
-    open source in the future. Additionally, JupiterOne already provides a free
-    tier of its cloud hosted service.
+[^1]:
+    JupiterOne Starbase and the
+    [Lyft Cartography](https://github.com/lyft/cartography) projects compliment
+    each other as both projects push graph data to a Neo4j database instance. As
+    such, users of Starbase can leverage the AWS connector from Cartography to
+    ingest AWS assets and relationships. A more comprehensive AWS integration is
+    used by the cloud hosted JupiterOne platform and we are considering making
+    the J1 AWS integration available as open source in the future. Additionally,
+    JupiterOne already provides a free tier of its cloud hosted service.
 
 ## Usage and Development
 
@@ -120,12 +127,12 @@ Here are some highlights:
 3. Install dependencies with `yarn install`.
 4. Register an account in the system each integration targets for ingestion and
    obtain API credentials.
-   
+
 ### Configuring Starbase
 
 Starbase leverages credentials from external services to authenticate and
-collect data. When Starbase is started, it reads configuration data from
-a single configuration file named `config.yaml` at the root of the project.
+collect data. When Starbase is started, it reads configuration data from a
+single configuration file named `config.yaml` at the root of the project.
 
 1. Copy `config.yaml.example` to `config.yaml`
 
@@ -138,34 +145,32 @@ cp config.yaml.example config.yaml
 > **NOTE**: The individual graph integration configuration field names can be
 > found in their respective `graph-*` projects.
 >
-> For example: https://github.com/JupiterOne/graph-google-cloud/blob/main/.env.example
+> For example:
+> https://github.com/JupiterOne/graph-google-cloud/blob/main/.env.example
 >
 > The `config.yaml` would resemble the following for Google Cloud:
 >
 > ```yaml
 > integrations:
->  -
->    name: graph-google-cloud
->    instanceId: testInstanceId
->    directory: ./.integrations/graph-google-cloud
->    gitRemoteUrl: https://github.com/JupiterOne/graph-google-cloud.git
->    config:
->      SERVICE_ACCOUNT_KEY_FILE={}
->      PROJECT_ID="..."
->      ORGANIZATION_ID="..."
->      CONFIGURE_ORGANIZATION_PROJECTS=false
+>   - name: graph-google-cloud
+>     instanceId: testInstanceId
+>     directory: ./.integrations/graph-google-cloud
+>     gitRemoteUrl: https://github.com/JupiterOne/graph-google-cloud.git
+>     config:
+>       SERVICE_ACCOUNT_KEY_FILE={} PROJECT_ID="..." ORGANIZATION_ID="..."
+>       CONFIGURE_ORGANIZATION_PROJECTS=false
 > storage:
->  engine: neo4j
->  config: 
->    username: neo4j
->    password: devpass
->    uri: bolt://localhost:7687
+>   engine: neo4j
+>   config:
+>     username: neo4j
+>     password: devpass
+>     uri: bolt://localhost:7687
 > ```
 
 ### Running Starbase
 
-Starbase exposes a CLI for bootstrapping graph integration
-development and execution.
+Starbase exposes a CLI for bootstrapping graph integration development and
+execution.
 
 ```
 ❯ yarn starbase --help
@@ -183,11 +188,10 @@ Commands:
   help [command]  display help for command
 ```
 
-1. Run `yarn starbase setup` to clone or update all integrations
-   listed in the `config.yaml` file as well as install all dependencies for each
-   integration.
-2. Run `yarn starbase run` to collect data for each listed integration and
-   then push collected data to the storage endpoint listed in `config.yaml`.
+1. Run `yarn starbase setup` to clone or update all integrations listed in the
+   `config.yaml` file as well as install all dependencies for each integration.
+2. Run `yarn starbase run` to collect data for each listed integration and then
+   push collected data to the storage endpoint listed in `config.yaml`.
 
 For additional information on using Neo4j as a storage endpoint, please see the
 [README.md](docker/README.md) provided.
@@ -197,20 +201,25 @@ For additional information on using Neo4j as a storage endpoint, please see the
 Starbase is composed of three components:
 
 1. **Starbase Core**
-  
-    The Starbase core project is an orchestration engine that handles bootstraping the underlying graph integrations.
+
+   The Starbase core project is an orchestration engine that handles
+   bootstraping the underlying graph integrations.
 
 2. **Graph Integrations**
 
-    These are the tools that perform data collection from third party systems and services. You can find a full list of 
-    supported [graph integrations here](https://github.com/jupiterone?q=graph-&type=all&language=&sort=). If you have a feature request, 
-    a bug to report, or you'd like to contribute to one of the supported integrations, please navigate to the specific integration repository.
+   These are the tools that perform data collection from third party systems and
+   services. You can find a full list of supported
+   [graph integrations here](https://github.com/jupiterone?q=graph-&type=all&language=&sort=).
+   If you have a feature request, a bug to report, or you'd like to contribute
+   to one of the supported integrations, please navigate to the specific
+   integration repository.
 
 3. **[Graph Integrations SDK](https://github.com/jupiterone/sdk)**
 
-    The Graph Integration SDK contains core utilities and the underlying graph integration
-    runtime packages.See the [SDK development documentation](https://github.com/JupiterOne/sdk/blob/main/docs/integrations/development.md)
-    for a deep dive into the mechanics of how integrations work.
+   The Graph Integration SDK contains core utilities and the underlying graph
+   integration runtime packages.See the
+   [SDK development documentation](https://github.com/JupiterOne/sdk/blob/main/docs/integrations/development.md)
+   for a deep dive into the mechanics of how integrations work.
 
 ### Changelog
 
@@ -223,7 +232,8 @@ Join us on `#starbase` on the [JupiterOne Community Slack](slack).
 
 ## JupiterOne
 
-If this is too much work, you can create a free cloud-hosted account at 
+If this is too much work, you can create a free cloud-hosted account at
 https://login.us.jupiterone.io/sign-up.
 
-[slack]: https://join.slack.com/t/jupiterone-community/shared_invite/zt-9b0a2htx-m8PmSWMbkjqCzF2dIZiabw
+[slack]:
+  https://join.slack.com/t/jupiterone-community/shared_invite/zt-9b0a2htx-m8PmSWMbkjqCzF2dIZiabw
