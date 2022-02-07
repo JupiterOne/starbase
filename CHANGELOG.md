@@ -9,12 +9,14 @@ and this project adheres to
 ## [Unreleased]
 
 ### Changed
-  - Commands now only include setup and run.  The update-integrations command
-    has now been absorbed into setup and it now performs clone, update, and
-    dependency installation.
+
+- Commands now only include setup and run. The update-integrations command has
+  now been absorbed into setup and it now performs clone, update, and dependency
+  installation.
 
 ### Fixed
-  - Steps are now properly awaiting prior to final push to Neo4j.
+
+- Steps are now properly awaiting prior to final push to Neo4j.
 
 ## [0.1.0] - 2021-12-27
 
