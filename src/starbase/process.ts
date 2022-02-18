@@ -1,14 +1,21 @@
 import { exec } from 'child_process';
-import * as util from 'util';
-
-const execPromise = util.promisify(exec);
 
 async function executeWithLogging(command: string) {
-  const result = await execPromise(command);
+  return new Promise<void>((resolve, reject) => {
+    const childProcess = exec(command);
 
-  if (result && result.stdout) {
-    console.log(result.stdout);
-  }
+    if (childProcess.stdout) {
+      childProcess.stdout.pipe(process.stdout);
+    }
+
+    childProcess.on('exit', () => {
+      resolve();
+    });
+
+    childProcess.on('error', (err) => {
+      reject(err);
+    });
+  });
 }
 
 export { executeWithLogging };
