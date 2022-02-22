@@ -157,7 +157,9 @@ cp config.yaml.example config.yaml
 >     directory: ./.integrations/graph-google-cloud
 >     gitRemoteUrl: https://github.com/JupiterOne/graph-google-cloud.git
 >     config:
->       SERVICE_ACCOUNT_KEY_FILE={} PROJECT_ID="..." ORGANIZATION_ID="..."
+>       SERVICE_ACCOUNT_KEY_FILE={}
+>       PROJECT_ID="..."
+>       ORGANIZATION_ID="..."
 >       CONFIGURE_ORGANIZATION_PROJECTS=false
 > storage:
 >   engine: neo4j
