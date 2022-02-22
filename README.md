@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="./img/branding/logo-light-bg.png" alt="Starbase Logo" width="250" /></br></br>
+  <img src="./img/branding/logo-animated.gif" alt="Starbase Logo" width="250" /></br></br>
   <strong style="font-size:75px;">Democratizing graph-based security analysis 🚀</strong>
 </h1></br>
 
@@ -157,7 +157,9 @@ cp config.yaml.example config.yaml
 >     directory: ./.integrations/graph-google-cloud
 >     gitRemoteUrl: https://github.com/JupiterOne/graph-google-cloud.git
 >     config:
->       SERVICE_ACCOUNT_KEY_FILE={} PROJECT_ID="..." ORGANIZATION_ID="..."
+>       SERVICE_ACCOUNT_KEY_FILE={} 
+>       PROJECT_ID="..." 
+>       ORGANIZATION_ID="..."
 >       CONFIGURE_ORGANIZATION_PROJECTS=false
 > storage:
 >   engine: neo4j
