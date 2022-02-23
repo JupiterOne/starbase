@@ -1,6 +1,6 @@
 <h1 align="center">
   <img src="./img/branding/logo-light-bg.png" alt="Starbase Logo" width="250" /></br></br>
-  <strong style="font-size:75px;">Democratizing graph-based security analysis 🚀</strong>
+  <strong style="font-size:75px;">Starbase: Graph-based asset management and security analysis for everyone 🚀</strong>
 </h1></br>
 
 Starbase from [JupiterOne](https://jupiterone.com), collects assets and
