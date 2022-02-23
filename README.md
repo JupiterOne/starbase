@@ -26,7 +26,7 @@ Starbase offers three key advantages:
 
 1. **Depth and breadth** - Deep visibility from a
    [breadth of external services and systems](#available-integrations--connectors).
-   Thousands of entities (verticies) and relationships (edges) are available
+   Thousands of entities (vertices) and relationships (edges) are available
    out-of-the-box.
 2. **Uniform data model** - The data that Starbase collects is _automatically_
    classified, making it easy to develop _generic_ queries.
@@ -196,7 +196,7 @@ Starbase is composed of three components:
 1. **Starbase Core**
 
    The Starbase core project is an orchestration engine that handles
-   bootstraping the underlying graph integrations.
+   bootstrapping the underlying graph integrations.
 
 2. **Graph Integrations**
 
@@ -210,7 +210,7 @@ Starbase is composed of three components:
 3. **[Graph Integrations SDK](https://github.com/jupiterone/sdk)**
 
    The Graph Integration SDK contains core utilities and the underlying graph
-   integration runtime packages.See the
+   integration runtime packages. See the
    [SDK development documentation](https://github.com/JupiterOne/sdk/blob/main/docs/integrations/development.md)
    for a deep dive into the mechanics of how integrations work.
 
@@ -233,7 +233,7 @@ https://login.us.jupiterone.io/sign-up.
 
 [^1]:
     JupiterOne Starbase and the
-    [Lyft Cartography](https://github.com/lyft/cartography) projects compliment
+    [Lyft Cartography](https://github.com/lyft/cartography) projects complement
     each other as both projects push graph data to a Neo4j database instance. As
     such, users of Starbase can leverage the AWS connector from Cartography to
     ingest AWS assets and relationships. A more comprehensive AWS integration is
