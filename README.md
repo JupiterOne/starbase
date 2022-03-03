@@ -64,6 +64,7 @@ Here are some highlights:
 - [Cisco Meraki](https://github.com/jupiterone/graph-cisco-meraki)
 - [Cloudflare](https://github.com/jupiterone/graph-cloudflare)
 - [CrowdStrike](https://github.com/jupiterone/graph-crowdstrike)
+- [Datadog](https://github.com/jupiterone/graph-datadog)
 - [Detectify](https://github.com/jupiterone/graph-detectify)
 - [DigiCert](https://github.com/jupiterone/graph-digicert)
 - [Duo](https://github.com/jupriterone/graph-duo)
@@ -91,6 +92,7 @@ Here are some highlights:
 - [PagerDuty](https://github.com/jupiterone/graph-pagerduty)
 - [Qualys](https://github.com/jupiterone/graph-qualys)
 - [Rapid7](https://github.com/jupiterone/graph-rapid7)
+- [Rumble](https://github.com/jupiterone/graph-rumble)
 - [SentinelOne](https://github.com/jupiterone/graph-sentinelone)
 - [ServiceNow](https://github.com/jupiterone/graph-servicenow)
 - [Slack](https://github.com/jupiterone/graph-slack)
@@ -98,6 +100,7 @@ Here are some highlights:
 - [Snowflake](https://github.com/jupiterone/graph-snowflake)
 - [Snyk](https://github.com/jupiterone/graph-snyk)
 - [Tenable io](https://github.com/jupiterone/graph-tenable-io)
+- [Terraform Cloud](https://github.com/jupiterone/graph-terraform-cloud)
 - [ThreatStack](https://github.com/jupiterone/graph-threatstack)
 - [Trend Micro](https://github.com/jupiterone/graph-trend-micro)
 - [Veracode](https://github.com/jupiterone/graph-veracode)
@@ -105,6 +108,7 @@ Here are some highlights:
 - [Wazuh](https://github.com/jupiterone/graph-wazuh)
 - [WhiteHat](https://github.com/jupiterone/graph-whitehat)
 - [Whois](https://github.com/jupiterone/graph-whois)
+- [Zendesk](https://github.com/jupiterone/graph-zendesk)
 </details>
 
 ## Usage and Development
