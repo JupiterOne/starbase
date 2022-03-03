@@ -53,6 +53,7 @@ Here are some highlights:
 
 - [^1]AWS
 - [AirWatch](https://github.com/jupiterone/graph-airwatch)
+- [AquaSec](https://github.com/jupiterone/graph-aquasec)
 - [JFrog Artifactory](https://github.com/jupiterone/graph-artifactory)
 - [Auth0](https://github.com/jupiterone/graph-auth0)
 - [Azure](https://github.com/jupiterone/graph-azure)
@@ -95,10 +96,12 @@ Here are some highlights:
 - [Rumble](https://github.com/jupiterone/graph-rumble)
 - [SentinelOne](https://github.com/jupiterone/graph-sentinelone)
 - [ServiceNow](https://github.com/jupiterone/graph-servicenow)
+- [Signal Sciences](https://github.com/jupiterone/graph-signal-sciences)
 - [Slack](https://github.com/jupiterone/graph-slack)
 - [Snipe It](https://github.com/jupiterone/graph-snipe-it)
 - [Snowflake](https://github.com/jupiterone/graph-snowflake)
 - [Snyk](https://github.com/jupiterone/graph-snyk)
+- [Sysdig](https://github.com/jupiterone/graph-sysdig)
 - [Tenable io](https://github.com/jupiterone/graph-tenable-io)
 - [Terraform Cloud](https://github.com/jupiterone/graph-terraform-cloud)
 - [ThreatStack](https://github.com/jupiterone/graph-threatstack)
