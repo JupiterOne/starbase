@@ -91,6 +91,7 @@ Here are some highlights:
 - [PagerDuty](https://github.com/jupiterone/graph-pagerduty)
 - [Qualys](https://github.com/jupiterone/graph-qualys)
 - [Rapid7](https://github.com/jupiterone/graph-rapid7)
+- [Rumble](https://github.com/jupiterone/graph-rumble)
 - [SentinelOne](https://github.com/jupiterone/graph-sentinelone)
 - [ServiceNow](https://github.com/jupiterone/graph-servicenow)
 - [Slack](https://github.com/jupiterone/graph-slack)
