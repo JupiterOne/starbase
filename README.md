@@ -52,6 +52,7 @@ Here are some highlights:
   <summary><b>❗Click here to expand a full list of supported graph integrations❗</b></summary>
 
 - [^1]AWS
+- [Addigy](https://github.com/jupiterone/graph-addigy)
 - [AirWatch](https://github.com/jupiterone/graph-airwatch)
 - [AquaSec](https://github.com/jupiterone/graph-aquasec)
 - [JFrog Artifactory](https://github.com/jupiterone/graph-artifactory)
@@ -89,6 +90,7 @@ Here are some highlights:
 - [Kubernetes](https://github.com/jupiterone/graph-kubernetes)
 - [Malwarebytes](https://github.com/jupiterone/graph-malwarebytes)
 - [Microsoft 365](https://github.com/jupiterone/graph-microsoft-365)
+- [Mimecast](https://github.com/jupiterone/graph-mimecast)
 - [Nmap](https://github.com/jupiterone/graph-nmap)
 - [NowSecure](https://github.com/jupiterone/graph-nowsecure)
 - [NPM](https://github.com/jupiterone/graph-npm)
@@ -238,15 +240,13 @@ The history of this project's development can be viewed at
 
 ### Contact
 
-Join us on `#starbase` on the [JupiterOne Community Slack](slack).
+Join us on `#starbase` on the [JupiterOne Community Slack](https://join.slack.com/t/jupiterone-community/shared_invite/zt-9b0a2htx-m8PmSWMbkjqCzF2dIZiabw).
 
 ## JupiterOne
 
 If this is too much work, you can create a free cloud-hosted account at
 https://login.us.jupiterone.io/sign-up.
 
-[slack]:
-  https://join.slack.com/t/jupiterone-community/shared_invite/zt-9b0a2htx-m8PmSWMbkjqCzF2dIZiabw
 
 [^1]:
     JupiterOne Starbase and the
