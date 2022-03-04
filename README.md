@@ -68,7 +68,6 @@ Here are some highlights:
 - [Cloudflare](https://github.com/jupiterone/graph-cloudflare)
 - [Cobalt](https://github.com/jupiterone/graph-cobalt)
 - [CrowdStrike](https://github.com/jupiterone/graph-crowdstrike)
-- [CyberReason](https://github.com/jupiterone/graph-cyberreason)
 - [Datadog](https://github.com/jupiterone/graph-datadog)
 - [Detectify](https://github.com/jupiterone/graph-detectify)
 - [DigiCert](https://github.com/jupiterone/graph-digicert)
