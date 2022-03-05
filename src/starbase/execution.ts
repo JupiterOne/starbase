@@ -48,6 +48,11 @@ async function executeStarbase(
     await writeIntegrationConfig(integration);
     await executeIntegration(integration, starbaseConfig);
   }
+  console.log(
+    `open ${
+      process.env.NEO4J_BROWSER_URI ?? 'http://localhost:7474/browser/'
+    } to browse your Neo4J graph.`,
+  );
 }
 
 export { executeStarbase, OnSkipIntegrationExecutionFunctionParams };
