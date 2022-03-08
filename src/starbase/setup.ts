@@ -2,7 +2,7 @@ import { Clone, Reference, Repository } from 'nodegit';
 import { StarbaseConfig, StarbaseIntegration } from './types';
 import { isDirectoryPresent } from '@jupiterone/integration-sdk-runtime';
 import { executeWithLogging } from './process';
-import camelCase from 'lodash.camelCase';
+import camelCase from 'lodash.camelcase';
 import mapkeys from 'lodash.mapkeys';
 import Ajv,  { Schema } from 'ajv';
 
