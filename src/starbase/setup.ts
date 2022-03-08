@@ -2,8 +2,8 @@ import { Clone, Reference, Repository } from 'nodegit';
 import { StarbaseConfig, StarbaseIntegration } from './types';
 import { isDirectoryPresent } from '@jupiterone/integration-sdk-runtime';
 import { executeWithLogging } from './process';
-import camelCase from 'lodash/camelCase';
-import mapkeys from 'lodash/mapkeys';
+import camelCase from 'lodash.camelCase';
+import mapkeys from 'lodash.mapkeys';
 import Ajv,  { Schema } from 'ajv';
 
 const ajv = new Ajv();
@@ -28,7 +28,6 @@ async function installIntegrationDependencies(directory: string) {
 async function checkInstanceConfigFields(integration: StarbaseIntegration) {
   import(`../.${integration.directory}/src/index`).then(({invocationConfig}) => {
     if(invocationConfig.instanceConfigFields) {
-      console.log(invocationConfig.instanceConfigFields);
       const integrationSchema: Schema = {
         type: 'object',
         properties: invocationConfig.instanceConfigFields,
