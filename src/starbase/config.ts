@@ -20,7 +20,6 @@ const integrationSchema: Schema = {
   additionalProperties: true,
 };
 
-// const integrationArraySchema: Schema = [integrationSchema];
 
 const storageSchema: Schema = {
   type: 'object',
