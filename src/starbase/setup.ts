@@ -2,16 +2,50 @@ import { Clone, Reference, Repository } from 'nodegit';
 import { StarbaseConfig, StarbaseIntegration } from './types';
 import { isDirectoryPresent } from '@jupiterone/integration-sdk-runtime';
 import { executeWithLogging } from './process';
+import camelCase from 'lodash/camelCase';
+import mapkeys from 'lodash/mapkeys';
+import Ajv,  { Schema } from 'ajv';
+
+const ajv = new Ajv();
+ajv.addKeyword("mask");
 
 async function setupStarbase(config: StarbaseConfig) {
   for (const integration of config.integrations) {
     await setupIntegration(integration);
+    await checkInstanceConfigFields(integration);
     await installIntegrationDependencies(integration.directory);
   }
 }
 
 async function installIntegrationDependencies(directory: string) {
   return executeWithLogging(`yarn --cwd ${directory} install`);
+}
+
+/**
+ * After we have cloned the repository, pull down information on the required
+ * instanceConfigFields and perform additional checks.
+ */
+async function checkInstanceConfigFields(integration: StarbaseIntegration) {
+  import(`../.${integration.directory}/src/index`).then(({invocationConfig}) => {
+    if(invocationConfig.instanceConfigFields) {
+      console.log(invocationConfig.instanceConfigFields);
+      const integrationSchema: Schema = {
+        type: 'object',
+        properties: invocationConfig.instanceConfigFields,
+        required: Object.keys(invocationConfig.instanceConfigFields),
+      };
+      const validator = ajv.compile(integrationSchema);
+      // We have to camelCase our integration config to mimic what will happen when our
+      // integrations run for real.
+      const camelCaseConfig = mapkeys(integration.config, (_value, key) => {
+        return camelCase(key);
+      });
+      if(!validator(camelCaseConfig)) {
+        // TODO do we want to throw an error here or write the error to console and keep going so we can find all errors?
+        console.error(`ERROR.  InstanceConfigFields validation error(s) for ${integration.name}:  `, validator.errors);
+      }
+    }
+  });
 }
 
 /**
