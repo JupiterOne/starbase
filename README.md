@@ -56,7 +56,7 @@ Here are some highlights:
 - [AirWatch](https://github.com/jupiterone/graph-airwatch)
 - [AquaSec](https://github.com/jupiterone/graph-aquasec)
 - [JFrog Artifactory](https://github.com/jupiterone/graph-artifactory)
-- [atSpoke](https://github.com/jupiterone/graph-atspoke)  
+- [atSpoke](https://github.com/jupiterone/graph-atspoke)
 - [Auth0](https://github.com/jupiterone/graph-auth0)
 - [Azure](https://github.com/jupiterone/graph-azure)
 - [Azure DevOps](https://github.com/jupiterone/graph-azure-devops)
@@ -167,9 +167,9 @@ cp config.yaml.example config.yaml
 >     directory: ./.integrations/graph-google-cloud
 >     gitRemoteUrl: https://github.com/JupiterOne/graph-google-cloud.git
 >     config:
->       SERVICE_ACCOUNT_KEY_FILE: {} 
->       PROJECT_ID: "..." 
->       ORGANIZATION_ID: "..."
+>       SERVICE_ACCOUNT_KEY_FILE: {}
+>       PROJECT_ID: '...'
+>       ORGANIZATION_ID: '...'
 >       CONFIGURE_ORGANIZATION_PROJECTS: false
 > storage:
 >   engine: neo4j
@@ -240,13 +240,13 @@ The history of this project's development can be viewed at
 
 ### Contact
 
-Join us on `#starbase` on the [JupiterOne Community Slack](https://join.slack.com/t/jupiterone-community/shared_invite/zt-9b0a2htx-m8PmSWMbkjqCzF2dIZiabw).
+Join us on `#starbase` on the
+[JupiterOne Community Slack](https://join.slack.com/t/jupiterone-community/shared_invite/zt-9b0a2htx-m8PmSWMbkjqCzF2dIZiabw).
 
 ## JupiterOne
 
 If this is too much work, you can create a free cloud-hosted account at
 https://login.us.jupiterone.io/sign-up.
-
 
 [^1]:
     JupiterOne Starbase and the
