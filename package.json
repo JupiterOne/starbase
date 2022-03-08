@@ -18,6 +18,7 @@
     "starbase": "ts-node ./src/index.ts",
     "starbase:help": "ts-node ./src/index.ts -h",
     "neo4j:start": "docker-compose -f docker/neo4j.yml up -d",
+    "neo4j:start:plugins": "docker-compose -f docker/neo4j.yml -f docker/neo4jplugins.yml up -d",
     "neo4j:stop": "docker-compose -f docker/neo4j.yml down",
     "format": "prettier --write '**/*.{js,ts,md,json}'",
     "lint": "eslint --ext .js,.ts",
