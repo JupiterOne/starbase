@@ -12,4 +12,4 @@ services:
       - ./.neo4j/import:/var/lib/neo4j/import
       - ./.neo4j/plugins:/plugins
     environment:
-      NEO4J_AUTH: neo4j/devpass
+      - NEO4J_AUTH=neo4j/devpass
