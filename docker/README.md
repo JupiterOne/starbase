@@ -18,7 +18,8 @@ Once the Neo4j server is running, you can access the Neo4j browser at
 default username to `neo4j` and the default password to `devpass`.
 
 The provided Neo4j configuration includes access to the standard Neo4j command
-set as well as the Graph Data Science and APOC libraries.  For more information
+set. Additionally, the `yarn neo4j:start:plugins` command will start the Neo4j
+instance including the Graph Data Science and APOC libraries.  For more information
 on their included functionality and proper use, see their docuementation here:
 
 [Graph Data Science (GDS)](https://neo4j.com/docs/graph-data-science/current/)
