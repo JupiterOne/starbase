@@ -78,6 +78,18 @@ const testConfigOptionals: StarbaseConfig = {
   },
 };
 
+const testEmptyConfig: StarbaseConfig = {
+  integrations: [],
+  storage: {
+    engine: 'neo4j',
+    config: {
+      username: 'neo4j',
+      password: 'devpass',
+      uri: 'bolt://localhost:7687',
+    },
+  }
+};
+
 describe('#parseConfig', () => {
   test('Example config.yaml generates example config', async () => {
     const config = await parseConfigYaml('config.yaml.example');
@@ -91,11 +103,11 @@ describe('#parseConfig', () => {
     );
   });
 
-  test('Optional/Required integration values yeild proper config.', async () => {
-    const config = await parseConfigYaml(
-      './src/starbase/__fixtures__/config/config.missingValues.yaml',
-    );
+  test('Missing integration values throws error', async () => {
+    await expect(parseConfigYaml('./src/starbase/__fixtures__/config/config.missingValues.yaml')).rejects.toThrowError('One or more errors found with configuration file.  Please correct above errors and try again.');
+  });
 
-    expect(config).toEqual(testConfigOptionals);
+  test('Malformed YAML throws error.', async () => {
+    await expect(parseConfigYaml('./src/starbase/__fixtures__/config/config.malformed.yaml')).rejects.toThrowError('One or more errors found with configuration file.  Please correct above errors and try again.');
   });
 });

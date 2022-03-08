@@ -20,6 +20,25 @@ const integrationSchema: Schema = {
   additionalProperties: true,
 };
 
+// const integrationArraySchema: Schema = [integrationSchema];
+
+const storageSchema: Schema = {
+  type: 'object',
+  properties: {
+    engine: { type: 'string' },
+    config: { type: 'object' },
+  },
+  required: ['engine']
+}
+
+const overallSchema: Schema = {
+  type: 'object',
+  properties: {
+    integrations: { type: 'array' },
+    storage: { type: 'object' },
+  }
+}
+
 function integrationConfigToEnvFormat(config: StarbaseIntegration['config']) {
   let envFileContents = '';
 
@@ -82,16 +101,33 @@ function validateStarbaseConfigSchema(config: StarbaseConfig) {
   };
 
   const validator = ajv.compile(integrationSchema);
+  const overallValidator = ajv.compile(overallSchema);
+  const storageValidator = ajv.compile(storageSchema);
+
+  let configErrorCount = 0;
+
+  if(!overallValidator(config)) {
+    console.error(`ERROR.  Overall configuration validation error(s):  `, overallValidator.errors);
+    configErrorCount++;
+  }
+
+  if(!storageValidator(config.storage)) {
+    console.error(`ERROR.  Storage configuration validation error(s):  `, storageValidator.errors);
+    configErrorCount++;
+  }
 
   for (const integration of config.integrations) {
+    const integrationName = integration.name || integration.instanceId || 'Unknown integration';
     if (!validator(integration)) {
-      console.log(
-        'WARNING.  Skipping the following due to missing item(s) in its config: ',
-        integration,
-      );
+      console.error('ERROR in configuration for ', integrationName, ":  ",  validator.errors);
+      configErrorCount++;
     } else {
       finalConfig.integrations.push(integration);
     }
+  }
+
+  if(configErrorCount > 0) {
+    throw new Error(`One or more errors found with configuration file.  Please correct above errors and try again.`);
   }
 
   return finalConfig;
