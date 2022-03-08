@@ -17,6 +17,14 @@ Once the Neo4j server is running, you can access the Neo4j browser at
 <http://localhost:7474/browser/>. The `neo4j.yml` docker-compose config sets the
 default username to `neo4j` and the default password to `devpass`.
 
+The provided Neo4j configuration includes access to the standard Neo4j command
+set as well as the Graph Data Science and APOC libraries.  For more information
+on their included functionality and proper use, see their docuementation here:
+
+[Graph Data Science (GDS)](https://neo4j.com/docs/graph-data-science/current/)
+
+[Awesome Procedures on Cypher (APOC)](https://neo4j.com/labs/apoc/)
+
 NOTE: An existing installation of Docker Engine and Docker Composer are needed
 to use the above commands. [Docker Desktop](https://docs.docker.com/desktop/)
 for Windows and Mac includes Docker Composer. Linux users will need to install

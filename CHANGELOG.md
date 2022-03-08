@@ -8,6 +8,11 @@ and this project adheres to
 
 ## [Unreleased]
 
+### Added
+
+- Commands to wipe and wipe-all now support the ability to wipe data in the
+Neo4j database, either by integrationID or completely.
+- The Neo4j Docker instance now includes the GDS and APOC libraries.
 ### Changed
 
 - Commands now only include setup and run. The update-integrations command has
