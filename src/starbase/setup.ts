@@ -45,11 +45,13 @@ async function checkInstanceConfigFields(
         // We have to snake_case and UPPERCASE our instanceConfigFields keys before
         // building our validator to mimic conversions that occur during execution
         // of our integrations.
-        const capsConfig = Object.assign({}, ...Object.keys(invocationConfig.instanceConfigFields).map(
-          (key)=>({
-            [snakecase(key).toUpperCase()]:invocationConfig.instanceConfigFields[key]
-          })
-        ));
+        const capsConfig = Object.assign(
+          {},
+          ...Object.keys(invocationConfig.instanceConfigFields).map((key) => ({
+            [snakecase(key).toUpperCase()]:
+              invocationConfig.instanceConfigFields[key],
+          })),
+        );
         const integrationSchema: Schema = {
           type: 'object',
           properties: capsConfig,

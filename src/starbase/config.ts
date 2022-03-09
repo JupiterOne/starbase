@@ -34,7 +34,7 @@ const configSchema: Schema = {
   properties: {
     integrations: {
       type: 'array',
-      items: integrationSchema
+      items: integrationSchema,
     },
     storage: storageSchema,
   },
