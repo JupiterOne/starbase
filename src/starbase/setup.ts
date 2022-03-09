@@ -10,10 +10,18 @@ const ajv = new Ajv();
 ajv.addKeyword('mask');
 
 async function setupStarbase(config: StarbaseConfig) {
+  let configErrorCount = 0;
   for (const integration of config.integrations) {
     await setupIntegration(integration);
-    await checkInstanceConfigFields(integration);
+    if (!(await checkInstanceConfigFields(integration))) {
+      configErrorCount++;
+    }
     await installIntegrationDependencies(integration.directory);
+  }
+  if (configErrorCount > 0) {
+    console.error(
+      `ERROR:  Configurations for ${configErrorCount} integration(s) failed validation tests.  Please correct above error messages and retry.`,
+    );
   }
 }
 
@@ -23,9 +31,13 @@ async function installIntegrationDependencies(directory: string) {
 
 /**
  * After we have cloned the repository, pull down information on the required
- * instanceConfigFields and perform additional checks.
+ * instanceConfigFields and perform additional checks.  Returns false if the
+ * config fields weren't successfully validated.
  */
-async function checkInstanceConfigFields(integration: StarbaseIntegration) {
+async function checkInstanceConfigFields(
+  integration: StarbaseIntegration,
+): Promise<boolean> {
+  let checkSuccessful = true;
   await import(`../.${integration.directory}/src/index`).then(
     ({ invocationConfig }) => {
       if (invocationConfig.instanceConfigFields) {
@@ -46,10 +58,12 @@ async function checkInstanceConfigFields(integration: StarbaseIntegration) {
             `ERROR:  instanceConfigFields validation error(s) for ${integration.name}:  `,
             validator.errors,
           );
+          checkSuccessful = false;
         }
       }
     },
   );
+  return checkSuccessful;
 }
 
 /**
