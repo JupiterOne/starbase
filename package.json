@@ -20,10 +20,11 @@
     "neo4j:start": "docker-compose -f docker/neo4j.yml up -d",
     "neo4j:start:plugins": "docker-compose -f docker/neo4j.yml -f docker/neo4jplugins.yml up -d",
     "neo4j:stop": "docker-compose -f docker/neo4j.yml down",
-    "format": "prettier --write '**/*.{js,ts,md,json}'",
+    "format": "prettier --write \"**/*.{ts,js,json,md,yml}\"",
+    "format:check": "prettier --check \"**/*.{ts,js,json,md,yml}\"",
     "lint": "eslint --ext .js,.ts",
     "type-check": "tsc",
-    "test": "jest",
+    "test": "jest && yarn format:check",
     "test:ci": "yarn lint && yarn type-check && yarn test",
     "build": "tsc -p tsconfig.dist.json --declaration && cp README.md dist/README.md && cp LICENSE dist/LICENSE"
   },
