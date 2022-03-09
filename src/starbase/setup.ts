@@ -8,7 +8,7 @@ import Ajv, { Schema } from 'ajv';
 
 // Set up Ajv to return all errors instead of just the first and
 // allow for the 'mask' keyword used in our instanceConfigFields.
-const ajv = new Ajv({allErrors: true});
+const ajv = new Ajv({ allErrors: true });
 ajv.addKeyword('mask');
 
 async function setupStarbase(config: StarbaseConfig) {
@@ -46,16 +46,19 @@ async function checkInstanceConfigFields(
         // We have to snake_case and UPPERCASE our instanceConfigFields keys before
         // building our validator to mimic conversions that occur during execution
         // of our integrations.
-        const capsConfig = mapkeys(invocationConfig.instanceConfigFields, (_value, key) => {
-          return snakecase(key).toUpperCase();
-        });
+        const capsConfig = mapkeys(
+          invocationConfig.instanceConfigFields,
+          (_value, key) => {
+            return snakecase(key).toUpperCase();
+          },
+        );
         const integrationSchema: Schema = {
           type: 'object',
           properties: capsConfig,
           required: Object.keys(capsConfig),
         };
         const validator = ajv.compile(integrationSchema);
-        
+
         if (!validator(integration.config)) {
           // Log but don't throw an error so we can report errors for all integration configurations, not just the first failure
           console.error(

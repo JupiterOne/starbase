@@ -5,7 +5,7 @@ import Ajv, { Schema } from 'ajv';
 import * as yaml from 'js-yaml';
 import { StarbaseConfig } from './types';
 
-const ajv = new Ajv({allErrors: true});
+const ajv = new Ajv({ allErrors: true });
 
 const integrationSchema: Schema = {
   type: 'object',
