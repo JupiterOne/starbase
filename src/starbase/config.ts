@@ -32,8 +32,11 @@ const storageSchema: Schema = {
 const configSchema: Schema = {
   type: 'object',
   properties: {
-    integrations: { type: 'array' },
-    storage: { type: 'object' },
+    integrations: {
+      type: 'array',
+      items: integrationSchema
+    },
+    storage: storageSchema,
   },
 };
 
@@ -95,58 +98,25 @@ async function loadParsedConfig(filePath: string): Promise<StarbaseConfig> {
 }
 
 function validateStarbaseConfigSchema(config: StarbaseConfig) {
-  const finalConfig: StarbaseConfig = {
-    integrations: [],
-    storage: config.storage,
-  };
-
-  const validator = ajv.compile(integrationSchema);
   const configValidator = ajv.compile(configSchema);
-  const storageValidator = ajv.compile(storageSchema);
-
-  let configErrorCount = 0;
 
   if (!configValidator(config)) {
     console.error(
       `ERROR:  config file validation error(s):  `,
       configValidator.errors,
     );
-    configErrorCount++;
-  }
-
-  if (!storageValidator(config.storage)) {
-    console.error(
-      `ERROR:  storage configuration validation error(s):  `,
-      storageValidator.errors,
-    );
-    configErrorCount++;
-  }
-
-  for (const integration of config.integrations) {
-    const integrationName =
-      integration.name || integration.instanceId || 'Unknown integration';
-    if (!validator(integration)) {
-      console.error(
-        'ERROR in configuration for ',
-        integrationName,
-        ':  ',
-        validator.errors,
-      );
-      configErrorCount++;
-    } else {
-      finalConfig.integrations.push(integration);
-    }
-  }
-
-  if (configErrorCount > 0) {
     throw new Error(
       `One or more errors found with configuration file.  Please correct above errors and try again.`,
     );
   }
 
-  return finalConfig;
+  return config;
 }
 
+// We were allowing for partial config runs when only some of our integration configurations
+// were incorrect or missing data.  We're now throwing and not allowing partial configs to
+// continue, so we can look at revamping this in the future to simplify, since the yamlConfig
+// won't be potentially mutated in the validate call.
 async function parseConfigYaml(configPath: string): Promise<StarbaseConfig> {
   const yamlConfig: StarbaseConfig = await loadParsedConfig(configPath);
   const finalConfig: StarbaseConfig = validateStarbaseConfigSchema(yamlConfig);

@@ -3,7 +3,6 @@ import { StarbaseConfig, StarbaseIntegration } from './types';
 import { isDirectoryPresent } from '@jupiterone/integration-sdk-runtime';
 import { executeWithLogging } from './process';
 import snakecase from 'lodash.snakecase';
-import mapkeys from 'lodash.mapkeys';
 import Ajv, { Schema } from 'ajv';
 
 // Set up Ajv to return all errors instead of just the first and
@@ -46,12 +45,11 @@ async function checkInstanceConfigFields(
         // We have to snake_case and UPPERCASE our instanceConfigFields keys before
         // building our validator to mimic conversions that occur during execution
         // of our integrations.
-        const capsConfig = mapkeys(
-          invocationConfig.instanceConfigFields,
-          (_value, key) => {
-            return snakecase(key).toUpperCase();
-          },
-        );
+        const capsConfig = Object.assign({}, ...Object.keys(invocationConfig.instanceConfigFields).map(
+          (key)=>({
+            [snakecase(key).toUpperCase()]:invocationConfig.instanceConfigFields[key]
+          })
+        ));
         const integrationSchema: Schema = {
           type: 'object',
           properties: capsConfig,
