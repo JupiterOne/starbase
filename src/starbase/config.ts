@@ -80,7 +80,9 @@ async function loadRawConfig(filePath: string) {
     return file;
   } catch (err) {
     if (err.code === 'ENOENT') {
-      throw new Error(`Starbase config file not found (filePath=${filePath})`);
+      throw new Error(
+        `Config file not found. Starbase cannot continue without the configuration information provided in it. Please create a config.yaml file in the project root directory before retrying. See the config.yaml.example file in the project root directory for a formatting example.`,
+      );
     }
 
     throw err;

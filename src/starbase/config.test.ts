@@ -58,7 +58,7 @@ describe('#parseConfig', () => {
 
   test('Missing config file', async () => {
     await expect(parseConfigYaml('')).rejects.toThrowError(
-      'Starbase config file not found (filePath=)',
+      'Config file not found. Starbase cannot continue without the configuration information provided in it. Please create a config.yaml file in the project root directory before retrying. See the config.yaml.example file in the project root directory for a formatting example.',
     );
   });
 
