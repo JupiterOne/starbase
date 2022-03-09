@@ -20,23 +20,22 @@ const integrationSchema: Schema = {
   additionalProperties: true,
 };
 
-
 const storageSchema: Schema = {
   type: 'object',
   properties: {
     engine: { type: 'string' },
     config: { type: 'object' },
   },
-  required: ['engine']
-}
+  required: ['engine'],
+};
 
 const overallSchema: Schema = {
   type: 'object',
   properties: {
     integrations: { type: 'array' },
     storage: { type: 'object' },
-  }
-}
+  },
+};
 
 function integrationConfigToEnvFormat(config: StarbaseIntegration['config']) {
   let envFileContents = '';
@@ -105,28 +104,42 @@ function validateStarbaseConfigSchema(config: StarbaseConfig) {
 
   let configErrorCount = 0;
 
-  if(!overallValidator(config)) {
-    console.error(`ERROR.  Overall configuration validation error(s):  `, overallValidator.errors);
+  if (!overallValidator(config)) {
+    console.error(
+      `ERROR:  overall configuration validation error(s):  `,
+      overallValidator.errors,
+    );
     configErrorCount++;
   }
 
-  if(!storageValidator(config.storage)) {
-    console.error(`ERROR.  Storage configuration validation error(s):  `, storageValidator.errors);
+  if (!storageValidator(config.storage)) {
+    console.error(
+      `ERROR:  storage configuration validation error(s):  `,
+      storageValidator.errors,
+    );
     configErrorCount++;
   }
 
   for (const integration of config.integrations) {
-    const integrationName = integration.name || integration.instanceId || 'Unknown integration';
+    const integrationName =
+      integration.name || integration.instanceId || 'Unknown integration';
     if (!validator(integration)) {
-      console.error('ERROR in configuration for ', integrationName, ":  ",  validator.errors);
+      console.error(
+        'ERROR in configuration for ',
+        integrationName,
+        ':  ',
+        validator.errors,
+      );
       configErrorCount++;
     } else {
       finalConfig.integrations.push(integration);
     }
   }
 
-  if(configErrorCount > 0) {
-    throw new Error(`One or more errors found with configuration file.  Please correct above errors and try again.`);
+  if (configErrorCount > 0) {
+    throw new Error(
+      `One or more errors found with configuration file.  Please correct above errors and try again.`,
+    );
   }
 
   return finalConfig;

@@ -4,10 +4,10 @@ import { isDirectoryPresent } from '@jupiterone/integration-sdk-runtime';
 import { executeWithLogging } from './process';
 import camelCase from 'lodash.camelcase';
 import mapkeys from 'lodash.mapkeys';
-import Ajv,  { Schema } from 'ajv';
+import Ajv, { Schema } from 'ajv';
 
 const ajv = new Ajv();
-ajv.addKeyword("mask");
+ajv.addKeyword('mask');
 
 async function setupStarbase(config: StarbaseConfig) {
   for (const integration of config.integrations) {
@@ -26,25 +26,30 @@ async function installIntegrationDependencies(directory: string) {
  * instanceConfigFields and perform additional checks.
  */
 async function checkInstanceConfigFields(integration: StarbaseIntegration) {
-  import(`../.${integration.directory}/src/index`).then(({invocationConfig}) => {
-    if(invocationConfig.instanceConfigFields) {
-      const integrationSchema: Schema = {
-        type: 'object',
-        properties: invocationConfig.instanceConfigFields,
-        required: Object.keys(invocationConfig.instanceConfigFields),
-      };
-      const validator = ajv.compile(integrationSchema);
-      // We have to camelCase our integration config to mimic what will happen when our
-      // integrations run for real.
-      const camelCaseConfig = mapkeys(integration.config, (_value, key) => {
-        return camelCase(key);
-      });
-      if(!validator(camelCaseConfig)) {
-        // TODO do we want to throw an error here or write the error to console and keep going so we can find all errors?
-        console.error(`ERROR.  InstanceConfigFields validation error(s) for ${integration.name}:  `, validator.errors);
+  await import(`../.${integration.directory}/src/index`).then(
+    ({ invocationConfig }) => {
+      if (invocationConfig.instanceConfigFields) {
+        const integrationSchema: Schema = {
+          type: 'object',
+          properties: invocationConfig.instanceConfigFields,
+          required: Object.keys(invocationConfig.instanceConfigFields),
+        };
+        const validator = ajv.compile(integrationSchema);
+        // We have to camelCase our integration config to mimic what will happen when our
+        // integrations run for real.
+        const camelCaseConfig = mapkeys(integration.config, (_value, key) => {
+          return camelCase(key);
+        });
+        if (!validator(camelCaseConfig)) {
+          // Log but don't throw an error so we can report errors for all integration configurations, not just the first failure
+          console.error(
+            `ERROR:  instanceConfigFields validation error(s) for ${integration.name}:  `,
+            validator.errors,
+          );
+        }
       }
-    }
-  });
+    },
+  );
 }
 
 /**
