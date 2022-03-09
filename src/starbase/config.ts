@@ -5,7 +5,7 @@ import Ajv, { Schema } from 'ajv';
 import * as yaml from 'js-yaml';
 import { StarbaseConfig } from './types';
 
-const ajv = new Ajv();
+const ajv = new Ajv({allErrors: true});
 
 const integrationSchema: Schema = {
   type: 'object',
@@ -29,7 +29,7 @@ const storageSchema: Schema = {
   required: ['engine'],
 };
 
-const overallSchema: Schema = {
+const configSchema: Schema = {
   type: 'object',
   properties: {
     integrations: { type: 'array' },
@@ -99,15 +99,15 @@ function validateStarbaseConfigSchema(config: StarbaseConfig) {
   };
 
   const validator = ajv.compile(integrationSchema);
-  const overallValidator = ajv.compile(overallSchema);
+  const configValidator = ajv.compile(configSchema);
   const storageValidator = ajv.compile(storageSchema);
 
   let configErrorCount = 0;
 
-  if (!overallValidator(config)) {
+  if (!configValidator(config)) {
     console.error(
-      `ERROR:  overall configuration validation error(s):  `,
-      overallValidator.errors,
+      `ERROR:  config file validation error(s):  `,
+      configValidator.errors,
     );
     configErrorCount++;
   }
