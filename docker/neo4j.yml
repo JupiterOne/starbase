@@ -1,11 +1,11 @@
-version: "3.8"
+version: '3.8'
 services:
   neo4j:
     image: neo4j:4.4.3
     hostname: neo4j
     ports:
-      - "7474:7474"
-      - "7687:7687"
+      - '7474:7474'
+      - '7687:7687'
     volumes:
       - ./.neo4j/data:/data
       - ./.neo4j/logs:/logs
