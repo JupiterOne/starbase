@@ -1,6 +1,7 @@
 {
   "extends": "./node_modules/@jupiterone/integration-sdk-dev-tools/config/typescript",
   "compilerOptions": {
+    "esModuleInterop": true,
     "outDir": "dist"
   },
   "exclude": ["dist"]
