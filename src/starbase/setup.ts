@@ -27,7 +27,6 @@ async function setupStarbase(config: StarbaseConfig) {
 }
 
 async function installIntegrationDependencies(directory: string) {
-  console.log(`APAPAP  yarn --cwd ${directory} install`);
   return executeWithLogging(`yarn --cwd ${directory} install`);
 }
 
