@@ -208,6 +208,20 @@ Commands:
 For additional information on using Neo4j as a storage endpoint, please see the
 [README.md](docker/README.md) provided.
 
+### Running Starbase - Docker
+
+Alternatively, Docker can be used to run Starbase, minimizing the need to locally
+install node and yarn.
+
+1. Run `docker build --no-cache -t starbase:latest .` to create the Starbase
+   docker image.
+2. Run `docker-compose run starbase setup` to clone or update all integrations listed in the
+   `config.yaml` file as well as install all dependencies for each integration.
+3. Run `docker-compose run starbase run` to collect data for each listed integration and then
+   push collected data to the storage endpoint listed in `config.yaml`.
+
+Note that OS X users in particular may see slower execution times when running 
+Starbase in a Docker container.
 ### Contributing
 
 Starbase is composed of three components:
