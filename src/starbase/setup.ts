@@ -14,10 +14,10 @@ async function setupStarbase(config: StarbaseConfig) {
   let configErrorCount = 0;
   for (const integration of config.integrations) {
     await setupIntegration(integration);
+    await installIntegrationDependencies(integration.directory);
     if (!(await checkInstanceConfigFields(integration))) {
       configErrorCount++;
     }
-    await installIntegrationDependencies(integration.directory);
   }
   if (configErrorCount > 0) {
     console.error(
@@ -27,6 +27,7 @@ async function setupStarbase(config: StarbaseConfig) {
 }
 
 async function installIntegrationDependencies(directory: string) {
+  console.log(`APAPAP  yarn --cwd ${directory} install`);
   return executeWithLogging(`yarn --cwd ${directory} install`);
 }
 
