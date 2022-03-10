@@ -5,7 +5,7 @@ import Ajv, { Schema } from 'ajv';
 import * as yaml from 'js-yaml';
 import { StarbaseConfig } from './types';
 
-const ajv = new Ajv();
+const ajv = new Ajv({ allErrors: true });
 
 const integrationSchema: Schema = {
   type: 'object',
@@ -18,6 +18,26 @@ const integrationSchema: Schema = {
   },
   required: ['name', 'instanceId', 'directory'],
   additionalProperties: true,
+};
+
+const storageSchema: Schema = {
+  type: 'object',
+  properties: {
+    engine: { type: 'string' },
+    config: { type: 'object' },
+  },
+  required: ['engine'],
+};
+
+const configSchema: Schema = {
+  type: 'object',
+  properties: {
+    integrations: {
+      type: 'array',
+      items: integrationSchema,
+    },
+    storage: storageSchema,
+  },
 };
 
 function integrationConfigToEnvFormat(config: StarbaseIntegration['config']) {
@@ -63,7 +83,9 @@ async function loadRawConfig(filePath: string) {
     return file;
   } catch (err) {
     if (err.code === 'ENOENT') {
-      throw new Error(`Starbase config file not found (filePath=${filePath})`);
+      throw new Error(
+        `Config file not found. Starbase cannot continue without the configuration information provided in it. Please create a config.yaml file in the project root directory before retrying. See the config.yaml.example file in the project root directory for a formatting example.`,
+      );
     }
 
     throw err;
@@ -76,27 +98,25 @@ async function loadParsedConfig(filePath: string): Promise<StarbaseConfig> {
 }
 
 function validateStarbaseConfigSchema(config: StarbaseConfig) {
-  const finalConfig: StarbaseConfig = {
-    integrations: [],
-    storage: config.storage,
-  };
+  const configValidator = ajv.compile(configSchema);
 
-  const validator = ajv.compile(integrationSchema);
-
-  for (const integration of config.integrations) {
-    if (!validator(integration)) {
-      console.log(
-        'WARNING.  Skipping the following due to missing item(s) in its config: ',
-        integration,
-      );
-    } else {
-      finalConfig.integrations.push(integration);
-    }
+  if (!configValidator(config)) {
+    console.error(
+      `ERROR:  config file validation error(s):  `,
+      configValidator.errors,
+    );
+    throw new Error(
+      `One or more errors found with configuration file.  Please correct above errors and try again.`,
+    );
   }
 
-  return finalConfig;
+  return config;
 }
 
+// We were allowing for partial config runs when only some of our integration configurations
+// were incorrect or missing data.  We're now throwing and not allowing partial configs to
+// continue, so we can look at revamping this in the future to simplify, since the yamlConfig
+// won't be potentially mutated in the validate call.
 async function parseConfigYaml(configPath: string): Promise<StarbaseConfig> {
   const yamlConfig: StarbaseConfig = await loadParsedConfig(configPath);
   const finalConfig: StarbaseConfig = validateStarbaseConfigSchema(yamlConfig);

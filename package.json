@@ -20,10 +20,11 @@
     "neo4j:start": "docker-compose -f docker/neo4j.yml up -d",
     "neo4j:start:plugins": "docker-compose -f docker/neo4j.yml -f docker/neo4jplugins.yml up -d",
     "neo4j:stop": "docker-compose -f docker/neo4j.yml down",
-    "format": "prettier --write '**/*.{js,ts,md,json}'",
+    "format": "prettier --write \"**/*.{ts,js,json,md,yml}\"",
+    "format:check": "prettier --check \"**/*.{ts,js,json,md,yml}\"",
     "lint": "eslint --ext .js,.ts",
     "type-check": "tsc",
-    "test": "jest",
+    "test": "jest && yarn format:check",
     "test:ci": "yarn lint && yarn type-check && yarn test",
     "build": "tsc -p tsconfig.dist.json --declaration && cp README.md dist/README.md && cp LICENSE dist/LICENSE && cp -r bin dist"
   },
@@ -32,6 +33,7 @@
     "@jupiterone/integration-sdk-core": "^8.4.4",
     "ajv": "^8.9.0",
     "js-yaml": "^4.1.0",
+    "lodash.snakecase": "^4.1.1",
     "nodegit": "^0.27.0",
     "ts-node": "^10.4.0",
     "typescript": "^4.5.5"
@@ -39,6 +41,7 @@
   "devDependencies": {
     "@jupiterone/integration-sdk-dev-tools": "^8.4.4",
     "@types/js-yaml": "^4.0.5",
+    "@types/lodash.snakecase": "^4.1.6",
     "@types/nodegit": "^0.27.7"
   },
   "volta": {

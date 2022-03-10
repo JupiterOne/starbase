@@ -1,5 +1,5 @@
 name: Build
-on: 
+on:
   pull_request:
   push:
     branches:
@@ -87,6 +87,7 @@ jobs:
           tag_name: ${{ steps.changelog_reader.outputs.version }}
           release_name: Release ${{ steps.changelog_reader.outputs.version }}
           body: ${{ steps.changelog_reader.outputs.changes }}
-          prerelease: ${{ steps.changelog_reader.outputs.status == 'prereleased' }}
+          prerelease:
+            ${{ steps.changelog_reader.outputs.status == 'prereleased' }}
           draft: ${{ steps.changelog_reader.outputs.status == 'unreleased' }}
         continue-on-error: true
