@@ -222,7 +222,7 @@ locally install node and yarn.
    integration and then push collected data to the storage endpoint listed in
    `config.yaml`.
 
-Note that OS X users in particular may see slower execution times when running
+Note that macOS users in particular may see slower execution times when running
 Starbase in a Docker container.
 
 ### Contributing
