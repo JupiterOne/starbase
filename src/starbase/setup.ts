@@ -1,4 +1,4 @@
-import { Clone, Reference, Repository } from 'nodegit';
+import { Clone, CloneOptions, Reference, Repository } from 'nodegit';
 import { StarbaseConfig, StarbaseIntegration } from './types';
 import { isDirectoryPresent } from '@jupiterone/integration-sdk-runtime';
 import { executeWithLogging } from './process';
@@ -83,7 +83,15 @@ async function setupIntegration(integration: StarbaseIntegration) {
   if (await isDirectoryPresent(integration.directory)) {
     await updateIntegrationDirectory(integration.directory);
   } else {
-    await Clone.clone(integration.gitRemoteUrl, integration.directory);
+    const options: CloneOptions = {
+      fetchOpts: {
+        callbacks: {
+          certificateCheck: () => 0,
+        },
+      },
+    };
+
+    await Clone.clone(integration.gitRemoteUrl, integration.directory, options);
   }
 }
 
