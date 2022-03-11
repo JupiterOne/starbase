@@ -26,7 +26,7 @@
     "type-check": "tsc",
     "test": "jest && yarn format:check",
     "test:ci": "yarn lint && yarn type-check && yarn test",
-    "build": "tsc -p tsconfig.dist.json --declaration && cp README.md dist/README.md && cp LICENSE dist/LICENSE"
+    "build": "tsc -p tsconfig.dist.json --declaration && cp README.md dist/README.md && cp LICENSE dist/LICENSE && cp -r bin dist"
   },
   "dependencies": {
     "@jupiterone/integration-sdk-cli": "^8.4.4",
@@ -35,7 +35,8 @@
     "js-yaml": "^4.1.0",
     "lodash.snakecase": "^4.1.1",
     "nodegit": "^0.27.0",
-    "ts-node": "^10.4.0"
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.5"
   },
   "devDependencies": {
     "@jupiterone/integration-sdk-dev-tools": "^8.4.4",

@@ -1,0 +1,5 @@
+.github
+.integrations
+coverage
+dist
+docker
