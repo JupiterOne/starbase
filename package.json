@@ -29,8 +29,8 @@
     "build": "tsc -p tsconfig.dist.json --declaration && cp README.md dist/README.md && cp LICENSE dist/LICENSE && cp -r bin dist"
   },
   "dependencies": {
-    "@jupiterone/integration-sdk-cli": "^8.4.4",
-    "@jupiterone/integration-sdk-core": "^8.4.4",
+    "@jupiterone/integration-sdk-cli": "^8.6.1",
+    "@jupiterone/integration-sdk-core": "^8.6.1",
     "ajv": "^8.9.0",
     "js-yaml": "^4.1.0",
     "lodash.snakecase": "^4.1.1",
@@ -39,7 +39,7 @@
     "typescript": "^4.5.5"
   },
   "devDependencies": {
-    "@jupiterone/integration-sdk-dev-tools": "^8.4.4",
+    "@jupiterone/integration-sdk-dev-tools": "^8.6.1",
     "@types/js-yaml": "^4.0.5",
     "@types/lodash.snakecase": "^4.1.6",
     "@types/nodegit": "^0.27.7"
