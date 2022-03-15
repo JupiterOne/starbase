@@ -989,13 +989,6 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.18.9.tgz#0e5944eefe2b287391279a19b407aa98bd14436d"
   integrity sha512-j11XSuRuAlft6vLDEX4RvhqC0KxNxx6QIyMXNb0vHHSNPXTPeiy3algESWmOOIzEtiEL0qiowPU3ewW9hHVa7Q==
 
-"@types/nodegit@^0.27.7":
-  version "0.27.8"
-  resolved "https://registry.yarnpkg.com/@types/nodegit/-/nodegit-0.27.8.tgz#dc2b44f2e4afa5fb042d1c7014f8fd4d26e831bb"
-  integrity sha512-cpGhaCHsLmciFcrJti2CN2arQLMRfOYxiMwBlVx1MvshPedjsU4Lz+atIlpY3SLxGk5usk4d2pjjiLZyyk4AWw==
-  dependencies:
-    "@types/node" "*"
-
 "@types/parse-json@^4.0.0":
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@types/parse-json/-/parse-json-4.0.0.tgz#2f8bb441434d163b35fb8ffdccd7138927ffb8c0"

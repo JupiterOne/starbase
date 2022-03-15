@@ -41,8 +41,7 @@
   "devDependencies": {
     "@jupiterone/integration-sdk-dev-tools": "^8.6.1",
     "@types/js-yaml": "^4.0.5",
-    "@types/lodash.snakecase": "^4.1.6",
-    "@types/nodegit": "^0.27.7"
+    "@types/lodash.snakecase": "^4.1.6"
   },
   "volta": {
     "node": "14.19.0",
