@@ -8,6 +8,12 @@ and this project adheres to
 
 ## [Unreleased]
 
+### Changed
+
+- Swapped out `nodegit` for `simple-git` as it has a simpler interface and some
+  users encountered a known issue with `libgit2`/`nodegit` where OSX is unable
+  to verify certs from `github.com`
+
 ### Added
 
 - Commands to wipe and wipe-all now support the ability to wipe data in the
