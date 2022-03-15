@@ -93,7 +93,7 @@ async function setupIntegration(integration: StarbaseIntegration) {
  */
 async function updateIntegrationDirectory(directory: string) {
   const git = simpleGit(directory);
-  git.pull();
+  await git.pull();
 }
 
 export { setupStarbase };
