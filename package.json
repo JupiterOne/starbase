@@ -35,6 +35,7 @@
     "js-yaml": "^4.1.0",
     "lodash.snakecase": "^4.1.1",
     "nodegit": "^0.27.0",
+    "simple-git": "^3.3.0",
     "ts-node": "^10.4.0",
     "typescript": "^4.5.5"
   },

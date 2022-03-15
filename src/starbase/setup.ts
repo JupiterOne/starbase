@@ -1,4 +1,4 @@
-import { Clone, Reference, Repository } from 'nodegit';
+import simpleGit from 'simple-git';
 import { StarbaseConfig, StarbaseIntegration } from './types';
 import { isDirectoryPresent } from '@jupiterone/integration-sdk-runtime';
 import { executeWithLogging } from './process';
@@ -83,7 +83,7 @@ async function setupIntegration(integration: StarbaseIntegration) {
   if (await isDirectoryPresent(integration.directory)) {
     await updateIntegrationDirectory(integration.directory);
   } else {
-    await Clone.clone(integration.gitRemoteUrl, integration.directory);
+    simpleGit().clone(integration.gitRemoteUrl, integration.directory);
   }
 }
 
@@ -92,12 +92,8 @@ async function setupIntegration(integration: StarbaseIntegration) {
  * `main` branch
  */
 async function updateIntegrationDirectory(directory: string) {
-  let repo = await Repository.open(directory);
-  await repo.fetchAll();
-
-  const localMain: Reference = await repo.getCurrentBranch();
-  const originMain = await repo.getBranch('origin/main');
-  await repo.mergeBranches(localMain, originMain);
+  const git = simpleGit(directory);
+  git.pull();
 }
 
 export { setupStarbase };
