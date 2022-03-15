@@ -12,15 +12,12 @@ COPY [ \
   "yarn.lock", \
   "config.yaml", \
   "./" \
-]
+  ]
 
 RUN apt-get update && \
-  # nodegit dependencies
-  apt-get install -y \
-  libgssapi-krb5-2 \
-  ca-certificates
+  apt-get upgrade -y && \
+  apt-get install -y git
 
-RUN update-ca-certificates
 RUN yarn install
 
 ENTRYPOINT ["yarn", "starbase"]
