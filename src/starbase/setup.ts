@@ -83,7 +83,7 @@ async function setupIntegration(integration: StarbaseIntegration) {
   if (await isDirectoryPresent(integration.directory)) {
     await updateIntegrationDirectory(integration.directory);
   } else {
-    simpleGit().clone(integration.gitRemoteUrl, integration.directory);
+    await simpleGit().clone(integration.gitRemoteUrl, integration.directory);
   }
 }
 
