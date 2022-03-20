@@ -15,7 +15,7 @@
     "starbase": "./bin/starbase"
   },
   "scripts": {
-    "starbase": "ts-node ./src/index.ts",
+    "starbase": "ts-node --require dotenv/config ./src/index.ts",
     "starbase:help": "ts-node ./src/index.ts -h",
     "neo4j:start": "docker-compose -f docker/neo4j.yml up -d",
     "neo4j:start:plugins": "docker-compose -f docker/neo4j.yml -f docker/neo4jplugins.yml up -d",
