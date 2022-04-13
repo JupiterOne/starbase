@@ -8,6 +8,8 @@ and this project adheres to
 
 ## [Unreleased]
 
+## [0.2.0] - 2022-04-13
+
 ### Changed
 
 - Swapped out `nodegit` for `simple-git` as it has a simpler interface and some
