@@ -1,10 +1,16 @@
 {
   "name": "@jupiterone/starbase",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Orchestrator project for JupiterOne open source ingestion projects.",
   "repository": "https://github.com/JupiterOne/starbase.git",
   "author": "dev-integrations@jupiterone.com",
   "license": "MPL-2.0",
+  "files": [
+    "LICENSE",
+    "README.md",
+    "dist",
+    "bin"
+  ],
   "publishConfig": {
     "access": "public"
   },
@@ -26,7 +32,7 @@
     "type-check": "tsc",
     "test": "jest && yarn format:check",
     "test:ci": "yarn lint && yarn type-check && yarn test",
-    "build": "tsc -p tsconfig.dist.json --declaration && cp README.md dist/README.md && cp LICENSE dist/LICENSE && cp -r bin dist"
+    "build": "tsc -p tsconfig.dist.json --declaration"
   },
   "dependencies": {
     "@jupiterone/integration-sdk-cli": "^8.6.1",
