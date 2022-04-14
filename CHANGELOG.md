@@ -8,7 +8,10 @@ and this project adheres to
 
 ## [Unreleased]
 
+## [0.2.1] - 2022-04-14
+
 ### Fixed
+
 - Working on fix for Starbase npm package.
 
 ## [0.2.0] - 2022-04-13
