@@ -8,6 +8,12 @@ and this project adheres to
 
 ## [Unreleased]
 
+## [0.2.3] - 2022-04-15
+
+### Fixed
+
+- Updated CLI command in ./bin/starbase.
+
 ## [0.2.2] - 2022-04-14
 
 ### Fixed
