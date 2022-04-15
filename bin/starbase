@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-const { createCli } = require('../dist/src');
+const { createStarbaseCli } = require('../dist/src/cli');
 
-createCli()
+createStarbaseCli()
   .parseAsync(process.argv)
   .catch(err => {
     console.error(err);
