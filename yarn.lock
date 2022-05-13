@@ -646,10 +646,38 @@
     upath "^1.2.0"
     vis "^4.21.0-EOL"
 
+"@jupiterone/integration-sdk-cli@^8.13.6":
+  version "8.13.6"
+  resolved "https://registry.yarnpkg.com/@jupiterone/integration-sdk-cli/-/integration-sdk-cli-8.13.6.tgz#8be49344830ea6a36320a0fbd6cf6d15c8fd217e"
+  integrity sha512-kVBG83VSuLgSVzIpZSI2BImPqSa0oY0NQASb8K8gzMSoK4CoHPXtSJq4lrTu/HB5ZOJIzMXtBSbYKOTIzW/6DQ==
+  dependencies:
+    "@jupiterone/integration-sdk-runtime" "^8.13.6"
+    chalk "^4"
+    commander "^5.0.0"
+    fs-extra "^10.1.0"
+    globby "^11.0.0"
+    js-yaml "^4.1.0"
+    json-diff "^0.5.4"
+    lodash "^4.17.19"
+    markdown-table "^2.0.0"
+    neo4j-driver "^4.3.3"
+    runtypes "5.1.0"
+    upath "^1.2.0"
+    vis "^4.21.0-EOL"
+
 "@jupiterone/integration-sdk-core@^8.13.2":
   version "8.13.2"
   resolved "https://registry.yarnpkg.com/@jupiterone/integration-sdk-core/-/integration-sdk-core-8.13.2.tgz#b2e03f52a4f90fe971270ff159b5fdeda7eb9b41"
   integrity sha512-OWY3B5fzs/gaGCtb/Y6QtWv3TkDd4xWpir4FXqlb+LVqP5Lee/Vv0UhNJetRyHQhvK1D++CAtGZTKS73qipsiw==
+  dependencies:
+    "@jupiterone/data-model" "^0.47.0"
+    lodash "^4.17.21"
+    uuid "^8.3.2"
+
+"@jupiterone/integration-sdk-core@^8.13.6":
+  version "8.13.6"
+  resolved "https://registry.yarnpkg.com/@jupiterone/integration-sdk-core/-/integration-sdk-core-8.13.6.tgz#68741ac15f21eb7a3178158bea19f17d0878a66e"
+  integrity sha512-NFoAxX9xGcLtiYn7HBA1ooWkxD+yAMtbo9MAkW87527SEUVgBcjTei5bRyaeVhRUiPx6Ufj13Yi0ZCPva9TXUw==
   dependencies:
     "@jupiterone/data-model" "^0.47.0"
     lodash "^4.17.21"
@@ -683,6 +711,29 @@
   integrity sha512-2VIUyOAUrEHDUvY4tR3bPDe+N6ogEABidgyISD8KUIz0hUMw8ah+1JqMTXBO2BNW8nsLeDUcUu2evP66QEwI/g==
   dependencies:
     "@jupiterone/integration-sdk-core" "^8.13.2"
+    "@lifeomic/alpha" "^1.4.0"
+    "@lifeomic/attempt" "^3.0.3"
+    async-sema "^3.1.0"
+    axios "^0.21.1"
+    bunyan "^1.8.12"
+    bunyan-format "^0.2.1"
+    dependency-graph "^0.9.0"
+    dotenv "^8.2.0"
+    dotenv-expand "^5.1.0"
+    get-folder-size "^2.0.1"
+    globby "^11.0.0"
+    lodash "^4.17.15"
+    p-map "^4.0.0"
+    p-queue "^6.3.0"
+    rimraf "^3.0.2"
+    uuid "^7.0.3"
+
+"@jupiterone/integration-sdk-runtime@^8.13.6":
+  version "8.13.6"
+  resolved "https://registry.yarnpkg.com/@jupiterone/integration-sdk-runtime/-/integration-sdk-runtime-8.13.6.tgz#402021c9a68ca4d6ac2c231440fb7bb6d2e411a8"
+  integrity sha512-Xxle9ZTNA18T+Y42BNgJozgMnKpexg6j2YJQwaEDhfR9zDTlgYO1wB+yyiOiQ/nF406I6xiIvBNgaZ4plv+lIQ==
+  dependencies:
+    "@jupiterone/integration-sdk-core" "^8.13.6"
     "@lifeomic/alpha" "^1.4.0"
     "@lifeomic/attempt" "^3.0.3"
     async-sema "^3.1.0"
