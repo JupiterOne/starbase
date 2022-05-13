@@ -8,6 +8,13 @@ and this project adheres to
 
 ## [Unreleased]
 
+## [0.2.4] - 2022-05-13
+
+### Fixed
+
+- Bumped SDK version to pull in fix for issue where we would periodically see
+  duplicate nodes.
+
 ## [0.2.3] - 2022-05-05
 
 ### Changed
