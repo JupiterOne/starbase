@@ -2,7 +2,9 @@ import { StarbaseConfig, StarbaseIntegration } from './types';
 import { executeWithLogging } from './process';
 
 async function collectIntegrationData(integrationDirectory: string) {
-  await executeWithLogging(`yarn --cwd ${integrationDirectory} start;`);
+  await executeWithLogging(
+    `yarn --cwd ${integrationDirectory} start --disable-schema-validation;`,
+  );
 }
 
 async function writeIntegrationDataToNeo4j(
