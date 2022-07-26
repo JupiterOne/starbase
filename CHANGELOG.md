@@ -8,6 +8,8 @@ and this project adheres to
 
 ## [Unreleased]
 
+- Make customisable base container image available on GitHub Container Registry.
+
 ## [0.2.4] - 2022-05-13
 
 ### Fixed
