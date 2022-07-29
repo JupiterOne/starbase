@@ -32,7 +32,8 @@
     "type-check": "tsc",
     "test": "jest && yarn format:check",
     "test:ci": "yarn lint && yarn type-check && yarn test",
-    "build": "tsc -p tsconfig.dist.json --declaration"
+    "build": "tsc -p tsconfig.dist.json --declaration",
+    "postversion": "cp package.json ./dist/package.json"
   },
   "dependencies": {
     "@jupiterone/integration-sdk-cli": "^8.13.6",
@@ -47,10 +48,27 @@
   "devDependencies": {
     "@jupiterone/integration-sdk-dev-tools": "^8.11.0",
     "@types/js-yaml": "^4.0.5",
-    "@types/lodash.snakecase": "^4.1.6"
+    "@types/lodash.snakecase": "^4.1.6",
+    "auto": "^10.36.5"
   },
   "volta": {
     "node": "14.19.0",
     "yarn": "1.22.17"
+  },
+  "auto": {
+    "plugins": [
+      [
+        "npm",
+        {
+          "setRcToken": false,
+          "publishFolder": "./dist"
+        }
+      ],
+      "released"
+    ],
+    "onlyPublishWithReleaseLabel": true,
+    "shipit": {
+      "prerelease": false
+    }
   }
 }
