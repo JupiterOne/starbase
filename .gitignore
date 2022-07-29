@@ -8,3 +8,4 @@ docker/.neo4j/
 yarn-error.log
 dist/
 coverage/
+.npmrc
