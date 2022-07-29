@@ -225,6 +225,16 @@ locally install node and yarn.
 Note that macOS users in particular may see slower execution times when running
 Starbase in a Docker container.
 
+### Customizable Base Container Image
+
+We also make a
+[base container image available via GitHub Container Registry](https://github.com/jupiterone/starbase/pkgs/container/starbase).
+This image has only Starbase installed, without any configuration or graph
+integrations. This means you'll need to pass configuration to Starbase by making
+your `config.yaml` available to your running container, for example via a
+[Kubernetes ConfigMap](https://kubernetes.io/docs/concepts/configuration/configmap/#using-configmaps-as-files-from-a-pod),
+and run `starbase setup` to install your graph integrations before using them.
+
 ### Contributing
 
 Starbase is composed of three components:

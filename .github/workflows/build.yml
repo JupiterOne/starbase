@@ -6,7 +6,8 @@ on:
       - main
 
 jobs:
-  test:
+  # Test starbase itself
+  test-starbase:
     runs-on: ubuntu-latest
     steps:
       - id: setup-node
@@ -27,10 +28,33 @@ jobs:
       - name: Run build
         run: yarn build
 
+  # Test Starbase base container image build
+  build-dist-docker-image:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Extract metadata (tags, labels) for Docker
+        id: meta
+        uses: docker/metadata-action@v4
+        with:
+          images: ghcr.io/${{ github.repository }}
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Build
+        uses: docker/build-push-action@v3
+        with:
+          file: dist.Dockerfile
+          push: false # only build the image, don't push it anywhere
+          context: .
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+
   # Publishing is done in a separate job to allow
   # for all matrix builds to complete.
   release:
-    needs: test
+    needs: test-starbase
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
     steps:
