@@ -9,3 +9,5 @@ yarn-error.log
 dist/
 coverage/
 .npmrc
+
+/site
