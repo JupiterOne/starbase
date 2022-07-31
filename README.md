@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="./img/branding/logo-light-bg.png" alt="Starbase Logo" width="250" /></br></br>
+  <img src="./docs/assets/logo-light-bg.png" alt="Starbase Logo" width="250" /></br></br>
   <strong style="font-size:75px;">Democratizing graph-based security analysis 🚀</strong>
 </h1></br>
 
@@ -17,7 +17,7 @@ Our team believes that in order to secure any system or service, you must have:
 - **Knowledge** of what questions to ask about what you have
 
 <p align="center">
-  <img src="./img/starbase-demo.gif" alt="Starbase Demo"/>
+  <img src="./docs/assets/starbase-demo.gif" alt="Starbase Demo"/>
 </p>
 
 ## Why Starbase?

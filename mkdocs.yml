@@ -1,0 +1,40 @@
+site_name: Starbase
+site_url: https://jupiterone.com/
+repo_url: https://github.com/jupiterone/starbase
+edit_uri: edit/main/docs/
+nav:
+  - About: index.md
+  - Getting Started:
+      - Installation: installation.md
+      - Docker: docker.md
+  - Integrations:
+      - Integrations Overview: integrations/index.md
+      - Azure: integrations/azure.md
+      - Google Cloud: integrations/azure.md
+  - Contact: contact.md
+theme:
+  name: 'material'
+  logo: assets/logo.svg
+  favicon: assets/logo.svg
+  font:
+    text: Lato
+  palette:
+    scheme: starbase
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.tabs.sticky
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+extra_css:
+  - stylesheets/layout.css
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/jupiterone/starbase
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/jupiterone
+    - icon: fontawesome/brands/slack
+      link: https://twitter.com/jupiterone
