@@ -10,7 +10,7 @@ nav:
   - Integrations:
       - Integrations Overview: integrations/index.md
       - Azure: integrations/azure.md
-      - Google Cloud: integrations/azure.md
+      - Google Cloud: integrations/google-cloud.md
   - Contact: contact.md
 theme:
   name: 'material'
