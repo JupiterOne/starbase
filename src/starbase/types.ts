@@ -15,6 +15,7 @@ interface Neo4jStorageConfig {
   username: string;
   password: string;
   uri: string;
+  database?: string;
 }
 
 export type Neo4jStorage = StarbaseStorage<Neo4jStorageConfig>;
