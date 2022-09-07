@@ -10,9 +10,10 @@ async function collectIntegrationData(integrationDirectory: string) {
 async function writeIntegrationDataToNeo4j(
   integrationInstanceId: string,
   integrationDirectory: string,
+  integrationDatabase: string = 'neo4j',
 ) {
   await executeWithLogging(
-    `yarn j1-integration neo4j push -i ${integrationInstanceId} -d ${integrationDirectory}/.j1-integration`,
+    `yarn j1-integration neo4j push -i ${integrationInstanceId} -d ${integrationDirectory}/.j1-integration -db ${integrationDatabase}`,
   );
 }
 
@@ -27,6 +28,7 @@ async function executeIntegration<TConfig>(
     await writeIntegrationDataToNeo4j(
       integration.instanceId,
       integration.directory,
+      starbaseConfig.storage?.config?.database,
     );
   }
 }
