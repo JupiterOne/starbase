@@ -29,6 +29,8 @@ export function wipeAll() {
       'neo4j',
     )
     .action(async (options) => {
-      executeWithLogging(`yarn j1-integration neo4j wipe-all -db ${options.databaseName}`);
+      executeWithLogging(
+        `yarn j1-integration neo4j wipe-all -db ${options.databaseName}`,
+      );
     });
 }
