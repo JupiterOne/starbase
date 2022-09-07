@@ -177,6 +177,7 @@ cp config.yaml.example config.yaml
 >     username: neo4j
 >     password: devpass
 >     uri: bolt://localhost:7687
+>     database: neo4j
 > ```
 
 ### Running Starbase
