@@ -1,3 +1,17 @@
+# v0.3.1 (Wed Sep 07 2022)
+
+#### 🐛 Bug Fix
+
+- Adding in optional Neo4j database name configuration [#78](https://github.com/JupiterOne/starbase/pull/78) ([@adam-in-ict](https://github.com/adam-in-ict))
+- Initial Starbase documentation website [#75](https://github.com/JupiterOne/starbase/pull/75) ([@austinkelleher](https://github.com/austinkelleher))
+
+#### Authors: 2
+
+- Adam Pierson ([@adam-in-ict](https://github.com/adam-in-ict))
+- Austin Kelleher ([@austinkelleher](https://github.com/austinkelleher))
+
+---
+
 # Changelog
 
 All notable changes to this project will be documented in this file.
