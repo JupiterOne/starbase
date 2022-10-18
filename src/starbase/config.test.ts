@@ -39,15 +39,17 @@ const testConfig: StarbaseConfig = {
       },
     },
   ],
-  storage: {
-    engine: 'neo4j',
-    config: {
-      username: 'neo4j',
-      password: 'devpass',
-      uri: 'bolt://localhost:7687',
-      database: 'neo4j',
+  storage: [
+    {
+      engine: 'neo4j',
+      config: {
+        username: 'neo4j',
+        password: 'devpass',
+        uri: 'bolt://localhost:7687',
+        database: 'neo4j',
+      },
     },
-  },
+  ],
 };
 
 describe('#parseConfig', () => {

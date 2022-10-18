@@ -36,7 +36,10 @@ const configSchema: Schema = {
       type: 'array',
       items: integrationSchema,
     },
-    storage: storageSchema,
+    storage: {
+      type: 'array',
+      items: storageSchema,
+    },
   },
 };
 
@@ -54,11 +57,23 @@ function integrationConfigToEnvFormat(config: StarbaseIntegration['config']) {
  * This is the `.env` file that is written to the root of the Starbase project.
  */
 async function writeNeo4jRootConfig(storage: StarbaseStorage) {
-  await fs.writeFile(
+  await fs.appendFile(
     '.env',
     `NEO4J_URI=${storage.config.uri}
 NEO4J_USER=${storage.config.username}
 NEO4J_PASSWORD=${storage.config.password}
+`,
+  );
+}
+
+async function writeJ1RootConfig(storage: StarbaseStorage) {
+  await fs.appendFile(
+    '.env',
+    `JUPITERONE_API_KEY=${storage.config.apiKey}
+JUPITERONE_ACCOUNT=${storage.config.accountId}
+JUPITERONE_API_BASEURL=${
+      storage.config.apiBaseUrl || 'https://api.us.jupiterone.io'
+    }
 `,
   );
 }
@@ -128,5 +143,6 @@ export {
   parseConfigYaml,
   writeIntegrationConfig,
   writeNeo4jRootConfig,
+  writeJ1RootConfig,
   integrationConfigToEnvFormat,
 };
