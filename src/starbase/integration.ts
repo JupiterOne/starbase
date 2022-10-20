@@ -27,12 +27,11 @@ async function writeIntegrationDataToJupiterOne(
   integrationDirectory: string,
   storageConfig: JupiterOneStorage,
 ) {
-  const isDev = storageConfig.config.apiBaseUrl?.match(/dev/) || false;
-  const optDevFlags = isDev
+  const optApiUrl = storageConfig.config.apiBaseUrl
     ? `--api-base-url ${storageConfig.config.apiBaseUrl}`
     : '';
   await executeWithLogging(
-    `yarn j1-integration sync -i ${integrationInstanceId} -p ${integrationDirectory} ${optDevFlags}`,
+    `yarn j1-integration sync -i ${integrationInstanceId} -p ${integrationDirectory} ${optApiUrl}`,
   );
 }
 
