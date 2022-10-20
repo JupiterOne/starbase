@@ -172,12 +172,12 @@ cp config.yaml.example config.yaml
 >       ORGANIZATION_ID: '...'
 >       CONFIGURE_ORGANIZATION_PROJECTS: false
 > storage:
->   engine: neo4j
->   config:
->     username: neo4j
->     password: devpass
->     uri: bolt://localhost:7687
->     database: neo4j
+>   - engine: neo4j
+>     config:
+>       username: neo4j
+>       password: devpass
+>       uri: bolt://localhost:7687
+>       database: neo4j
 > ```
 
 ### Running Starbase

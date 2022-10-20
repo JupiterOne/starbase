@@ -2,8 +2,12 @@
 
 #### 🐛 Bug Fix
 
-- Adding in optional Neo4j database name configuration [#78](https://github.com/JupiterOne/starbase/pull/78) ([@adam-in-ict](https://github.com/adam-in-ict))
-- Initial Starbase documentation website [#75](https://github.com/JupiterOne/starbase/pull/75) ([@austinkelleher](https://github.com/austinkelleher))
+- Adding in optional Neo4j database name configuration
+  [#78](https://github.com/JupiterOne/starbase/pull/78)
+  ([@adam-in-ict](https://github.com/adam-in-ict))
+- Initial Starbase documentation website
+  [#75](https://github.com/JupiterOne/starbase/pull/75)
+  ([@austinkelleher](https://github.com/austinkelleher))
 
 #### Authors: 2
 

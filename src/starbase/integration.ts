@@ -1,5 +1,10 @@
-import { StarbaseConfig, StarbaseIntegration } from './types';
+import {
+  JupiterOneStorage,
+  StarbaseConfig,
+  StarbaseIntegration,
+} from './types';
 import { executeWithLogging } from './process';
+import { StarbaseConfigurationError } from './error';
 
 async function collectIntegrationData(integrationDirectory: string) {
   await executeWithLogging(
@@ -17,6 +22,19 @@ async function writeIntegrationDataToNeo4j(
   );
 }
 
+async function writeIntegrationDataToJupiterOne(
+  integrationInstanceId: string,
+  integrationDirectory: string,
+  storageConfig: JupiterOneStorage,
+) {
+  const optApiUrl = storageConfig.config.apiBaseUrl
+    ? `--api-base-url ${storageConfig.config.apiBaseUrl}`
+    : '';
+  await executeWithLogging(
+    `yarn j1-integration sync -i ${integrationInstanceId} -p ${integrationDirectory} ${optApiUrl}`,
+  );
+}
+
 async function executeIntegration<TConfig>(
   integration: StarbaseIntegration<TConfig>,
   starbaseConfig: StarbaseConfig,
@@ -24,12 +42,28 @@ async function executeIntegration<TConfig>(
   await collectIntegrationData(integration.directory);
 
   // TODO: Remove this in favor of custom storage engine handler functions.
-  if (starbaseConfig.storage?.engine === 'neo4j') {
-    await writeIntegrationDataToNeo4j(
-      integration.instanceId,
-      integration.directory,
-      starbaseConfig.storage?.config?.database,
-    );
+
+  for (const storageConfig of starbaseConfig.storage || []) {
+    switch (storageConfig.engine) {
+      case 'neo4j':
+        await writeIntegrationDataToNeo4j(
+          integration.instanceId,
+          integration.directory,
+          storageConfig.config?.database,
+        );
+        break;
+      case 'jupiterone':
+        await writeIntegrationDataToJupiterOne(
+          integration.instanceId,
+          integration.directory,
+          storageConfig,
+        );
+        break;
+      default:
+        throw new StarbaseConfigurationError(
+          `Invalid storage engine supplied: '${storageConfig.engine}'.`,
+        );
+    }
   }
 }
 
