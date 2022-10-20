@@ -1,3 +1,15 @@
+# v0.5.0 (Thu Oct 20 2022)
+
+#### 🚀 Enhancement
+
+- Add 'jupiterone' storage engine [#79](https://github.com/JupiterOne/starbase/pull/79) ([@erichs](https://github.com/erichs))
+
+#### Authors: 1
+
+- Erich Smith ([@erichs](https://github.com/erichs))
+
+---
+
 # v0.3.1 (Wed Sep 07 2022)
 
 #### 🐛 Bug Fix
