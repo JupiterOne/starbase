@@ -1,6 +1,6 @@
 {
   "name": "@jupiterone/starbase",
-  "version": "0.4.3",
+  "version": "0.5.0",
   "description": "Orchestrator project for JupiterOne open source ingestion projects.",
   "repository": "https://github.com/JupiterOne/starbase.git",
   "author": "dev-integrations@jupiterone.com",
