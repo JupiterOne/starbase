@@ -28,8 +28,9 @@ function onSkipIntegrationExecution({
 export function run() {
   return createCommand('run')
     .description('collect and upload entities and relationships')
-    .action(async () => {
-      await executeStarbase(await parseConfigYaml('config.yaml'), {
+    .action(async (cmd) => {
+      const config = cmd.parent.config;
+      await executeStarbase(await parseConfigYaml(config), {
         onSkipIntegrationExecution,
       });
     });
