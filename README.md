@@ -35,8 +35,8 @@ Starbase offers three key advantages:
 ## Available Integrations / Connectors
 
 Starbase supports
-[70+](https://github.com/jupiterone?q=graph-&type=all&language=&sort=) open
-source graph integrations!
+[115+](https://github.com/orgs/JupiterOne/repositories?q=graph-++in%3Aname&type=public&language=&sort=)
+open source graph integrations!
 
 Here are some highlights:
 
@@ -193,7 +193,8 @@ Usage: yarn starbase [options] [command]
 Starbase graph ingestion orchestrator
 
 Options:
-  -h, --help      display help for command
+  -c, --config <path>  optional path to config file (default: "config.yaml")
+  -h, --help           display help for command
 
 Commands:
   run             collect and upload entities and relationships
@@ -206,8 +207,8 @@ Commands:
 2. Run `yarn starbase run` to collect data for each listed integration and then
    push collected data to the storage endpoint listed in `config.yaml`.
 
-For additional information on using Neo4j as a storage endpoint, please see the
-[README.md](docker/README.md) provided.
+For additional information on using Neo4j or JupiterOne as a storage endpoint,
+please see the [README.md](docker/README.md) provided.
 
 ### Running Starbase - Docker
 

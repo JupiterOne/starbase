@@ -33,3 +33,36 @@ for Windows and Mac includes Docker Composer. Linux users will need to install
 [Docker Engine](https://docs.docker.com/engine/install/) and
 [Docker Composer](https://docs.docker.com/compose/install/) manually until
 Docker Desktop for Linux is available.
+
+# JupiterOne as a Storage Endpoint
+
+In addition to a local Neo4J storage endpoint, Starbase supports a remote
+JupiterOne storage endpoint, allowing you to run your integrations locally (or
+on-premise) and persist your integration data directly to a configured
+JupiterOne account.
+
+You may specify multiple storage endpoints in the `storage` list, for example if
+you also wanted to persist data to a local Neo4J storage endpoint.
+
+## Configuring the JupiterOne Storage Endpoint
+
+Add a configuration stanza like the following to your `config.yaml`:
+
+```
+storage:
+  -
+    engine: jupiterone
+    config:
+      apiKey: your-unique-api-key  (may be either user or account key, needs graph write permission)
+      accountId: your-j1-account-id
+```
+
+NOTE: if the canonical API URL for your account/region is not
+`https://api.us.jupiterone.io`, you will need to specify an additional storage
+configuration parameter, `apiBaseUrl`, with the HTTPS URL appropriate for the
+token and account you've provided.
+
+See [JupiterOne API](https://community.askj1.com/kb/articles/794-jupiterone-api)
+and
+[Creating User and Account API Keys](https://community.askj1.com/kb/articles/785-creating-user-and-account-api-keys)
+docs for additional details.
