@@ -2,7 +2,9 @@
 
 #### 🚀 Enhancement
 
-- Add 'jupiterone' storage engine [#79](https://github.com/JupiterOne/starbase/pull/79) ([@erichs](https://github.com/erichs))
+- Add 'jupiterone' storage engine
+  [#79](https://github.com/JupiterOne/starbase/pull/79)
+  ([@erichs](https://github.com/erichs))
 
 #### Authors: 1
 
