@@ -4,6 +4,7 @@ Starbase can also be run inside of Docker, minimizing the need to locally
 install node and yarn.
 
 ## Execution Flow Diagram
+
 ```mermaid
 sequenceDiagram
     participant Docker
