@@ -47,10 +47,16 @@ async function checkInstanceConfigFields(
         // of our integrations.
         const capsConfig = Object.assign(
           {},
-          ...Object.keys(invocationConfig.instanceConfigFields).map((key) => ({
-            [snakecase(key).toUpperCase()]:
-              invocationConfig.instanceConfigFields[key],
-          })),
+          ...Object.keys(invocationConfig.instanceConfigFields)
+            .filter(function (key) {
+              // Explicitly filter out optional config fields before performing schema check
+              if (!invocationConfig.instanceConfigFields[key]?.optional)
+                return key;
+            })
+            .map((key) => ({
+              [snakecase(key).toUpperCase()]:
+                invocationConfig.instanceConfigFields[key],
+            })),
         );
         const integrationSchema: Schema = {
           type: 'object',
