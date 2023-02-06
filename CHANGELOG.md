@@ -1,3 +1,19 @@
+# v0.6.0 (Mon Feb 06 2023)
+
+#### 🚀 Enhancement
+
+- Bumping minor revision to fix past manual tag creation [#87](https://github.com/JupiterOne/starbase/pull/87) ([@adam-in-ict](https://github.com/adam-in-ict))
+
+#### 🐛 Bug Fix
+
+- Updating to latest SDK [#86](https://github.com/JupiterOne/starbase/pull/86) ([@adam-in-ict](https://github.com/adam-in-ict))
+
+#### Authors: 1
+
+- Adam Pierson ([@adam-in-ict](https://github.com/adam-in-ict))
+
+---
+
 # v0.5.0 (Thu Oct 20 2022)
 
 #### 🚀 Enhancement
