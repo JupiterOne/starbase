@@ -118,6 +118,7 @@ Here are some highlights:
 - [Trend Micro](https://github.com/jupiterone/graph-trend-micro)
 - [Veracode](https://github.com/jupiterone/graph-veracode)
 - [Vuls Findings](https://github.com/jupiterone/graph-vuls-findings)
+= [vSphere](https://github.com/jupiterone/graph-vsphere)
 - [Wazuh](https://github.com/jupiterone/graph-wazuh)
 - [WhiteHat](https://github.com/jupiterone/graph-whitehat)
 - [Whois](https://github.com/jupiterone/graph-whois)
