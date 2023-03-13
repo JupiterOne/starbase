@@ -8,6 +8,10 @@ async function executeWithLogging(command: string) {
       childProcess.stdout.pipe(process.stdout);
     }
 
+    if (childProcess.stderr) {
+      childProcess.stderr.pipe(process.stderr);
+    }
+
     childProcess.on('exit', () => {
       resolve();
     });
