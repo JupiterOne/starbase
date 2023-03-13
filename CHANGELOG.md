@@ -1,3 +1,20 @@
+# v0.7.0 (Mon Mar 13 2023)
+
+#### 🚀 Enhancement
+
+- Merge branch 'dependabot/npm_and_yarn/simple-git-3.16.0' of https://github.com/JupiterOne/starbase into expose-stderr [#88](https://github.com/JupiterOne/starbase/pull/88) ([@adam-in-ict](https://github.com/adam-in-ict))
+
+#### 🐛 Bug Fix
+
+- Exposing stderr output [#89](https://github.com/JupiterOne/starbase/pull/89) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@adam-in-ict](https://github.com/adam-in-ict))
+
+#### Authors: 2
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Adam Pierson ([@adam-in-ict](https://github.com/adam-in-ict))
+
+---
+
 # v0.6.0 (Mon Feb 06 2023)
 
 #### 🚀 Enhancement
