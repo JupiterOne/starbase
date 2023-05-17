@@ -33,9 +33,22 @@ interface JupiterOneStorageEngineConfig {
   apiBaseUrl?: string;
 }
 
+interface SupabaseStorageEngineConfig {
+  /**
+   * The Supabase API key to authenticate with
+   */
+  apiKey: string;
+  /**
+   * The base project URL
+   */
+  apiBaseUrl: string;
+}
+
 export type Neo4jStorage = StarbaseStorage<Neo4jStorageEngineConfig>;
 
 export type JupiterOneStorage = StarbaseStorage<JupiterOneStorageEngineConfig>;
+
+export type SupabaseStorage = StarbaseStorage<SupabaseStorageEngineConfig>;
 
 export type StarbaseConfig = {
   integrations: StarbaseIntegration[];

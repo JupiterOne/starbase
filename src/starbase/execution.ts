@@ -21,6 +21,9 @@ async function setupStarbaseStorageEngine(starbaseConfig: StarbaseConfig) {
       case 'jupiterone':
         await writeJ1RootConfig(storageConfig);
         break;
+      case 'supabase':
+        // NOP
+        break;
       default:
         throw new StarbaseConfigurationError(
           `Invalid storage engine supplied: '${storageConfig.engine}'.`,

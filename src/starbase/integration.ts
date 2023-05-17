@@ -1,10 +1,15 @@
 import {
   JupiterOneStorage,
+  SupabaseStorage,
   StarbaseConfig,
   StarbaseIntegration,
 } from './types';
+import { findGraphEntityJSONFiles } from './util';
 import { executeWithLogging } from './process';
 import { StarbaseConfigurationError } from './error';
+import { createClient } from '@supabase/supabase-js';
+import fs from 'node:fs/promises';
+import path from 'path';
 
 async function collectIntegrationData(integrationDirectory: string) {
   await executeWithLogging(
@@ -35,6 +40,41 @@ async function writeIntegrationDataToJupiterOne(
   );
 }
 
+async function writeIntegrationDataToSupabase(
+  integrationInstanceId: string,
+  integrationDirectory: string,
+  storageConfig: SupabaseStorage,
+) {
+  const supabaseUrl = storageConfig.config.apiBaseUrl;
+  const supabaseKey = storageConfig.config.apiKey;
+  const supabase = createClient(supabaseUrl, supabaseKey);
+
+  try {
+    const entityFiles = await findGraphEntityJSONFiles(
+      path.join(integrationDirectory, '.j1-integration'),
+    );
+    for (const entityFile of entityFiles) {
+      const entityData = await fs.readFile(entityFile, 'utf8');
+      // peek at the first entity to determine the entity type being uploaded
+      const object = JSON.parse(entityData);
+      const entityType = object.entities[0]._type;
+      const uploadFileName = `${entityType}.json`;
+      const { error } = await supabase.storage
+        .from('integration-data')
+        .upload(uploadFileName, entityData);
+      if (error) {
+        console.warn(
+          `Error uploading ${uploadFileName} to Supabase: ${error.message}`,
+        );
+      } else {
+        console.log(`Uploaded ${uploadFileName} to Supabase.`);
+      }
+    }
+  } catch (err) {
+    console.log(err);
+  }
+}
+
 async function executeIntegration<TConfig>(
   integration: StarbaseIntegration<TConfig>,
   starbaseConfig: StarbaseConfig,
@@ -59,6 +99,13 @@ async function executeIntegration<TConfig>(
           storageConfig,
         );
         break;
+      case 'supabase':
+        await writeIntegrationDataToSupabase(
+          integration.instanceId,
+          integration.directory,
+          storageConfig,
+        );
+        break;
       default:
         throw new StarbaseConfigurationError(
           `Invalid storage engine supplied: '${storageConfig.engine}'.`,
@@ -71,4 +118,6 @@ export {
   executeIntegration,
   collectIntegrationData,
   writeIntegrationDataToNeo4j,
+  writeIntegrationDataToJupiterOne,
+  writeIntegrationDataToSupabase,
 };
