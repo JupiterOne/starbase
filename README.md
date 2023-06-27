@@ -273,11 +273,6 @@ The history of this project's development can be viewed at
 Join us on `#starbase` on the
 [JupiterOne Community Slack](https://join.slack.com/t/jupiterone-community/shared_invite/zt-9b0a2htx-m8PmSWMbkjqCzF2dIZiabw).
 
-## JupiterOne
-
-If this is too much work, you can create a free cloud-hosted account at
-https://login.us.jupiterone.io/sign-up.
-
 [^1]:
     JupiterOne Starbase and the
     [Lyft Cartography](https://github.com/lyft/cartography) projects complement
