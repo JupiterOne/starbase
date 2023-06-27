@@ -1,5 +1,5 @@
 # Dockerfile for distributed base image without any user configuration present, see README
-FROM node:14-buster-slim
+FROM node:18-buster-slim
 
 ENV APP_DIR=/opt/jupiterone/starbase
 WORKDIR ${APP_DIR}
