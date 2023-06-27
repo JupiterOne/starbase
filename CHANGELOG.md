@@ -1,3 +1,19 @@
+# v0.8.0 (Tue Jun 27 2023)
+
+#### 🚀 Enhancement
+
+- Update to use Node.js 18 [#95](https://github.com/JupiterOne/starbase/pull/95) ([@austinkelleher](https://github.com/austinkelleher))
+
+#### 🐛 Bug Fix
+
+- Remove J1 free account reference [#94](https://github.com/JupiterOne/starbase/pull/94) ([@austinkelleher](https://github.com/austinkelleher))
+
+#### Authors: 1
+
+- Austin Kelleher ([@austinkelleher](https://github.com/austinkelleher))
+
+---
+
 # v0.7.0 (Mon Mar 13 2023)
 
 #### 🚀 Enhancement
