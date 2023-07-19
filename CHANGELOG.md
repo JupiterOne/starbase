@@ -1,3 +1,20 @@
+# v0.9.0 (Wed Jul 19 2023)
+
+#### 🚀 Enhancement
+
+- Revising node version requirements [#98](https://github.com/JupiterOne/starbase/pull/98) ([@dependabot[bot]](https://github.com/dependabot[bot]) [@adam-in-ict](https://github.com/adam-in-ict))
+
+#### 🐛 Bug Fix
+
+- Merge branch 'dependabot/npm_and_yarn/word-wrap-1.2.4' of https://github.com/JupiterOne/starbase into revise-engine-requirements [#96](https://github.com/JupiterOne/starbase/pull/96) ([@adam-in-ict](https://github.com/adam-in-ict))
+
+#### Authors: 2
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Adam Pierson ([@adam-in-ict](https://github.com/adam-in-ict))
+
+---
+
 # v0.8.0 (Tue Jun 27 2023)
 
 #### 🚀 Enhancement
