@@ -6,7 +6,7 @@
 Starbase from [JupiterOne](https://jupiterone.com), collects assets and
 relationships from services and systems including cloud infrastructure, SaaS
 applications, security controls, and more into an intuitive graph view backed by
-the [Neo4j](https://neo4j.com/) database.
+the [Memgraph](https://memgraph.com/) or [Neo4j](https://neo4j.com/) database.
 
 **Security is a basic right**. Starbase's goal is to **democratize graph-based
 security analysis** and overall visibility into external services and systems.
@@ -208,8 +208,8 @@ Commands:
 2. Run `yarn starbase run` to collect data for each listed integration and then
    push collected data to the storage endpoint listed in `config.yaml`.
 
-For additional information on using Neo4j or JupiterOne as a storage endpoint,
-please see the [README.md](docker/README.md) provided.
+For additional information on using Memgraph, Neo4j or JupiterOne as a storage 
+endpoint, please see the [README.md](docker/README.md) provided.
 
 ### Running Starbase - Docker
 
@@ -276,8 +276,8 @@ Join us on `#starbase` on the
 [^1]:
     JupiterOne Starbase and the
     [Lyft Cartography](https://github.com/lyft/cartography) projects complement
-    each other as both projects push graph data to a Neo4j database instance. As
-    such, users of Starbase can leverage the AWS connector from Cartography to
+    each other as both projects push graph data to Memgraph or Neo4j database instance. 
+    As such, users of Starbase can leverage the AWS connector from Cartography to
     ingest AWS assets and relationships. A more comprehensive AWS integration is
     used by the [cloud hosted JupiterOne platform](https://jupiterone.com) and
     we are considering open sourcing the JupiterOne AWS integration in the
