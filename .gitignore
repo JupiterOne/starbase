@@ -5,7 +5,9 @@ tsconfig.tsbuildinfo
 config.yaml
 .env
 docker/.neo4j/
-docker/.memgraph/
+docker/mg_lib
+docker/mg_log
+docker/mg_etc
 yarn-error.log
 dist/
 coverage/

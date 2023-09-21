@@ -18,9 +18,9 @@ integrations:
       ORGANIZATION_SLUG: example-organization
 storage:
   - 
-    engine: neo4j
-    config: 
-      username: neo4j
-      password: devpass
-      uri: bolt://localhost:7687
-      database: neo4j
+      engine: memgraph
+      config: 
+        username:
+        password:
+        uri: bolt://localhost:7687
+        database: memgraph
