@@ -1,0 +1,12 @@
+openapi: 3.0.1
+info:
+  title: '@jupiterone/starbase'
+  description: Orchestrator project for JupiterOne open source ingestion projects.
+  x-cortex-git:
+    github:
+      repository: JupiterOne/starbase
+  x-cortex-owners:
+    - type: group
+      name: JupiterOne/integrations
+  x-cortex-service-groups: tier-4
+  x-cortex-tag: '@jupiterone/starbase'
