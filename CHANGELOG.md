@@ -1,3 +1,20 @@
+# v0.10.0 (Fri Oct 20 2023)
+
+#### 🚀 Enhancement
+
+- Bump @babel/traverse from 7.16.10 to 7.23.2 [#106](https://github.com/JupiterOne/starbase/pull/106) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+
+#### ⚠️ Pushed to `main`
+
+- Populate CODEOWENRS, baseline package.json and baseline cortex.yaml ([@jablonnc](https://github.com/jablonnc))
+
+#### Authors: 2
+
+- [@dependabot[bot]](https://github.com/dependabot[bot])
+- Noah Jablonski ([@jablonnc](https://github.com/jablonnc))
+
+---
+
 # v0.9.0 (Wed Jul 19 2023)
 
 #### 🚀 Enhancement
