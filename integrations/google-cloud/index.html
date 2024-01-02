@@ -1,0 +1,2475 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://jupiterone.com/integrations/google-cloud/">
+      
+      
+        <link rel="prev" href="../azure/">
+      
+      
+        <link rel="next" href="../../contact/">
+      
+      
+      <link rel="icon" href="../../assets/logo.svg">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
+    
+    
+      
+        <title>Google Cloud - Starbase</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.50c56a3b.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Lato";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/layout.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="starbase" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#google-cloud" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Starbase" class="md-header__button md-logo" aria-label="Starbase" data-md-component="logo">
+      
+  <img src="../../assets/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Starbase
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Google Cloud
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/jupiterone/starbase" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  About
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../installation/" class="md-tabs__link">
+          
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  Integrations
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../contact/" class="md-tabs__link">
+        
+  
+    
+  
+  Contact
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Starbase" class="md-nav__button md-logo" aria-label="Starbase" data-md-component="logo">
+      
+  <img src="../../assets/logo.svg" alt="logo">
+
+    </a>
+    Starbase
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/jupiterone/starbase" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting Started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Integrations
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Integrations
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Integrations Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../azure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Azure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Google Cloud
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Google Cloud
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#google-cloud-jupiterone-integration-benefits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Google Cloud + JupiterOne Integration Benefits
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How it Works
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requirements
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#support" class="md-nav__link">
+    <span class="md-ellipsis">
+      Support
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-walkthrough" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integration Walkthrough
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Integration Walkthrough">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#in-google-cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      In Google Cloud
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="In Google Cloud">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enabling-google-cloud-service-api-from-google-cloud-console" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enabling Google Cloud Service API from Google Cloud Console
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enabling-google-cloud-service-api-from-gcloud-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enabling Google Cloud Service API from gcloud CLI
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-google-cloud-project-service-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating Google Cloud project service account
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generate-a-service-account-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generate a service account key
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jupiterone-google-cloud-organization" class="md-nav__link">
+    <span class="md-ellipsis">
+      JupiterOne + Google Cloud Organization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="JupiterOne + Google Cloud Organization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in-jupiterone" class="md-nav__link">
+    <span class="md-ellipsis">
+      In JupiterOne
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-uninstall" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Uninstall
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Model
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#entities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entities
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relationships" class="md-nav__link">
+    <span class="md-ellipsis">
+      Relationships
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#google-cloud-jupiterone-integration-benefits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Google Cloud + JupiterOne Integration Benefits
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How it Works
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requirements
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#support" class="md-nav__link">
+    <span class="md-ellipsis">
+      Support
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-walkthrough" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integration Walkthrough
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Integration Walkthrough">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#in-google-cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      In Google Cloud
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="In Google Cloud">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enabling-google-cloud-service-api-from-google-cloud-console" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enabling Google Cloud Service API from Google Cloud Console
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enabling-google-cloud-service-api-from-gcloud-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enabling Google Cloud Service API from gcloud CLI
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-google-cloud-project-service-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating Google Cloud project service account
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generate-a-service-account-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generate a service account key
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jupiterone-google-cloud-organization" class="md-nav__link">
+    <span class="md-ellipsis">
+      JupiterOne + Google Cloud Organization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="JupiterOne + Google Cloud Organization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in-jupiterone" class="md-nav__link">
+    <span class="md-ellipsis">
+      In JupiterOne
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-uninstall" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to Uninstall
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Model
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#entities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entities
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relationships" class="md-nav__link">
+    <span class="md-ellipsis">
+      Relationships
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="google-cloud">Google Cloud</h1>
+<h2 id="google-cloud-jupiterone-integration-benefits">Google Cloud + JupiterOne Integration Benefits</h2>
+<ul>
+<li>Visualize Google Cloud resources in the JupiterOne graph.</li>
+<li>Map Google users to employees in your JupiterOne account.</li>
+<li>Monitor visibility and governance of your Google Cloud environment by
+  leveraging hundreds of out of the box queries.</li>
+<li>Monitor compliance against the Google Cloud CIS Framework and other security
+  benchmarks using the JupiterOne compliance app.</li>
+<li>Monitor changes to your Google Cloud resources using multiple JupiterOne alert
+  rule packs specific to Google Cloud.</li>
+</ul>
+<h2 id="how-it-works">How it Works</h2>
+<ul>
+<li>JupiterOne periodically fetches users and cloud resources from Google Cloud to
+  update the graph.</li>
+<li>Write JupiterOne queries to review and monitor updates to the graph, or
+  leverage existing queries.</li>
+<li>Configure alerts to take action when the JupiterOne graph changes, or leverage
+  existing alerts.</li>
+</ul>
+<h2 id="requirements">Requirements</h2>
+<ul>
+<li>JupiterOne requires the contents of a Google Cloud service account key file
+  with the correct API services enabled (see the <strong>Integration Walkthrough</strong>).</li>
+<li>You must have permission in JupiterOne to install new integrations.</li>
+</ul>
+<h2 id="support">Support</h2>
+<p>If you need help with this integration, please contact
+<a href="https://support.jupiterone.io">JupiterOne Support</a>.</p>
+<h2 id="integration-walkthrough">Integration Walkthrough</h2>
+<p>Customers authorize access by creating a
+<a href="https://cloud.google.com/iam/docs/creating-managing-service-accounts">Google Cloud service account</a>
+and providing the service account key to JupiterOne.</p>
+<h3 id="in-google-cloud">In Google Cloud</h3>
+<p>A
+<a href="https://cloud.google.com/iam/docs/creating-managing-service-accounts">Google Cloud service account</a>
+and a
+<a href="https://cloud.google.com/iam/docs/creating-managing-service-account-keys">Google Cloud service account key</a>
+must be created in order to run the integration. The service account key is used
+to authenticate on behalf of the integration's Google Cloud project and ingest
+data into JupiterOne.</p>
+<p>Google Cloud has most API services disabled by default. When a Google Cloud
+service API is disabled, the JupiterOne integration will not ingest the data
+from that API. The following Google Cloud service APIs must be enabled to ingest
+all of the supported data into JupiterOne:</p>
+<table>
+<thead>
+<tr>
+<th>Service Name</th>
+<th>Service API</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://console.developers.google.com/apis/library/accesscontextmanager.googleapis.com">Access Context Manager</a></td>
+<td>accesscontextmanager.googleapis.com</td>
+</tr>
+<tr>
+<td><a href="https://console.developers.google.com/apis/library/apigateway.googleapis.com">API Gateway</a></td>
+<td>apigateway.googleapis.com</td>
+</tr>
+<tr>
+<td><a href="https://console.developers.google.com/apis/library/appengine.googleapis.com">App Engine Admin</a></td>
+<td>appengine.googleapis.com</td>
+</tr>
+<tr>
+<td><a href="https://console.developers.google.com/apis/library/bigquery.googleapis.com">BigQuery</a></td>
+<td>bigquery.googleapis.com</td>
+</tr>
+<tr>
+<td><a href="https://console.developers.google.com/apis/library/binaryauthorization.googleapis.com">Binary Authorization</a></td>
+<td>binaryauthorization.googleapis.com</td>
+</tr>
+<tr>
+<td><a href="https://console.developers.google.com/apis/library/privateca.googleapis.com">Certificate Authority Service</a></td>
+<td>privateca.googleapis.com</td>
+</tr>
+<tr>
+<td><a href="https://console.developers.google.com/apis/library/cloudasset.googleapis.com">Cloud Asset</a></td>
+<td>cloudasset.googleapis.com</td>
+</tr>
+<tr>
+<td><a href="https://console.developers.google.com/apis/library/dns.googleapis.com">Cloud DNS</a></td>
+<td>dns.googleapis.com</td>
+</tr>
+<tr>
+<td><a href="https://console.developers.google.com/apis/library/cloudfunctions.googleapis.com">Cloud Functions</a></td>
+<td>cloudfunctions.googleapis.com</td>
+</tr>
+<tr>
+<td><a href="https://console.developers.google.com/apis/library/cloudkms.googleapis.com">Cloud Key Management Service (KMS)</a></td>
+<td>cloudkms.googleapis.com</td>
+</tr>
+<tr>
+<td><a href="https://console.developers.google.com/apis/library/logging.googleapis.com">Cloud Logging</a></td>
+<td>logging.googleapis.com</td>
+</tr>
+<tr>
+<td><a href="https://console.developers.google.com/apis/library/memcache.googleapis.com">Cloud Memorystore for Memcached</a></td>
+<td>memcache.googleapis.com</td>
+</tr>
+<tr>
+<td><a href="https://console.developers.google.com/apis/library/pubsub.googleapis.com">Cloud Pub/Sub</a></td>
+<td>pubsub.googleapis.com</td>
+</tr>
+<tr>
+<td><a href="https://console.developers.google.com/apis/library/cloudresourcemanager.googleapis.com">Cloud Resource Manager</a></td>
+<td>cloudresourcemanager.googleapis.com</td>
+</tr>
+<tr>
+<td><a href="https://console.developers.google.com/apis/library/run.googleapis.com">Cloud Run</a></td>
+<td>run.googleapis.com</td>
+</tr>
+<tr>
+<td><a href="https://console.developers.google.com/apis/library/spanner.googleapis.com">Cloud Spanner</a></td>
+<td>spanner.googleapis.com</td>
+</tr>
+<tr>
+<td><a href="https://console.developers.google.com/apis/library/sqladmin.googleapis.com">Cloud SQL Admin</a></td>
+<td>sqladmin.googleapis.com</td>
+</tr>
+<tr>
+<td><a href="https://console.developers.google.com/apis/library/storage.googleapis.com">Cloud Storage</a></td>
+<td>storage.googleapis.com</td>
+</tr>
+<tr>
+<td><a href="https://console.developers.google.com/apis/library/compute.googleapis.com">Compute Engine</a></td>
+<td>compute.googleapis.com</td>
+</tr>
+<tr>
+<td><a href="https://console.developers.google.com/apis/library/redis.googleapis.com">Google Cloud Memorystore for Redis</a></td>
+<td>redis.googleapis.com</td>
+</tr>
+<tr>
+<td><a href="https://console.developers.google.com/apis/library/iam.googleapis.com">Identity and Access Management (IAM)</a></td>
+<td>iam.googleapis.com</td>
+</tr>
+<tr>
+<td><a href="https://console.developers.google.com/apis/library/container.googleapis.com">Kubernetes Engine</a></td>
+<td>container.googleapis.com</td>
+</tr>
+<tr>
+<td><a href="https://console.developers.google.com/apis/library/serviceusage.googleapis.com">Service Usage</a></td>
+<td>serviceusage.googleapis.com</td>
+</tr>
+<tr>
+<td><a href="https://console.developers.google.com/apis/library/monitoring.googleapis.com">Stackdriver Monitoring</a></td>
+<td>monitoring.googleapis.com</td>
+</tr>
+</tbody>
+</table>
+<p>Google Cloud service APIs can be enabled using one of the following methods:</p>
+<h4 id="enabling-google-cloud-service-api-from-google-cloud-console">Enabling Google Cloud Service API from Google Cloud Console</h4>
+<ol>
+<li>Click on the service name link that you'd like to enable from the table above</li>
+<li>Select your Google Cloud project from the project dropdown menu</li>
+<li>Click the "Enable" button</li>
+</ol>
+<h4 id="enabling-google-cloud-service-api-from-gcloud-cli">Enabling Google Cloud Service API from <code>gcloud</code> CLI</h4>
+<p>Instructions on how to setup the
+<a href="https://cloud.google.com/sdk/gcloud"><code>gcloud</code> CLI</a> can be found in the
+<a href="https://github.com/JupiterOne/graph-google-cloud/blob/master/docs/development.md">JupiterOne Google Cloud integration developer documentation</a>.</p>
+<p>After setting up the <a href="https://cloud.google.com/sdk/gcloud"><code>gcloud</code> CLI</a>, you
+can run the following command to enable all services that the JupiterOne
+integration supports:</p>
+<p><strong>NOTE</strong> You can only enable 20 services at a time</p>
+<pre><code>gcloud services enable \
+  accesscontextmanager.googleapis.com \
+  apigateway.googleapis.com \
+  appengine.googleapis.com \
+  bigquery.googleapis.com \
+  binaryauthorization.googleapis.com \
+  privateca.googleapis.com \
+  cloudasset.googleapis.com \
+  dns.googleapis.com \
+  cloudfunctions.googleapis.com \
+  cloudkms.googleapis.com \
+  logging.googleapis.com \
+  memcache.googleapis.com \
+  pubsub.googleapis.com \
+  cloudresourcemanager.googleapis.com \
+  run.googleapis.com \
+  spanner.googleapis.com \
+  sqladmin.googleapis.com \
+  storage.googleapis.com \
+  compute.googleapis.com \
+  redis.googleapis.com \
+  iam.googleapis.com \
+  container.googleapis.com \
+  serviceusage.googleapis.com \
+  monitoring.googleapis.com
+</code></pre>
+<h4 id="creating-google-cloud-project-service-account">Creating Google Cloud project service account</h4>
+<ul>
+<li>See the
+  <a href="https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating">Google Cloud service account documentation</a>
+  for more information on how to create a service account in the project that
+  you would like to ingest data from.</li>
+</ul>
+<p>We must assign the correct permissions to the newly created service account for
+the integration to be run. We recommend using the following roles managed by
+Google Cloud:</p>
+<ul>
+<li><a href="https://cloud.google.com/iam/docs/understanding-roles#iam.securityReviewer"><code>roles/iam.securityReviewer</code></a></li>
+<li><a href="https://cloud.google.com/iam/docs/understanding-roles#iam.organizationRoleViewer"><code>roles/iam.organizationRoleViewer</code></a></li>
+<li><a href="https://cloud.google.com/bigquery/docs/access-control#bigquery.metadataViewer"><code>roles/bigquery.metadataViewer</code></a></li>
+</ul>
+<p>Some additional data may be optionally ingested by the JupiterOne Google Cloud
+integration by configuring a custom role with the following permissions:</p>
+<pre><code>appengine.applications.get
+binaryauthorization.policy.get
+cloudasset.assets.searchAllIamPolicies
+compute.projects.get
+orgpolicy.policy.get
+</code></pre>
+<p>For BigQuery, the following <em>additional</em> permissions are needed to ingest
+BigQuery datasets, models, and tables respectively:</p>
+<pre><code>bigquery.datasets.get
+bigquery.models.getMetadata
+bigquery.tables.get
+</code></pre>
+<p>See the
+<a href="https://cloud.google.com/iam/docs/creating-custom-roles#creating_a_custom_role">Google Cloud custom role documentation</a>
+for additional information on how custom roles can be configured and assigned.</p>
+<p>NOTE: You may also create a service account using the
+<a href="https://cloud.google.com/sdk/gcloud"><code>gcloud</code> CLI</a>. There is documentation on
+how to leverage the CLI in the
+<a href="https://github.com/JupiterOne/graph-google-cloud/blob/master/docs/development.md">JupiterOne Google Cloud integration developer documentation</a>.</p>
+<h4 id="generate-a-service-account-key">Generate a service account key</h4>
+<ul>
+<li>See the
+  <a href="https://cloud.google.com/iam/docs/creating-managing-service-account-keys#creating_service_account_keys">Google Cloud service account key documentation</a>
+  for more information on how to create a service account key for the service
+  account that you would like to ingest data using.</li>
+</ul>
+<p>NOTE: You may also create a service account key using the
+<a href="https://cloud.google.com/sdk/gcloud"><code>gcloud</code> CLI</a>. There is documentation on
+how to leverage the CLI in the
+<a href="https://github.com/JupiterOne/graph-google-cloud/blob/master/docs/development.md">Google Cloud integration developer documentation</a>.</p>
+<h4 id="jupiterone-google-cloud-organization">JupiterOne + Google Cloud Organization</h4>
+<p>Given the correct permissions, JupiterOne has the ability to automatically
+discover each project under a Google Cloud organization and configure
+integration instances for each of the projects.</p>
+<h5 id="setup">Setup</h5>
+<ol>
+<li>Select one Google Cloud project to configure a service account for
+   JupiterOne.</li>
+<li>Create the service account without a role. Copy the email address of the new
+   service account (e.g. <code>my-sa@my-j1-project.iam.gserviceaccount.com</code>)</li>
+<li>Generate and copy a new service account key</li>
+<li>Enable all service APIs in the "main" project and each "child" project that
+   you'd like JupiterOne to access. Documentation for enabling service APIs is
+   described in an earlier section of this document.</li>
+<li><strong>NOTE</strong>: The "Cloud Asset" and "Identity and Access Management (IAM)" APIs
+     only need to be enabled in the "main" project.</li>
+<li>Switch to the organization that you'd like to create individual integration
+   instances for each project</li>
+<li><a href="https://cloud.google.com/iam/docs/creating-custom-roles">Create a new custom role</a>
+   with the following permissions:</li>
+</ol>
+<pre><code>resourcemanager.folders.get
+resourcemanager.folders.list
+resourcemanager.organizations.get
+resourcemanager.projects.get
+resourcemanager.projects.list
+serviceusage.services.list
+resourcemanager.organizations.getIamPolicy
+cloudasset.assets.searchAllIamPolicies
+</code></pre>
+<p>The integration will also try to ingest organization policy for
+"storage.publicAccessPrevention" to precisely calculate storage buckets public
+access, it is therefore recommended that the following permission is also
+included in the custom role above:</p>
+<pre><code>orgpolicy.policy.get
+</code></pre>
+<ol>
+<li>
+<p>Navigate to the Cloud Resource Manager for that organization and
+   <a href="https://cloud.google.com/resource-manager/docs/access-control-org#grant-access">add a new member to the organization</a>.
+   The new member email address is the email address of the service account that
+   was created earlier. Select the new organization role that was created above,
+   as well as the Google Cloud managed role "Security Reviewer"
+   (<code>roles/iam.securityReviewer</code>) or an alternative JupiterOne custom role that
+   you've created.</p>
+</li>
+<li>
+<p>Navigate to the JupiterOne Google Cloud integration configuration page to
+   begin configuring the "main" integration instance.</p>
+</li>
+</ol>
+<p>Use the generated service account key as the value for the "Service Account Key
+File" field.</p>
+<p><strong>NOTE</strong>: The "Polling Interval" that is selected for the "main" integration
+instances, will be the same polling interval that is used for each of the child
+integration instances.</p>
+<ol>
+<li>Check the "Configure Organization Projects" checkbox</li>
+<li>Place the numerical value of the Google Cloud organization into the
+   "Organization ID" text field (e.g. "1234567890")</li>
+<li>Click the <code>CREATE CONFIGURATION</code> button</li>
+</ol>
+<p><strong>NOTE</strong>: Depending on how many projects exist under a Google Cloud
+organization, the auto-configuration process may take a few minutes to complete.
+When the process has been completed, you will see your new integration instances
+on the JupiterOne Google Cloud integration list page.</p>
+<h3 id="in-jupiterone">In JupiterOne</h3>
+<ol>
+<li>From the configuration <strong>Gear Icon</strong>, select <strong>Integrations</strong>.</li>
+<li>Scroll to the <strong>Google Cloud</strong> integration tile and click it.</li>
+<li>
+<p>Click the <strong>Add Configuration</strong> button and configure the following settings:</p>
+</li>
+<li>
+<p>Enter the <strong>Account Name</strong> by which you'd like to identify this Google Cloud
+  account in JupiterOne. Ingested entities will have this value stored in
+  <code>tag.AccountName</code> when <strong>Tag with Account Name</strong> is checked.</p>
+</li>
+<li>Enter a <strong>Description</strong> that will further assist your team when identifying
+  the integration instance.</li>
+<li>Select a <strong>Polling Interval</strong> that you feel is sufficient for your monitoring
+  needs. You may leave this as <code>DISABLED</code> and manually execute the integration.</li>
+<li>
+<p>Enter the <strong>Servce Account Key File</strong> contents of the Google Cloud service
+  account.</p>
+</li>
+<li>
+<p>Click <strong>Create Configuration</strong> once all values are provided.</p>
+</li>
+</ol>
+<h2 id="how-to-uninstall">How to Uninstall</h2>
+<ol>
+<li>From the configuration <strong>Gear Icon</strong>, select <strong>Integrations</strong>.</li>
+<li>Scroll to the <strong>Google Cloud</strong> integration tile and click it.</li>
+<li>Identify and click the <strong>integration to delete</strong>.</li>
+<li>Click the <strong>trash can</strong> icon.</li>
+<li>Click the <strong>Remove</strong> button to delete the integration.</li>
+</ol>
+<!-- {J1_DOCUMENTATION_MARKER_START} -->
+<!--
+********************************************************************************
+NOTE: ALL OF THE FOLLOWING DOCUMENTATION IS GENERATED USING THE
+"j1-integration document" COMMAND. DO NOT EDIT BY HAND! PLEASE SEE THE DEVELOPER
+DOCUMENTATION FOR USAGE INFORMATION:
+
+https://github.com/JupiterOne/sdk/blob/main/docs/integrations/development.md
+********************************************************************************
+-->
+
+<h2 id="data-model">Data Model</h2>
+<h3 id="entities">Entities</h3>
+<p>The following entities are created:</p>
+<table>
+<thead>
+<tr>
+<th>Resources</th>
+<th>Entity <code>_type</code></th>
+<th>Entity <code>_class</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Access Context Manager Access Level</td>
+<td><code>google_access_context_manager_access_level</code></td>
+<td><code>Ruleset</code></td>
+</tr>
+<tr>
+<td>Access Context Manager Access Policy</td>
+<td><code>google_access_context_manager_access_policy</code></td>
+<td><code>AccessPolicy</code></td>
+</tr>
+<tr>
+<td>Access Context Manager Service Perimeter</td>
+<td><code>google_access_context_manager_service_perimeter</code></td>
+<td><code>Configuration</code></td>
+</tr>
+<tr>
+<td>Access Context Manager Service Perimeter Api Operation</td>
+<td><code>google_access_context_manager_service_perimeter_api_operation</code></td>
+<td><code>Configuration</code></td>
+</tr>
+<tr>
+<td>Access Context Manager Service Perimeter Egress Policy</td>
+<td><code>google_access_context_manager_service_perimeter_egress_policy</code></td>
+<td><code>ControlPolicy</code></td>
+</tr>
+<tr>
+<td>Access Context Manager Service Perimeter Ingress Policy</td>
+<td><code>google_access_context_manager_service_perimeter_ingress_policy</code></td>
+<td><code>ControlPolicy</code></td>
+</tr>
+<tr>
+<td>Access Context Manager Service Perimeter Method Selector</td>
+<td><code>google_access_context_manager_service_perimeter_method_selector</code></td>
+<td><code>Configuration</code></td>
+</tr>
+<tr>
+<td>Api Gateway Api</td>
+<td><code>google_api_gateway_api</code></td>
+<td><code>Service</code></td>
+</tr>
+<tr>
+<td>Api Gateway Api Config</td>
+<td><code>google_api_gateway_api_config</code></td>
+<td><code>Configuration</code></td>
+</tr>
+<tr>
+<td>Api Gateway Gateway</td>
+<td><code>google_api_gateway_gateway</code></td>
+<td><code>Gateway</code></td>
+</tr>
+<tr>
+<td>AppEngine Application</td>
+<td><code>google_app_engine_application</code></td>
+<td><code>Application</code></td>
+</tr>
+<tr>
+<td>AppEngine Instance</td>
+<td><code>google_app_engine_instance</code></td>
+<td><code>Host</code></td>
+</tr>
+<tr>
+<td>AppEngine Service</td>
+<td><code>google_app_engine_service</code></td>
+<td><code>Container</code></td>
+</tr>
+<tr>
+<td>AppEngine Version</td>
+<td><code>google_app_engine_version</code></td>
+<td><code>Service</code></td>
+</tr>
+<tr>
+<td>Audit Config</td>
+<td><code>google_cloud_audit_config</code></td>
+<td><code>Configuration</code></td>
+</tr>
+<tr>
+<td>Big Query Dataset</td>
+<td><code>google_bigquery_dataset</code></td>
+<td><code>DataStore</code>, <code>Database</code></td>
+</tr>
+<tr>
+<td>Big Query Model</td>
+<td><code>google_bigquery_model</code></td>
+<td><code>Model</code></td>
+</tr>
+<tr>
+<td>Big Query Table</td>
+<td><code>google_bigquery_table</code></td>
+<td><code>DataCollection</code></td>
+</tr>
+<tr>
+<td>Bigtable AppProfile</td>
+<td><code>google_bigtable_app_profile</code></td>
+<td><code>Configuration</code></td>
+</tr>
+<tr>
+<td>Bigtable Backup</td>
+<td><code>google_bigtable_backup</code></td>
+<td><code>Backup</code></td>
+</tr>
+<tr>
+<td>Bigtable Cluster</td>
+<td><code>google_bigtable_cluster</code></td>
+<td><code>Cluster</code></td>
+</tr>
+<tr>
+<td>Bigtable Instance</td>
+<td><code>google_bigtable_instance</code></td>
+<td><code>Database</code></td>
+</tr>
+<tr>
+<td>Bigtable Table</td>
+<td><code>google_bigtable_table</code></td>
+<td><code>DataCollection</code></td>
+</tr>
+<tr>
+<td>Billing Account</td>
+<td><code>google_billing_account</code></td>
+<td><code>Account</code></td>
+</tr>
+<tr>
+<td>Billing Budget</td>
+<td><code>google_billing_budget</code></td>
+<td><code>Ruleset</code></td>
+</tr>
+<tr>
+<td>Binary Authorization Policy</td>
+<td><code>google_binary_authorization_policy</code></td>
+<td><code>AccessPolicy</code></td>
+</tr>
+<tr>
+<td>Cloud API Service</td>
+<td><code>google_cloud_api_service</code></td>
+<td><code>Service</code></td>
+</tr>
+<tr>
+<td>Cloud Function</td>
+<td><code>google_cloud_function</code></td>
+<td><code>Function</code></td>
+</tr>
+<tr>
+<td>Cloud Run Configuration</td>
+<td><code>google_cloud_run_configuration</code></td>
+<td><code>Configuration</code></td>
+</tr>
+<tr>
+<td>Cloud Run Route</td>
+<td><code>google_cloud_run_route</code></td>
+<td><code>Configuration</code></td>
+</tr>
+<tr>
+<td>Cloud Run Service</td>
+<td><code>google_cloud_run_service</code></td>
+<td><code>Service</code></td>
+</tr>
+<tr>
+<td>Cloud Storage Bucket</td>
+<td><code>google_storage_bucket</code></td>
+<td><code>DataStore</code></td>
+</tr>
+<tr>
+<td>Compute Address</td>
+<td><code>google_compute_address</code></td>
+<td><code>IpAddress</code></td>
+</tr>
+<tr>
+<td>Compute Backend Bucket</td>
+<td><code>google_compute_backend_bucket</code></td>
+<td><code>Gateway</code></td>
+</tr>
+<tr>
+<td>Compute Backend Service</td>
+<td><code>google_compute_backend_service</code></td>
+<td><code>Service</code></td>
+</tr>
+<tr>
+<td>Compute Disk</td>
+<td><code>google_compute_disk</code></td>
+<td><code>DataStore</code>, <code>Disk</code></td>
+</tr>
+<tr>
+<td>Compute Firewalls</td>
+<td><code>google_compute_firewall</code></td>
+<td><code>Firewall</code></td>
+</tr>
+<tr>
+<td>Compute Forwarding Rule</td>
+<td><code>google_compute_forwarding_rule</code></td>
+<td><code>Configuration</code></td>
+</tr>
+<tr>
+<td>Compute Global Address</td>
+<td><code>google_compute_global_address</code></td>
+<td><code>IpAddress</code></td>
+</tr>
+<tr>
+<td>Compute Global Forwarding Rule</td>
+<td><code>google_compute_global_forwarding_rule</code></td>
+<td><code>Configuration</code></td>
+</tr>
+<tr>
+<td>Compute Image</td>
+<td><code>google_compute_image</code></td>
+<td><code>Image</code></td>
+</tr>
+<tr>
+<td>Compute Instance</td>
+<td><code>google_compute_instance</code></td>
+<td><code>Host</code></td>
+</tr>
+<tr>
+<td>Compute Instance Group</td>
+<td><code>google_compute_instance_group</code></td>
+<td><code>Group</code></td>
+</tr>
+<tr>
+<td>Compute Instance Group Named Port</td>
+<td><code>google_compute_instance_group_named_port</code></td>
+<td><code>Configuration</code></td>
+</tr>
+<tr>
+<td>Compute Networks</td>
+<td><code>google_compute_network</code></td>
+<td><code>Network</code></td>
+</tr>
+<tr>
+<td>Compute Project</td>
+<td><code>google_compute_project</code></td>
+<td><code>Project</code></td>
+</tr>
+<tr>
+<td>Compute Region Health Check</td>
+<td><code>google_compute_health_check</code></td>
+<td><code>Service</code></td>
+</tr>
+<tr>
+<td>Compute Region Load Balancer</td>
+<td><code>google_compute_url_map</code></td>
+<td><code>Gateway</code></td>
+</tr>
+<tr>
+<td>Compute Region Target HTTP Proxy</td>
+<td><code>google_compute_target_http_proxy</code></td>
+<td><code>Gateway</code></td>
+</tr>
+<tr>
+<td>Compute Region Target HTTPS Proxy</td>
+<td><code>google_compute_target_https_proxy</code></td>
+<td><code>Gateway</code></td>
+</tr>
+<tr>
+<td>Compute SSL Policy</td>
+<td><code>google_compute_ssl_policy</code></td>
+<td><code>Policy</code></td>
+</tr>
+<tr>
+<td>Compute Snapshot</td>
+<td><code>google_compute_snapshot</code></td>
+<td><code>Image</code></td>
+</tr>
+<tr>
+<td>Compute Subnetwork</td>
+<td><code>google_compute_subnetwork</code></td>
+<td><code>Network</code></td>
+</tr>
+<tr>
+<td>Compute Target SSL Proxy</td>
+<td><code>google_compute_target_ssl_proxy</code></td>
+<td><code>Gateway</code></td>
+</tr>
+<tr>
+<td>Container Cluster</td>
+<td><code>google_container_cluster</code></td>
+<td><code>Cluster</code></td>
+</tr>
+<tr>
+<td>Container Node Pool</td>
+<td><code>google_container_node_pool</code></td>
+<td><code>Group</code></td>
+</tr>
+<tr>
+<td>DNS Managed Zone</td>
+<td><code>google_dns_managed_zone</code></td>
+<td><code>DomainZone</code></td>
+</tr>
+<tr>
+<td>DNS Policy</td>
+<td><code>google_dns_policy</code></td>
+<td><code>Ruleset</code></td>
+</tr>
+<tr>
+<td>Dataproc Cluster</td>
+<td><code>google_dataproc_cluster</code></td>
+<td><code>Cluster</code></td>
+</tr>
+<tr>
+<td>Folder</td>
+<td><code>google_cloud_folder</code></td>
+<td><code>Group</code></td>
+</tr>
+<tr>
+<td>IAM Binding</td>
+<td><code>google_iam_binding</code></td>
+<td><code>AccessPolicy</code></td>
+</tr>
+<tr>
+<td>IAM Custom Role</td>
+<td><code>google_iam_role</code></td>
+<td><code>AccessRole</code></td>
+</tr>
+<tr>
+<td>IAM Service Account</td>
+<td><code>google_iam_service_account</code></td>
+<td><code>User</code></td>
+</tr>
+<tr>
+<td>IAM Service Account Key</td>
+<td><code>google_iam_service_account_key</code></td>
+<td><code>AccessKey</code></td>
+</tr>
+<tr>
+<td>KMS Crypto Key</td>
+<td><code>google_kms_crypto_key</code></td>
+<td><code>Key</code>, <code>CryptoKey</code></td>
+</tr>
+<tr>
+<td>KMS Key Ring</td>
+<td><code>google_kms_key_ring</code></td>
+<td><code>Vault</code></td>
+</tr>
+<tr>
+<td>Logging Metric</td>
+<td><code>google_logging_metric</code></td>
+<td><code>Configuration</code></td>
+</tr>
+<tr>
+<td>Logging Project Sink</td>
+<td><code>google_logging_project_sink</code></td>
+<td><code>Logs</code></td>
+</tr>
+<tr>
+<td>Memcache Instance</td>
+<td><code>google_memcache_instance</code></td>
+<td><code>Database</code>, <code>DataStore</code>, <code>Cluster</code></td>
+</tr>
+<tr>
+<td>Memcache Instance Node</td>
+<td><code>google_memcache_instance_node</code></td>
+<td><code>Database</code>, <code>DataStore</code>, <code>Host</code></td>
+</tr>
+<tr>
+<td>Monitoring Alert Policy</td>
+<td><code>google_monitoring_alert_policy</code></td>
+<td><code>Policy</code></td>
+</tr>
+<tr>
+<td>Organization</td>
+<td><code>google_cloud_organization</code></td>
+<td><code>Organization</code></td>
+</tr>
+<tr>
+<td>Private CA Certificate</td>
+<td><code>google_privateca_certificate</code></td>
+<td><code>Certificate</code></td>
+</tr>
+<tr>
+<td>Private CA Certificate Authority</td>
+<td><code>google_privateca_certificate_authority</code></td>
+<td><code>Service</code></td>
+</tr>
+<tr>
+<td>Project</td>
+<td><code>google_cloud_project</code></td>
+<td><code>Account</code></td>
+</tr>
+<tr>
+<td>PubSub Subscription</td>
+<td><code>google_pubsub_subscription</code></td>
+<td><code>Service</code></td>
+</tr>
+<tr>
+<td>PubSub Topic</td>
+<td><code>google_pubsub_topic</code></td>
+<td><code>Channel</code></td>
+</tr>
+<tr>
+<td>Redis Instance</td>
+<td><code>google_redis_instance</code></td>
+<td><code>Database</code>, <code>DataStore</code>, <code>Host</code></td>
+</tr>
+<tr>
+<td>SQL Admin MySQL Instance</td>
+<td><code>google_sql_mysql_instance</code></td>
+<td><code>Database</code></td>
+</tr>
+<tr>
+<td>SQL Admin Postgres Instance</td>
+<td><code>google_sql_postgres_instance</code></td>
+<td><code>Database</code></td>
+</tr>
+<tr>
+<td>SQL Admin SQL Server Instance</td>
+<td><code>google_sql_sql_server_instance</code></td>
+<td><code>Database</code></td>
+</tr>
+<tr>
+<td>Spanner Instance</td>
+<td><code>google_spanner_instance</code></td>
+<td><code>Database</code>, <code>Cluster</code></td>
+</tr>
+<tr>
+<td>Spanner Instance Config</td>
+<td><code>google_spanner_instance_config</code></td>
+<td><code>Configuration</code></td>
+</tr>
+<tr>
+<td>Spanner Instance Database</td>
+<td><code>google_spanner_database</code></td>
+<td><code>Database</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="relationships">Relationships</h3>
+<p>The following relationships are created:</p>
+<table>
+<thead>
+<tr>
+<th>Source Entity <code>_type</code></th>
+<th>Relationship <code>_class</code></th>
+<th>Target Entity <code>_type</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>google_access_context_manager_access_policy</code></td>
+<td><strong>HAS</strong></td>
+<td><code>google_access_context_manager_access_level</code></td>
+</tr>
+<tr>
+<td><code>google_access_context_manager_access_policy</code></td>
+<td><strong>HAS</strong></td>
+<td><code>google_access_context_manager_service_perimeter</code></td>
+</tr>
+<tr>
+<td><code>google_access_context_manager_service_perimeter_api_operation</code></td>
+<td><strong>HAS</strong></td>
+<td><code>google_access_context_manager_service_perimeter_method_selector</code></td>
+</tr>
+<tr>
+<td><code>google_access_context_manager_service_perimeter_egress_policy</code></td>
+<td><strong>HAS</strong></td>
+<td><code>google_access_context_manager_service_perimeter_api_operation</code></td>
+</tr>
+<tr>
+<td><code>google_access_context_manager_service_perimeter</code></td>
+<td><strong>HAS</strong></td>
+<td><code>google_access_context_manager_service_perimeter_egress_policy</code></td>
+</tr>
+<tr>
+<td><code>google_access_context_manager_service_perimeter</code></td>
+<td><strong>HAS</strong></td>
+<td><code>google_access_context_manager_service_perimeter_ingress_policy</code></td>
+</tr>
+<tr>
+<td><code>google_access_context_manager_service_perimeter_ingress_policy</code></td>
+<td><strong>HAS</strong></td>
+<td><code>google_access_context_manager_service_perimeter_api_operation</code></td>
+</tr>
+<tr>
+<td><code>google_access_context_manager_service_perimeter</code></td>
+<td><strong>LIMITS</strong></td>
+<td><code>google_cloud_api_service</code></td>
+</tr>
+<tr>
+<td><code>google_access_context_manager_service_perimeter</code></td>
+<td><strong>PROTECTS</strong></td>
+<td><code>google_cloud_project</code></td>
+</tr>
+<tr>
+<td><code>google_api_gateway_api_config</code></td>
+<td><strong>USES</strong></td>
+<td><code>google_iam_service_account</code></td>
+</tr>
+<tr>
+<td><code>google_api_gateway_api</code></td>
+<td><strong>HAS</strong></td>
+<td><code>google_api_gateway_gateway</code></td>
+</tr>
+<tr>
+<td><code>google_api_gateway_api</code></td>
+<td><strong>USES</strong></td>
+<td><code>google_api_gateway_api_config</code></td>
+</tr>
+<tr>
+<td><code>google_app_engine_application</code></td>
+<td><strong>HAS</strong></td>
+<td><code>google_app_engine_service</code></td>
+</tr>
+<tr>
+<td><code>google_app_engine_application</code></td>
+<td><strong>USES</strong></td>
+<td><code>google_storage_bucket</code></td>
+</tr>
+<tr>
+<td><code>google_app_engine_service</code></td>
+<td><strong>HAS</strong></td>
+<td><code>google_app_engine_version</code></td>
+</tr>
+<tr>
+<td><code>google_app_engine_version</code></td>
+<td><strong>HAS</strong></td>
+<td><code>google_app_engine_instance</code></td>
+</tr>
+<tr>
+<td><code>google_bigquery_dataset</code></td>
+<td><strong>HAS</strong></td>
+<td><code>google_bigquery_model</code></td>
+</tr>
+<tr>
+<td><code>google_bigquery_dataset</code></td>
+<td><strong>HAS</strong></td>
+<td><code>google_bigquery_table</code></td>
+</tr>
+<tr>
+<td><code>google_bigquery_dataset</code></td>
+<td><strong>USES</strong></td>
+<td><code>google_kms_crypto_key</code></td>
+</tr>
+<tr>
+<td><code>google_bigtable_cluster</code></td>
+<td><strong>HAS</strong></td>
+<td><code>google_bigtable_backup</code></td>
+</tr>
+<tr>
+<td><code>google_bigtable_cluster</code></td>
+<td><strong>USES</strong></td>
+<td><code>google_kms_crypto_key</code></td>
+</tr>
+<tr>
+<td><code>google_bigtable_instance</code></td>
+<td><strong>HAS</strong></td>
+<td><code>google_bigtable_app_profile</code></td>
+</tr>
+<tr>
+<td><code>google_bigtable_instance</code></td>
+<td><strong>HAS</strong></td>
+<td><code>google_bigtable_cluster</code></td>
+</tr>
+<tr>
+<td><code>google_bigtable_instance</code></td>
+<td><strong>HAS</strong></td>
+<td><code>google_bigtable_table</code></td>
+</tr>
+<tr>
+<td><code>google_bigtable_table</code></td>
+<td><strong>HAS</strong></td>
+<td><code>google_bigtable_backup</code></td>
+</tr>
+<tr>
+<td><code>google_billing_account</code></td>
+<td><strong>HAS</strong></td>
+<td><code>google_billing_budget</code></td>
+</tr>
+<tr>
+<td><code>google_cloud_api_service</code></td>
+<td><strong>HAS</strong></td>
+<td><code>google_iam_role</code></td>
+</tr>
+<tr>
+<td><code>google_cloud_api_service</code></td>
+<td><strong>HAS</strong></td>
+<td><code>resource</code></td>
+</tr>
+<tr>
+<td><code>google_cloud_api_service</code></td>
+<td><strong>USES</strong></td>
+<td><code>google_cloud_audit_config</code></td>
+</tr>
+<tr>
+<td><code>google_cloud_audit_config</code></td>
+<td><strong>ALLOWS</strong></td>
+<td><code>google_domain</code></td>
+</tr>
+<tr>
+<td><code>google_cloud_audit_config</code></td>
+<td><strong>ALLOWS</strong></td>
+<td><code>google_group</code></td>
+</tr>
+<tr>
+<td><code>google_cloud_audit_config</code></td>
+<td><strong>ALLOWS</strong></td>
+<td><code>google_iam_service_account</code></td>
+</tr>
+<tr>
+<td><code>google_cloud_audit_config</code></td>
+<td><strong>ALLOWS</strong></td>
+<td><code>google_user</code></td>
+</tr>
+<tr>
+<td><code>internet</code></td>
+<td><strong>ALLOWS</strong></td>
+<td><code>google_compute_firewall</code></td>
+</tr>
+<tr>
+<td><code>google_cloud_folder</code></td>
+<td><strong>HAS</strong></td>
+<td><code>google_cloud_folder</code></td>
+</tr>
+<tr>
+<td><code>google_cloud_function</code></td>
+<td><strong>USES</strong></td>
+<td><code>google_iam_service_account</code></td>
+</tr>
+<tr>
+<td><code>google_cloud_organization</code></td>
+<td><strong>HAS</strong></td>
+<td><code>google_cloud_folder</code></td>
+</tr>
+<tr>
+<td><code>google_cloud_project</code></td>
+<td><strong>HAS</strong></td>
+<td><code>google_cloud_api_service</code></td>
+</tr>
+<tr>
+<td><code>google_cloud_project</code></td>
+<td><strong>HAS</strong></td>
+<td><code>google_billing_budget</code></td>
+</tr>
+<tr>
+<td><code>google_cloud_project</code></td>
+<td><strong>HAS</strong></td>
+<td><code>google_binary_authorization_policy</code></td>
+</tr>
+<tr>
+<td><code>google_cloud_run_service</code></td>
+<td><strong>MANAGES</strong></td>
+<td><code>google_cloud_run_configuration</code></td>
+</tr>
+<tr>
+<td><code>google_cloud_run_service</code></td>
+<td><strong>MANAGES</strong></td>
+<td><code>google_cloud_run_route</code></td>
+</tr>
+<tr>
+<td><code>google_compute_backend_bucket</code></td>
+<td><strong>HAS</strong></td>
+<td><code>google_storage_bucket</code></td>
+</tr>
+<tr>
+<td><code>google_compute_backend_service</code></td>
+<td><strong>HAS</strong></td>
+<td><code>google_compute_health_check</code></td>
+</tr>
+<tr>
+<td><code>google_compute_backend_service</code></td>
+<td><strong>HAS</strong></td>
+<td><code>google_compute_instance_group</code></td>
+</tr>
+<tr>
+<td><code>google_compute_backend_service</code></td>
+<td><strong>HAS</strong></td>
+<td><code>google_compute_target_ssl_proxy</code></td>
+</tr>
+<tr>
+<td><code>google_compute_disk</code></td>
+<td><strong>CREATED</strong></td>
+<td><code>google_compute_snapshot</code></td>
+</tr>
+<tr>
+<td><code>google_compute_disk</code></td>
+<td><strong>USES</strong></td>
+<td><code>google_compute_image</code></td>
+</tr>
+<tr>
+<td><code>google_compute_disk</code></td>
+<td><strong>USES</strong></td>
+<td><code>google_kms_crypto_key</code></td>
+</tr>
+<tr>
+<td><code>google_compute_firewall</code></td>
+<td><strong>PROTECTS</strong></td>
+<td><code>google_compute_network</code></td>
+</tr>
+<tr>
+<td><code>google_compute_forwarding_rule</code></td>
+<td><strong>CONNECTS</strong></td>
+<td><code>google_compute_backend_service</code></td>
+</tr>
+<tr>
+<td><code>google_compute_forwarding_rule</code></td>
+<td><strong>CONNECTS</strong></td>
+<td><code>google_compute_network</code></td>
+</tr>
+<tr>
+<td><code>google_compute_forwarding_rule</code></td>
+<td><strong>CONNECTS</strong></td>
+<td><code>google_compute_subnetwork</code></td>
+</tr>
+<tr>
+<td><code>google_compute_forwarding_rule</code></td>
+<td><strong>CONNECTS</strong></td>
+<td><code>google_compute_target_http_proxy</code></td>
+</tr>
+<tr>
+<td><code>google_compute_forwarding_rule</code></td>
+<td><strong>CONNECTS</strong></td>
+<td><code>google_compute_target_https_proxy</code></td>
+</tr>
+<tr>
+<td><code>google_compute_forwarding_rule</code></td>
+<td><strong>USES</strong></td>
+<td><code>google_compute_address</code></td>
+</tr>
+<tr>
+<td><code>google_compute_global_forwarding_rule</code></td>
+<td><strong>CONNECTS</strong></td>
+<td><code>google_compute_backend_service</code></td>
+</tr>
+<tr>
+<td><code>google_compute_global_forwarding_rule</code></td>
+<td><strong>CONNECTS</strong></td>
+<td><code>google_compute_network</code></td>
+</tr>
+<tr>
+<td><code>google_compute_global_forwarding_rule</code></td>
+<td><strong>CONNECTS</strong></td>
+<td><code>google_compute_subnetwork</code></td>
+</tr>
+<tr>
+<td><code>google_compute_global_forwarding_rule</code></td>
+<td><strong>CONNECTS</strong></td>
+<td><code>google_compute_target_http_proxy</code></td>
+</tr>
+<tr>
+<td><code>google_compute_global_forwarding_rule</code></td>
+<td><strong>CONNECTS</strong></td>
+<td><code>google_compute_target_https_proxy</code></td>
+</tr>
+<tr>
+<td><code>google_compute_image</code></td>
+<td><strong>USES</strong></td>
+<td><code>google_compute_image</code></td>
+</tr>
+<tr>
+<td><code>google_compute_image</code></td>
+<td><strong>USES</strong></td>
+<td><code>google_kms_crypto_key</code></td>
+</tr>
+<tr>
+<td><code>google_compute_instance_group</code></td>
+<td><strong>HAS</strong></td>
+<td><code>google_compute_instance</code></td>
+</tr>
+<tr>
+<td><code>google_compute_instance_group</code></td>
+<td><strong>HAS</strong></td>
+<td><code>google_compute_instance_group_named_port</code></td>
+</tr>
+<tr>
+<td><code>google_compute_instance</code></td>
+<td><strong>TRUSTS</strong></td>
+<td><code>google_iam_service_account</code></td>
+</tr>
+<tr>
+<td><code>google_compute_instance</code></td>
+<td><strong>USES</strong></td>
+<td><code>google_compute_address</code></td>
+</tr>
+<tr>
+<td><code>google_compute_instance</code></td>
+<td><strong>USES</strong></td>
+<td><code>google_compute_disk</code></td>
+</tr>
+<tr>
+<td><code>google_compute_network</code></td>
+<td><strong>CONNECTS</strong></td>
+<td><code>google_compute_network</code></td>
+</tr>
+<tr>
+<td><code>google_compute_network</code></td>
+<td><strong>CONTAINS</strong></td>
+<td><code>google_compute_subnetwork</code></td>
+</tr>
+<tr>
+<td><code>google_compute_network</code></td>
+<td><strong>HAS</strong></td>
+<td><code>google_compute_address</code></td>
+</tr>
+<tr>
+<td><code>google_compute_network</code></td>
+<td><strong>HAS</strong></td>
+<td><code>google_dns_policy</code></td>
+</tr>
+<tr>
+<td><code>google_compute_network</code></td>
+<td><strong>HAS</strong></td>
+<td><code>google_compute_firewall</code></td>
+</tr>
+<tr>
+<td><code>google_compute_network</code></td>
+<td><strong>HAS</strong></td>
+<td><code>google_compute_global_address</code></td>
+</tr>
+<tr>
+<td><code>google_compute_project</code></td>
+<td><strong>HAS</strong></td>
+<td><code>google_compute_instance</code></td>
+</tr>
+<tr>
+<td><code>google_compute_snapshot</code></td>
+<td><strong>CREATED</strong></td>
+<td><code>google_compute_image</code></td>
+</tr>
+<tr>
+<td><code>google_compute_subnetwork</code></td>
+<td><strong>HAS</strong></td>
+<td><code>google_compute_address</code></td>
+</tr>
+<tr>
+<td><code>google_compute_subnetwork</code></td>
+<td><strong>HAS</strong></td>
+<td><code>google_compute_global_address</code></td>
+</tr>
+<tr>
+<td><code>google_compute_subnetwork</code></td>
+<td><strong>HAS</strong></td>
+<td><code>google_compute_instance</code></td>
+</tr>
+<tr>
+<td><code>google_compute_target_https_proxy</code></td>
+<td><strong>HAS</strong></td>
+<td><code>google_compute_ssl_policy</code></td>
+</tr>
+<tr>
+<td><code>google_compute_target_ssl_proxy</code></td>
+<td><strong>HAS</strong></td>
+<td><code>google_compute_ssl_policy</code></td>
+</tr>
+<tr>
+<td><code>google_compute_url_map</code></td>
+<td><strong>HAS</strong></td>
+<td><code>google_compute_backend_bucket</code></td>
+</tr>
+<tr>
+<td><code>google_compute_url_map</code></td>
+<td><strong>HAS</strong></td>
+<td><code>google_compute_backend_service</code></td>
+</tr>
+<tr>
+<td><code>google_compute_url_map</code></td>
+<td><strong>HAS</strong></td>
+<td><code>google_compute_target_http_proxy</code></td>
+</tr>
+<tr>
+<td><code>google_compute_url_map</code></td>
+<td><strong>HAS</strong></td>
+<td><code>google_compute_target_https_proxy</code></td>
+</tr>
+<tr>
+<td><code>google_container_cluster</code></td>
+<td><strong>HAS</strong></td>
+<td><code>google_container_node_pool</code></td>
+</tr>
+<tr>
+<td><code>google_container_node_pool</code></td>
+<td><strong>HAS</strong></td>
+<td><code>google_compute_instance_group</code></td>
+</tr>
+<tr>
+<td><code>google_dataproc_cluster</code></td>
+<td><strong>USES</strong></td>
+<td><code>google_compute_image</code></td>
+</tr>
+<tr>
+<td><code>google_dataproc_cluster</code></td>
+<td><strong>USES</strong></td>
+<td><code>google_kms_crypto_key</code></td>
+</tr>
+<tr>
+<td><code>google_dataproc_cluster</code></td>
+<td><strong>USES</strong></td>
+<td><code>google_storage_bucket</code></td>
+</tr>
+<tr>
+<td><code>google_cloud_folder</code></td>
+<td><strong>HAS</strong></td>
+<td><code>google_cloud_project</code></td>
+</tr>
+<tr>
+<td><code>google_iam_binding</code></td>
+<td><strong>ALLOWS</strong></td>
+<td><code>resource</code></td>
+</tr>
+<tr>
+<td><code>google_iam_binding</code></td>
+<td><strong>ASSIGNED</strong></td>
+<td><code>google_cloud_authenticated_users</code></td>
+</tr>
+<tr>
+<td><code>google_iam_binding</code></td>
+<td><strong>ASSIGNED</strong></td>
+<td><code>google_domain</code></td>
+</tr>
+<tr>
+<td><code>google_iam_binding</code></td>
+<td><strong>ASSIGNED</strong></td>
+<td><code>everyone</code></td>
+</tr>
+<tr>
+<td><code>google_iam_binding</code></td>
+<td><strong>ASSIGNED</strong></td>
+<td><code>google_group</code></td>
+</tr>
+<tr>
+<td><code>google_iam_binding</code></td>
+<td><strong>ASSIGNED</strong></td>
+<td><code>google_iam_role</code></td>
+</tr>
+<tr>
+<td><code>google_iam_binding</code></td>
+<td><strong>ASSIGNED</strong></td>
+<td><code>google_iam_service_account</code></td>
+</tr>
+<tr>
+<td><code>google_iam_binding</code></td>
+<td><strong>ASSIGNED</strong></td>
+<td><code>google_user</code></td>
+</tr>
+<tr>
+<td><code>google_iam_binding</code></td>
+<td><strong>USES</strong></td>
+<td><code>google_iam_role</code></td>
+</tr>
+<tr>
+<td><code>google_iam_service_account</code></td>
+<td><strong>CREATED</strong></td>
+<td><code>google_app_engine_version</code></td>
+</tr>
+<tr>
+<td><code>google_iam_service_account</code></td>
+<td><strong>HAS</strong></td>
+<td><code>google_iam_service_account_key</code></td>
+</tr>
+<tr>
+<td><code>google_kms_key_ring</code></td>
+<td><strong>HAS</strong></td>
+<td><code>google_kms_crypto_key</code></td>
+</tr>
+<tr>
+<td><code>google_logging_metric</code></td>
+<td><strong>HAS</strong></td>
+<td><code>google_monitoring_alert_policy</code></td>
+</tr>
+<tr>
+<td><code>google_logging_project_sink</code></td>
+<td><strong>USES</strong></td>
+<td><code>google_storage_bucket</code></td>
+</tr>
+<tr>
+<td><code>google_memcache_instance</code></td>
+<td><strong>HAS</strong></td>
+<td><code>google_memcache_instance_node</code></td>
+</tr>
+<tr>
+<td><code>google_memcache_instance</code></td>
+<td><strong>USES</strong></td>
+<td><code>google_compute_network</code></td>
+</tr>
+<tr>
+<td><code>google_cloud_organization</code></td>
+<td><strong>HAS</strong></td>
+<td><code>google_cloud_project</code></td>
+</tr>
+<tr>
+<td><code>google_privateca_certificate_authority</code></td>
+<td><strong>CREATED</strong></td>
+<td><code>google_privateca_certificate</code></td>
+</tr>
+<tr>
+<td><code>google_privateca_certificate_authority</code></td>
+<td><strong>USES</strong></td>
+<td><code>google_storage_bucket</code></td>
+</tr>
+<tr>
+<td><code>google_pubsub_subscription</code></td>
+<td><strong>USES</strong></td>
+<td><code>google_pubsub_topic</code></td>
+</tr>
+<tr>
+<td><code>google_pubsub_topic</code></td>
+<td><strong>USES</strong></td>
+<td><code>google_kms_crypto_key</code></td>
+</tr>
+<tr>
+<td><code>google_redis_instance</code></td>
+<td><strong>USES</strong></td>
+<td><code>google_compute_network</code></td>
+</tr>
+<tr>
+<td><code>google_spanner_database</code></td>
+<td><strong>USES</strong></td>
+<td><code>google_kms_crypto_key</code></td>
+</tr>
+<tr>
+<td><code>google_spanner_instance</code></td>
+<td><strong>HAS</strong></td>
+<td><code>google_spanner_database</code></td>
+</tr>
+<tr>
+<td><code>google_spanner_instance</code></td>
+<td><strong>USES</strong></td>
+<td><code>google_spanner_instance_config</code></td>
+</tr>
+<tr>
+<td><code>google_sql_mysql_instance</code></td>
+<td><strong>USES</strong></td>
+<td><code>google_kms_crypto_key</code></td>
+</tr>
+<tr>
+<td><code>google_sql_postgres_instance</code></td>
+<td><strong>USES</strong></td>
+<td><code>google_kms_crypto_key</code></td>
+</tr>
+<tr>
+<td><code>google_sql_sql_server_instance</code></td>
+<td><strong>USES</strong></td>
+<td><code>google_kms_crypto_key</code></td>
+</tr>
+<tr>
+<td><code>google_user</code></td>
+<td><strong>CREATED</strong></td>
+<td><code>google_app_engine_version</code></td>
+</tr>
+</tbody>
+</table>
+<!--
+********************************************************************************
+END OF GENERATED DOCUMENTATION AFTER BELOW MARKER
+********************************************************************************
+-->
+<!-- {J1_DOCUMENTATION_MARKER_END} -->
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/jupiterone/starbase" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/jupiterone" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/jupiterone" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.tabs.sticky"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,26 @@
+[data-md-color-scheme='starbase'] {
+  --md-primary-fg-color: #041e42;
+  --md-footer-bg-color: #041e42;
+}
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3 {
+  color: #00bfa5;
+}
+
+.md-typeset {
+  font-size: 0.8rem;
+}
+
+.md-typeset h1 {
+  font-weight: 500;
+}
+
+.md-typeset h2 {
+  font-weight: 400;
+}
+
+.md-typeset h3 {
+  font-weight: 400;
+}
