@@ -49,6 +49,15 @@ const testConfig: StarbaseConfig = {
         database: 'neo4j',
       },
     },
+    {
+      engine: 'memgraph',
+      config: {
+        username: '',
+        password: '',
+        uri: 'bolt://localhost:7687',
+        database: 'memgraph',
+      },
+    },
   ],
 };
 

@@ -1,5 +1,6 @@
 import {
   writeIntegrationConfig,
+  writeMemgraphRootConfig,
   writeNeo4jRootConfig,
   writeJ1RootConfig,
 } from './config';
@@ -17,6 +18,9 @@ async function setupStarbaseStorageEngine(starbaseConfig: StarbaseConfig) {
     switch (storageConfig.engine) {
       case 'neo4j':
         await writeNeo4jRootConfig(storageConfig);
+        break;
+      case 'memgraph':
+        await writeMemgraphRootConfig(storageConfig);
         break;
       case 'jupiterone':
         await writeJ1RootConfig(storageConfig);
@@ -69,6 +73,13 @@ async function executeStarbase(
       `open ${
         process.env.NEO4J_BROWSER_URI ?? 'http://localhost:7474/browser/'
       } to browse your Neo4J graph.`,
+    );
+  }
+  else if (engines.includes('memgraph')) {
+    console.log(
+      `open ${
+        process.env.MEMGRAPH_BROWSER_URI ?? 'http://localhost:3000/browser/'
+      } to browse your graph in Memgraph.`,
     );
   }
 }
