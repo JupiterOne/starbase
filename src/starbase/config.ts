@@ -66,6 +66,16 @@ NEO4J_PASSWORD=${storage.config.password}
   );
 }
 
+async function writeMemgraphRootConfig(storage: StarbaseStorage) {
+  await fs.appendFile(
+    '.env',
+    `MEMGRAPH_URI=${storage.config.uri}
+    MEMGRAPH_USER=${storage.config.username}
+    MEMGRAPH_PASSWORD=${storage.config.password}
+`,
+  );
+}
+
 async function writeJ1RootConfig(storage: StarbaseStorage) {
   await fs.appendFile(
     '.env',
@@ -142,6 +152,7 @@ async function parseConfigYaml(configPath: string): Promise<StarbaseConfig> {
 export {
   parseConfigYaml,
   writeIntegrationConfig,
+  writeMemgraphRootConfig,
   writeNeo4jRootConfig,
   writeJ1RootConfig,
   integrationConfigToEnvFormat,

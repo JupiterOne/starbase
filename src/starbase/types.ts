@@ -18,6 +18,13 @@ interface Neo4jStorageEngineConfig {
   database?: string;
 }
 
+interface MemgraphStorageEngineConfig {
+  username: string;
+  password: string;
+  uri: string;
+  database?: string;
+}
+
 interface JupiterOneStorageEngineConfig {
   /**
    * The JupiterOne API key to authenticate with
@@ -34,6 +41,8 @@ interface JupiterOneStorageEngineConfig {
 }
 
 export type Neo4jStorage = StarbaseStorage<Neo4jStorageEngineConfig>;
+
+export type MemgraphStorage = StarbaseStorage<MemgraphStorageEngineConfig>;
 
 export type JupiterOneStorage = StarbaseStorage<JupiterOneStorageEngineConfig>;
 

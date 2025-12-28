@@ -8,7 +8,7 @@ import { StarbaseConfigurationError } from './error';
 
 async function collectIntegrationData(integrationDirectory: string) {
   await executeWithLogging(
-    `yarn --cwd ${integrationDirectory} start --disable-schema-validation;`,
+    `yarn --cwd ${integrationDirectory} start --disable-schema-validation`,
   );
 }
 
@@ -19,6 +19,16 @@ async function writeIntegrationDataToNeo4j(
 ) {
   await executeWithLogging(
     `yarn j1-integration neo4j push -i ${integrationInstanceId} -d ${integrationDirectory}/.j1-integration -db ${integrationDatabase}`,
+  );
+}
+
+async function writeIntegrationDataToMemgraph(
+  integrationInstanceId: string,
+  integrationDirectory: string,
+  integrationDatabase: string = 'memgraph',
+) {
+  await executeWithLogging(
+    `yarn j1-integration memgraph push -i ${integrationInstanceId} -d ${integrationDirectory}/.j1-integration -db ${integrationDatabase}`,
   );
 }
 
@@ -52,6 +62,13 @@ async function executeIntegration<TConfig>(
           storageConfig.config?.database,
         );
         break;
+      case 'memgraph':
+        await writeIntegrationDataToMemgraph(
+          integration.instanceId,
+          integration.directory,
+          storageConfig.config?.database,
+        );
+        break;
       case 'jupiterone':
         await writeIntegrationDataToJupiterOne(
           integration.instanceId,
@@ -70,5 +87,6 @@ async function executeIntegration<TConfig>(
 export {
   executeIntegration,
   collectIntegrationData,
+  writeIntegrationDataToMemgraph,
   writeIntegrationDataToNeo4j,
 };
